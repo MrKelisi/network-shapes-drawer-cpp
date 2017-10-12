@@ -9,6 +9,8 @@ class Vecteur {
     public:
         Vecteur(const Point& destination);
         Vecteur(const Point& origine, const Point& destination);
+        //Pas besoin de constructeur par copie
+        //Pas besoin de destructeur
 
         inline Point destination() const;
 
@@ -27,6 +29,8 @@ class Vecteur {
         Vecteur operator *= (double scalaire);
 
         Vecteur operator - () const;
+
+        //Pas besoin de l'opérateur =
 
         bool operator == (const Vecteur& vecteur) const;
         bool operator != (const Vecteur& vecteur) const;

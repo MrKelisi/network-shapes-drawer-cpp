@@ -20,9 +20,9 @@ class Point {
         void setX(double x);
         void setY(double y);
 
-        Point translate(const Vecteur& vecteur);
-        Point homothetie(const Point& centre, double facteur);
-        Point rotation(const Point& centre, double angle);
+        Point translate(const Vecteur& vecteur) const;
+        Point homothetie(const Point& centre, double facteur) const;
+        Point rotation(const Point& centre, double angle) const;
 
         //Pas besoin de l'operateur =
 

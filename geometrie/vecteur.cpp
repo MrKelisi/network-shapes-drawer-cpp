@@ -45,8 +45,8 @@ Vecteur Vecteur::operator*(double scalaire) const {
 }
 
 Vecteur Vecteur::operator*=(double scalaire) {
-    destination().setX(destination().x() * scalaire);
-    destination().setY(destination().y() * scalaire);
+    _destination.setX(destination().x() * scalaire);
+    _destination.setY(destination().y() * scalaire);
     return *this;
 }
 

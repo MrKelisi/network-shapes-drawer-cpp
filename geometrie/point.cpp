@@ -1,4 +1,5 @@
 #include <sstream>
+#include <const.h>
 #include "point.h"
 #include "vecteur.h"
 
@@ -8,17 +9,17 @@ Point::Point(double x, double y) :
 
 }
 
-Point Point::translate(const Vecteur& vecteur) {
+Point Point::translate(const Vecteur& vecteur) const {
     return (*this) + vecteur.destination();
 }
 
-Point Point::homothetie(const Point& centre, double facteur) {
+Point Point::homothetie(const Point& centre, double facteur) const {
     Vecteur v(centre, *this);
     v *= facteur;
     return centre + v;
 }
 
-Point Point::rotation(const Point& centre, double angle) {
+Point Point::rotation(const Point& centre, double angle) const {
 
 }
 
@@ -55,11 +56,13 @@ Point Point::operator+=(double offset) {
 }
 
 Point Point::operator-(double offset) const {
-    return Point(0, 0);
+    return Point(x() - offset, y() - offset);
 }
 
 Point Point::operator-=(double offset) {
-    return Point(0, 0);
+    _x -= offset;
+    _y -= offset;
+    return *this;
 }
 
 Point Point::operator+(const Vecteur& vecteur) const {
@@ -96,11 +99,11 @@ std::ostream& operator<<(std::ostream& o, const Point& point) {
 }
 
 bool Point::operator==(const Point& point) const {
-    return x() == point.x() && y() == point.y();
+    return std::abs(x() - point.x()) < PRECISION && std::abs(y() - point.y()) < PRECISION;
 }
 
 bool Point::operator!=(const Point& point) const {
-    return x() != point.x() || y() != point.y();
+    return !(*this == point);
 }
 
 void Point::setX(double x) {
