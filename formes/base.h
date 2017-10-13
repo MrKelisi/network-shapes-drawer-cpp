@@ -19,6 +19,10 @@ class Base {
         virtual void transformer(const Transformation& transformation) = 0;
         virtual void afficher(std::ostream& o) const = 0;
 
+        bool equals(const Base& base) const;
+        bool operator == (const Base& base) const;
+        bool operator != (const Base& base) const;
+
         friend std::ostream& operator << (std::ostream& o, const Base& base);
 };
 
