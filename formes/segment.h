@@ -1,30 +1,30 @@
 #pragma once
 
-#include <geometrie/point.h>
+#include <geometrie/vecteur.h>
 #include "base.h"
 
 class Segment : public Base {
     private:
-        Point _debut;
-        Point _fin;
+        Vecteur _debut;
+        Vecteur _fin;
 
     public:
-        Segment(Couleur couleur, const Point& debut, const Point& fin);
+        Segment(Couleur couleur, const Vecteur& debut, const Vecteur& fin);
 
-        inline const Point& debut() const;
-        inline const Point& fin() const;
+        inline const Vecteur& debut() const;
+        inline const Vecteur& fin() const;
 
-        void setDebut(const Point& debut);
-        void setFin(const Point& fin);
+        void setDebut(const Vecteur& debut);
+        void setFin(const Vecteur& fin);
 
         virtual void transformer(const Transformation& transformation) override;
         virtual void afficher(std::ostream& o) const override;
 };
 
-const Point& Segment::debut() const {
+const Vecteur& Segment::debut() const {
     return _debut;
 }
 
-const Point& Segment::fin() const {
+const Vecteur& Segment::fin() const {
     return _fin;
 }

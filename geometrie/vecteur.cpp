@@ -1,70 +1,95 @@
 #include <cmath>
-#include <sstream>
+#include <iostream>
 #include "vecteur.h"
+#include <const.h>
+#include <sstream>
 
-Vecteur::Vecteur(const Point& destination) :
-        _destination(destination) {
-}
+Vecteur::Vecteur(double x, double y) :
+        _x(x),
+        _y(y) {
 
-Vecteur::Vecteur(const Point& origine, const Point& destination) :
-    _destination(destination - origine) {
-}
-
-void Vecteur::setDestination(const Point& destination) {
-    _destination = destination;
-}
-
-void Vecteur::setDestination(const Point& origine, const Point& destination) {
-    _destination = destination - origine;
 }
 
 double Vecteur::norme() const {
-    return sqrt(pow(destination().x(), 2) + pow(destination().y(), 2));
+    return sqrt(pow(x(), 2) + pow(y(), 2));
+}
+
+void Vecteur::setX(double x) {
+    _x = x;
+}
+
+void Vecteur::setY(double y) {
+    _y = y;
+}
+
+Vecteur Vecteur::translate(const Vecteur& vecteur) const {
+    return *this + vecteur;
+}
+
+Vecteur Vecteur::homothetie(const Vecteur& centre, double facteur) const {
+    return centre + ((*this - centre) * facteur);
+}
+
+Vecteur Vecteur::rotation(double angle) const {
+    return Vecteur((x() - y()) * angle, (x() + y()) * angle);
+}
+
+Vecteur Vecteur::rotation(const Vecteur& centre, double angle) const {
+    return centre + (*this - centre).rotation(angle);
 }
 
 Vecteur Vecteur::operator+(const Vecteur& vecteur) const {
-    return Vecteur(destination() + vecteur.destination());
+    Vecteur copy(*this);
+    copy += vecteur;
+    return copy;
 }
 
 Vecteur Vecteur::operator+=(const Vecteur& vecteur) {
-    _destination += vecteur.destination();
+    _x += vecteur.x();
+    _y += vecteur.y();
     return *this;
 }
 
 Vecteur Vecteur::operator-(const Vecteur& vecteur) const {
-    return Vecteur(destination() - vecteur.destination());
+    Vecteur copy(*this);
+    copy -= vecteur;
+    return copy;
 }
 
 Vecteur Vecteur::operator-=(const Vecteur& vecteur) {
-    _destination -= vecteur.destination();
+    _x -= vecteur.x();
+    _y -= vecteur.y();
     return *this;
 }
 
 Vecteur Vecteur::operator*(double scalaire) const {
-    return Vecteur(Point(destination().x() * scalaire, destination().y() * scalaire));
+    Vecteur copy(*this);
+    copy *= scalaire;
+    return copy;
 }
 
 Vecteur Vecteur::operator*=(double scalaire) {
-    _destination.setX(destination().x() * scalaire);
-    _destination.setY(destination().y() * scalaire);
+    _x *= scalaire;
+    _y *= scalaire;
     return *this;
 }
 
 Vecteur Vecteur::operator-() const {
-    return Vecteur(- destination());
+    return Vecteur(-x(), -y());
 }
 
 bool Vecteur::operator==(const Vecteur& vecteur) const {
-    return destination() == vecteur.destination();
+    return std::abs(x() - vecteur.x()) < PRECISION &&
+           std::abs(y() - vecteur.y()) < PRECISION;
 }
 
 bool Vecteur::operator!=(const Vecteur& vecteur) const {
-    return destination() != vecteur.destination();
+    return !(*this == vecteur);
 }
 
 Vecteur::operator std::string() const {
     std::ostringstream o;
-    o << "Vecteur(" << destination() << ")";
+    o << "Vecteur(" << x() << ";" << y() << ")";
     return o.str();
 }
 

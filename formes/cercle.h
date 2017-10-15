@@ -1,23 +1,23 @@
 #pragma once
 
-#include <geometrie/point.h>
 #include <ostream>
+#include <geometrie/vecteur.h>
 #include "base.h"
 
 class Cercle : public Base {
     private:
-        Point _centre;
+        Vecteur _centre;
         double _rayon;
 
     public:
-        Cercle(Couleur couleur, const Point& centre, double rayon);
+        Cercle(Couleur couleur, const Vecteur& centre, double rayon);
         //Pas besoin de constructeur par copie
         //Pas besoin de destructeur
 
-        inline const Point& centre() const;
+        inline const Vecteur& centre() const;
         inline double rayon() const;
 
-        void setCentre(const Point& centre);
+        void setCentre(const Vecteur& centre);
         void setRayon(double rayon);
 
         void transformer(const Transformation& transformation) override;
@@ -27,7 +27,7 @@ class Cercle : public Base {
         virtual bool operator != (const Cercle& cercle) const;
 };
 
-const Point& Cercle::centre() const {
+const Vecteur& Cercle::centre() const {
     return _centre;
 }
 

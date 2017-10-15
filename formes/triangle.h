@@ -1,26 +1,26 @@
 #pragma once
 
-#include <geometrie/point.h>
+#include <geometrie/vecteur.h>
 #include "base.h"
 
 class Triangle : public Base {
     private:
-        Point _p1;
-        Point _p2;
-        Point _p3;
+        Vecteur _p1;
+        Vecteur _p2;
+        Vecteur _p3;
 
     public:
-        Triangle(Couleur couleur, const Point& p1, const Point& p2, const Point& p3);
+        Triangle(Couleur couleur, const Vecteur& p1, const Vecteur& p2, const Vecteur& p3);
         //Pas besoin de constructeur par copie
         //Pas besoin de destructeur
 
-        inline Point p1() const;
-        inline Point p2() const;
-        inline Point p3() const;
+        inline Vecteur p1() const;
+        inline Vecteur p2() const;
+        inline Vecteur p3() const;
 
-        void setP1(const Point& p1);
-        void setP2(const Point& p2);
-        void setP3(const Point& p3);
+        void setP1(const Vecteur& p1);
+        void setP2(const Vecteur& p2);
+        void setP3(const Vecteur& p3);
 
         void transformer(const Transformation& transformation) override;
         void afficher(std::ostream& o) const override;
@@ -29,14 +29,14 @@ class Triangle : public Base {
         bool operator != (const Triangle& triangle) const;
 };
 
-Point Triangle::p1() const {
+Vecteur Triangle::p1() const {
     return _p1;
 }
 
-Point Triangle::p2() const {
+Vecteur Triangle::p2() const {
     return _p2;
 }
 
-Point Triangle::p3() const {
+Vecteur Triangle::p3() const {
     return _p3;
 }

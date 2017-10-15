@@ -1,6 +1,6 @@
 #include "triangle.h"
 
-Triangle::Triangle(Couleur couleur, const Point& p1, const Point& p2, const Point& p3) :
+Triangle::Triangle(Couleur couleur, const Vecteur& p1, const Vecteur& p2, const Vecteur& p3) :
         Base(couleur),
         _p1(p1),
         _p2(p2),
@@ -8,15 +8,15 @@ Triangle::Triangle(Couleur couleur, const Point& p1, const Point& p2, const Poin
 
 }
 
-void Triangle::setP1(const Point& p1) {
+void Triangle::setP1(const Vecteur& p1) {
     Triangle::_p1 = p1;
 }
 
-void Triangle::setP2(const Point& p2) {
+void Triangle::setP2(const Vecteur& p2) {
     Triangle::_p2 = p2;
 }
 
-void Triangle::setP3(const Point& p3) {
+void Triangle::setP3(const Vecteur& p3) {
     Triangle::_p3 = p3;
 }
 

@@ -8,7 +8,6 @@ include_directories("catch")
 
 set(SOURCE_FILES
         main.cpp
-        geometrie/point.cpp
         geometrie/vecteur.cpp
         formes.cpp formes/triangle.cpp)
 add_executable(martin_cpp_tests ${SOURCE_FILES})

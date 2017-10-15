@@ -1,13 +1,13 @@
 #include "cercle.h"
 
-Cercle::Cercle(Couleur couleur, const Point& centre, double rayon) :
+Cercle::Cercle(Couleur couleur, const Vecteur& centre, double rayon) :
     Base(couleur),
     _centre(centre),
     _rayon(rayon) {
 
 }
 
-void Cercle::setCentre(const Point& centre) {
+void Cercle::setCentre(const Vecteur& centre) {
     _centre = centre;
 }
 

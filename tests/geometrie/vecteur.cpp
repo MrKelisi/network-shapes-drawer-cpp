@@ -3,47 +3,45 @@
 #include "catch.hpp"
 
 TEST_CASE("Test vecteurs", "[VECTEUR]") {
-    Vecteur v1(Point(100, 100));
-    Vecteur v2(Point(10, 10), Point(100, 100));
+    Vecteur v1(100, 100);
+    Vecteur v2(100, 100);
 
-    REQUIRE(v1.destination() == Point(100, 100));
-    REQUIRE(v2.destination() == Point(90, 90));
+    REQUIRE(v1 == Vecteur(100, 100));
 
-    v1.setDestination(Point(10, 10), Point(100, 100));
-    v2.setDestination(Point(100, 100));
+    v1.setX(90);
+    v1.setY(90);
 
-    REQUIRE(v1.destination() == Point(90, 90));
-    REQUIRE(v2.destination() == Point(100, 100));
+    REQUIRE(v1 == Vecteur(90, 90));
 
     REQUIRE(std::abs(v1.norme() - 127.279220614) < PRECISION);
     REQUIRE(std::abs(v2.norme() - 141.421356237) < PRECISION);
 
     Vecteur v3(v1);
-    REQUIRE(v3.destination() == Point(90, 90));
+    REQUIRE(v3 == Vecteur(90, 90));
 
     v3 = v2;
-    REQUIRE(v3.destination() == Point(100, 100));
+    REQUIRE(v3 == Vecteur(100, 100));
 
     v3 = v3 + v2;
-    REQUIRE(v3.destination() == Point(200, 200));
+    REQUIRE(v3 == Vecteur(200, 200));
 
     v3 += v2;
-    REQUIRE(v3.destination() == Point(300, 300));
+    REQUIRE(v3 == Vecteur(300, 300));
 
     v3 = v3 - v2;
-    REQUIRE(v3.destination() == Point(200, 200));
+    REQUIRE(v3 == Vecteur(200, 200));
 
     v3 -= v2;
-    REQUIRE(v3.destination() == Point(100, 100));
+    REQUIRE(v3 == Vecteur(100, 100));
 
     v3 = v3 * 2;
-    REQUIRE(v3.destination() == Point(200, 200));
+    REQUIRE(v3 == Vecteur(200, 200));
 
     v3 *= 2;
-    REQUIRE(v3.destination() == Point(400, 400));
+    REQUIRE(v3 == Vecteur(400, 400));
 
     v3 = -v3;
-    REQUIRE(v3.destination() == Point(-400, -400));
+    REQUIRE(v3 == Vecteur(-400, -400));
 
     v2 = v1;
     REQUIRE(v1 != v3);
