@@ -1,7 +1,7 @@
 #include "segment.h"
 
 Segment::Segment(Couleur couleur, const Vecteur& debut, const Vecteur& fin) :
-    Base(couleur),
+    Forme(couleur),
     _debut(debut),
     _fin(fin) {
 }

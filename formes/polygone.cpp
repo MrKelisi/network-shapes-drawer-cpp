@@ -2,7 +2,7 @@
 #include <algorithm>
 
 Polygone::Polygone(Couleur couleur) :
-        Base(couleur) {
+        Forme(couleur) {
 
 }
 
@@ -75,7 +75,7 @@ void Polygone::afficher(std::ostream& o) const {
 }
 
 bool Polygone::operator==(const Polygone& polygone) const {
-    return Base::equals(polygone) &&
+    return Forme::equals(polygone) &&
            _points == polygone._points; //TODO: verify
 }
 

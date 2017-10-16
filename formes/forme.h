@@ -4,12 +4,12 @@
 #include <couleur.h>
 #include <iostream>
 
-class Base {
+class Forme {
     private:
         Couleur _couleur;
 
     protected:
-        Base(Couleur couleur);
+        Forme(Couleur couleur);
 
     public:
         inline Couleur couleur() const;
@@ -19,14 +19,14 @@ class Base {
         virtual void transformer(const Transformation& transformation) = 0;
         virtual void afficher(std::ostream& o) const = 0;
 
-        bool equals(const Base& base) const;
-        bool operator == (const Base& base) const;
-        bool operator != (const Base& base) const;
+        bool equals(const Forme& base) const;
+        bool operator == (const Forme& base) const;
+        bool operator != (const Forme& base) const;
 
-        friend std::ostream& operator << (std::ostream& o, const Base& base);
+        friend std::ostream& operator << (std::ostream& o, const Forme& base);
 };
 
-Couleur Base::couleur() const {
+Couleur Forme::couleur() const {
     return _couleur;
 }
 

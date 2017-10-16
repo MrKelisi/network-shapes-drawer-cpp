@@ -1,7 +1,7 @@
 #include "triangle.h"
 
 Triangle::Triangle(Couleur couleur, const Vecteur& p1, const Vecteur& p2, const Vecteur& p3) :
-        Base(couleur),
+        Forme(couleur),
         _p1(p1),
         _p2(p2),
         _p3(p3) {
@@ -29,7 +29,7 @@ void Triangle::afficher(std::ostream& o) const {
 }
 
 bool Triangle::operator == (const Triangle& triangle) const {
-    return Base::equals(triangle) &&
+    return Forme::equals(triangle) &&
            (
                 _p1 == triangle._p1 &&
                 (_p2 == triangle._p2 && _p3 == triangle._p3) ||

@@ -2,9 +2,9 @@
 
 #include <geometrie/vecteur.h>
 #include <vector>
-#include "base.h"
+#include "forme.h"
 
-class Polygone : public Base {
+class Polygone : public Forme {
     private:
         std::vector<Vecteur> _points;
 

@@ -1,9 +1,9 @@
 #pragma once
 
 #include <geometrie/vecteur.h>
-#include "base.h"
+#include "forme.h"
 
-class Segment : public Base {
+class Segment : public Forme {
     private:
         Vecteur _debut;
         Vecteur _fin;

@@ -1,9 +1,9 @@
 #pragma once
 
 #include <geometrie/vecteur.h>
-#include "base.h"
+#include "forme.h"
 
-class Triangle : public Base {
+class Triangle : public Forme {
     private:
         Vecteur _p1;
         Vecteur _p2;

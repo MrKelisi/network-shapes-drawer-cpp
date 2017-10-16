@@ -1,7 +1,7 @@
 #include "cercle.h"
 
 Cercle::Cercle(Couleur couleur, const Vecteur& centre, double rayon) :
-    Base(couleur),
+    Forme(couleur),
     _centre(centre),
     _rayon(rayon) {
 
@@ -16,7 +16,7 @@ void Cercle::setRayon(double rayon) {
 }
 
 bool Cercle::operator == (const Cercle& cercle) const {
-    return Base::equals(cercle) &&
+    return Forme::equals(cercle) &&
            _centre == cercle._centre &&
            _rayon == cercle._rayon;
 }

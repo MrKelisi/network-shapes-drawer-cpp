@@ -2,9 +2,9 @@
 
 #include <ostream>
 #include <geometrie/vecteur.h>
-#include "base.h"
+#include "forme.h"
 
-class Cercle : public Base {
+class Cercle : public Forme {
     private:
         Vecteur _centre;
         double _rayon;
