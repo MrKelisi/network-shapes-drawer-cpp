@@ -1,12 +1,32 @@
 #include "forme.h"
+#include "groupe.h"
 
 Forme::Forme(Couleur couleur) :
-    _couleur(couleur) {
+    _couleur(couleur),
+    _groupe(nullptr) {
+
+}
+
+Forme::Forme(const Forme& forme) :
+    _couleur(forme._couleur),
+    _groupe(nullptr) {
 
 }
 
 void Forme::setCouleur(Couleur couleur) {
     _couleur = couleur;
+}
+
+void Forme::setGroupe(Groupe* groupe) {
+    if(_groupe != nullptr) {
+        _groupe->removeForme(this);
+    }
+
+    _groupe = groupe;
+
+    if(_groupe != nullptr) {
+        _groupe->addForme(this);
+    }
 }
 
 bool Forme::equals(const Forme& base) const {

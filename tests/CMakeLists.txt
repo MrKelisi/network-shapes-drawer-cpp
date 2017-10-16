@@ -9,6 +9,6 @@ include_directories("catch")
 set(SOURCE_FILES
         main.cpp
         geometrie/vecteur.cpp
-        formes.cpp formes/triangle.cpp formes/polygone.cpp)
+        formes.cpp formes/triangle.cpp formes/polygone.cpp formes/groupe.cpp)
 add_executable(martin_cpp_tests ${SOURCE_FILES})
 target_link_libraries(martin_cpp_tests martin_cpp)
