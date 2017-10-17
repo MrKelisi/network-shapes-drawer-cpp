@@ -17,9 +17,9 @@ class Polygone : public Forme {
         Vecteur point(unsigned long index) const;
 
         void ajouter(const Vecteur& point);
+        void remplacer(unsigned long index, const Vecteur& point);
 
         void transformer(const Transformation& transformation) override;
-
         void afficher(std::ostream& o) const override;
 
         Polygone operator + (const Vecteur& point) const;

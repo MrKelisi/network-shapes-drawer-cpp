@@ -22,6 +22,10 @@ void Polygone::ajouter(const Vecteur& point) {
     _points.push_back(point);
 }
 
+void Polygone::remplacer(unsigned long index, const Vecteur& point) {
+    _points[index] = point;
+}
+
 Polygone Polygone::operator+(const Vecteur& point) const {
     Polygone copy(*this);
     copy += point;

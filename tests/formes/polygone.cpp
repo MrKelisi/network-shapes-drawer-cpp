@@ -29,4 +29,7 @@ TEST_CASE("Tests polygone", "[POLYGONE]") {
     Polygone p4 = p3;
     REQUIRE(p4.nombrePoints() == 1);
     REQUIRE(p4.point(0) == Vecteur(10, 10));
+
+    p4.remplacer(0, Vecteur(20, 20));
+    REQUIRE(p4.point(0) == Vecteur(20, 20));
 }

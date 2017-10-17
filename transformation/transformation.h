@@ -10,5 +10,5 @@ class Transformation {
         virtual void transformer(Segment* segment) const = 0;
         virtual void transformer(Cercle* cercle) const = 0;
         virtual void transformer(Triangle* triangle) const = 0;
-        virtual void transformer(Polygone* triangle) const = 0;
+        virtual void transformer(Polygone* polygone) const = 0;
 };
