@@ -5,7 +5,7 @@
 TEST_CASE("Test ajout/suppression de formes dans groupe", "[GROUPE]") {
     Segment s(BLUE, Vecteur(0, 0), Vecteur(10, 10));
     {
-        Groupe g;
+        Groupe g(RED);
 
         REQUIRE(g.nombreFormes() == 0);
 

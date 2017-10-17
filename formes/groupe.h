@@ -14,7 +14,7 @@ class Groupe : public Forme {
         void removeForme(Forme* forme);
 
     public:
-        Groupe();
+        Groupe(Couleur couleur);
         ~Groupe();
 
         unsigned long nombreFormes() const;

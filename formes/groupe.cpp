@@ -1,8 +1,8 @@
 #include "groupe.h"
 #include <algorithm>
 
-Groupe::Groupe() :
-    Forme(RED) { //TODO: couleur ?
+Groupe::Groupe(Couleur couleur) :
+    Forme(couleur) {
 
 }
 
