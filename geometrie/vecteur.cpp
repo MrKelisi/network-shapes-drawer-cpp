@@ -31,7 +31,9 @@ Vecteur Vecteur::homothetie(const Vecteur& centre, double facteur) const {
 }
 
 Vecteur Vecteur::rotation(double angle) const {
-    return Vecteur((x() - y()) * angle, (x() + y()) * angle);
+    double cosa = std::cos(angle);
+    double sina = std::sin(angle);
+    return Vecteur(x() * cosa - y() * sina, x() * sina + y() * cosa);
 }
 
 Vecteur Vecteur::rotation(const Vecteur& centre, double angle) const {

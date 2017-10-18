@@ -50,4 +50,8 @@ TEST_CASE("Test vecteurs", "[VECTEUR]") {
     //Test precision
     v2 *= 1.00000000001;
     REQUIRE(v1 == v2);
+
+    //Test angle
+    v1 = Vecteur(10,0);
+    REQUIRE(v1.rotation(0.5 * M_PI) == Vecteur(0, 10));
 }
