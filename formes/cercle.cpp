@@ -32,3 +32,7 @@ void Cercle::transformer(const Transformation& transformation) {
 void Cercle::afficher(std::ostream& o) const {
     o << "Cercle(centre:" << _centre << "; rayon:" << _rayon << ")";
 }
+
+void Cercle::afficher(Afficheur* afficheur) const {
+    afficheur->afficher(this);
+}

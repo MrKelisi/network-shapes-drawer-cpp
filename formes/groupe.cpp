@@ -82,3 +82,7 @@ Groupe& Groupe::operator-=(Forme* forme) {
     return *this;
 }
 
+void Groupe::afficher(Afficheur* afficheur) const {
+    afficheur->afficher(this);
+}
+

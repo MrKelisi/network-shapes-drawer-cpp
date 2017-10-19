@@ -49,3 +49,6 @@ bool Triangle::operator != (const Triangle& triangle) const {
     return !(triangle == *this);
 }
 
+void Triangle::afficher(Afficheur* afficheur) const {
+    afficheur->afficher(this);
+}

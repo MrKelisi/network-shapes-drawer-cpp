@@ -21,3 +21,7 @@ void Segment::transformer(const Transformation& transformation) {
 void Segment::afficher(std::ostream& o) const {
     o << "Segment(" << debut() << ";" << fin() << ")";
 }
+
+void Segment::afficher(Afficheur* afficheur) const {
+    afficheur->afficher(this);
+}

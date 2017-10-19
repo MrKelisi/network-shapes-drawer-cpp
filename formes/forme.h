@@ -3,8 +3,10 @@
 #include <transformation/transformation.h>
 #include <couleur.h>
 #include <iostream>
+#include <affichage/afficheur.h>
 
 class Groupe;
+
 
 class Forme {
     private:
@@ -25,6 +27,7 @@ class Forme {
 
         virtual void transformer(const Transformation& transformation) = 0;
         virtual void afficher(std::ostream& o) const = 0;
+        virtual void afficher(Afficheur* afficheur) const = 0;
 
         bool equals(const Forme& base) const;
         bool operator == (const Forme& base) const;
@@ -32,15 +35,14 @@ class Forme {
 
         friend std::ostream& operator << (std::ostream& o, const Forme& base);
 };
-
-Couleur Forme::couleur() const {
-    return _couleur;
-}
-
 const Groupe* Forme::groupe() const {
     return _groupe;
 }
 
 Groupe* Forme::groupe() {
     return _groupe;
+}
+
+Couleur Forme::couleur() const {
+    return _couleur;
 }

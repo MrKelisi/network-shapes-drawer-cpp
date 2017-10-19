@@ -24,6 +24,8 @@ class Groupe : public Forme {
         void transformer(const Transformation& transformation) override;
         void afficher(std::ostream& o) const override;
 
+        virtual void afficher(Afficheur* afficheur) const override;
+
         Forme* operator [] (unsigned long index);
         const Forme* operator [] (unsigned long index) const;
 

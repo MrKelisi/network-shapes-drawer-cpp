@@ -19,6 +19,7 @@ class Segment : public Forme {
 
         virtual void transformer(const Transformation& transformation) override;
         virtual void afficher(std::ostream& o) const override;
+        virtual void afficher(Afficheur* afficheur) const override;
 };
 
 const Vecteur& Segment::debut() const {

@@ -86,3 +86,7 @@ bool Polygone::operator==(const Polygone& polygone) const {
 bool Polygone::operator!=(const Polygone& polygone) const {
     return !(*this == polygone);
 }
+
+void Polygone::afficher(Afficheur* afficheur) const {
+    afficheur->afficher(this);
+}
