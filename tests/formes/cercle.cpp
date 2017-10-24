@@ -1,5 +1,6 @@
 #include <catch.hpp>
 #include <formes/cercle.h>
+#include <const.h>
 
 TEST_CASE("Test cercle", "[CERCLE]") {
     Cercle c(BLUE, Vecteur(0, 0), 10.5);
@@ -7,6 +8,7 @@ TEST_CASE("Test cercle", "[CERCLE]") {
     REQUIRE(c.centre() == Vecteur(0, 0));
     REQUIRE(c.rayon() == 10.5);
     REQUIRE(c.couleur() == BLUE);
+    REQUIRE(std::abs(c.aire() - 346.360590058) < PRECISION);
 
     Cercle c2(c);
     REQUIRE(c2.centre() == Vecteur(0, 0));
@@ -25,6 +27,7 @@ TEST_CASE("Test cercle", "[CERCLE]") {
     REQUIRE(c.centre() == Vecteur(-50, 50));
     REQUIRE(c.rayon() == 0.5);
     REQUIRE(c.couleur() == RED);
+    REQUIRE(std::abs(c.aire() - 0.785398163397) < PRECISION);
 }
 
 TEST_CASE("Test egalite cercles", "[CERCLES]") {

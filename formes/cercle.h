@@ -22,6 +22,7 @@ class Cercle : public Forme {
 
         void transformer(const Transformation& transformation) override;
         void afficher(std::ostream& o) const override;
+        double aire() const override;
 
         virtual void afficher(Afficheur* afficheur) const override;
 

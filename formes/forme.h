@@ -28,6 +28,7 @@ class Forme {
         virtual void transformer(const Transformation& transformation) = 0;
         virtual void afficher(std::ostream& o) const = 0;
         virtual void afficher(Afficheur* afficheur) const = 0;
+        virtual double aire() const = 0;
 
         bool equals(const Forme& base) const;
         bool operator == (const Forme& base) const;

@@ -18,4 +18,7 @@ TEST_CASE("Test segment", "[SEGMENT]") {
     s1.setFin(s2.debut());
     REQUIRE(s1.fin() == Vecteur(0, 0));
     REQUIRE(s1.debut() == Vecteur(10, 10));
+
+    REQUIRE(s1.aire() == 0);
+    REQUIRE(s2.aire() == 0);
 }

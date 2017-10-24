@@ -52,3 +52,7 @@ bool Triangle::operator != (const Triangle& triangle) const {
 void Triangle::afficher(Afficheur* afficheur) const {
     afficheur->afficher(this);
 }
+
+double Triangle::aire() const {
+    return (p2() - p1()).determinant(p3() - p1()) / 2;
+}

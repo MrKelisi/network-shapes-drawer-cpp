@@ -24,8 +24,9 @@ class Triangle : public Forme {
 
         void transformer(const Transformation& transformation) override;
         void afficher(std::ostream& o) const override;
-
         virtual void afficher(Afficheur* afficheur) const override;
+
+        double aire() const override;
 
         bool operator == (const Triangle& triangle) const;
         bool operator != (const Triangle& triangle) const;

@@ -25,3 +25,7 @@ void Segment::afficher(std::ostream& o) const {
 void Segment::afficher(Afficheur* afficheur) const {
     afficheur->afficher(this);
 }
+
+double Segment::aire() const {
+    return 0;
+}

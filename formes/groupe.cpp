@@ -86,3 +86,13 @@ void Groupe::afficher(Afficheur* afficheur) const {
     afficheur->afficher(this);
 }
 
+double Groupe::aire() const {
+    double aire = 0;
+
+    for(Forme* forme : _formes) {
+        aire += forme->aire();
+    }
+
+    return aire;
+}
+

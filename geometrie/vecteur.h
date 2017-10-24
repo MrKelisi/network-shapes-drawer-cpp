@@ -15,6 +15,7 @@ class Vecteur {
         inline double x() const;
         inline double y() const;
         double norme() const;
+        double determinant(const Vecteur& other) const;
 
         void setX(double x);
         void setY(double y);

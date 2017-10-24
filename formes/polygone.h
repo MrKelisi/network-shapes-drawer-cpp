@@ -13,7 +13,7 @@ class Polygone : public Forme {
         //Pas besoin de constructeur par copie
         //Pas besoin de destructeur
 
-        unsigned long nombrePoints() const;
+        inline unsigned long nombrePoints() const;
         Vecteur point(unsigned long index) const;
 
         void ajouter(const Vecteur& point);
@@ -21,8 +21,8 @@ class Polygone : public Forme {
 
         void transformer(const Transformation& transformation) override;
         void afficher(std::ostream& o) const override;
-
         virtual void afficher(Afficheur* afficheur) const override;
+        double aire() const override;
 
         Polygone operator + (const Vecteur& point) const;
         Polygone operator += (const Vecteur& point);
@@ -37,3 +37,7 @@ class Polygone : public Forme {
 
         //Pas besoin de l'operateur =
 };
+
+unsigned long Polygone::nombrePoints() const {
+    return _points.size();
+}
