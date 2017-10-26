@@ -33,3 +33,20 @@ TEST_CASE("Tests polygone", "[POLYGONE]") {
     p4.remplacer(0, Vecteur(20, 20));
     REQUIRE(p4.point(0) == Vecteur(20, 20));
 }
+
+TEST_CASE("Aire polygones", "[POLYGONE]") {
+    Polygone p(RED);
+    REQUIRE(p.aire() == 0);
+
+    p += Vecteur(0,0);
+    REQUIRE(p.aire() == 0);
+
+    p += Vecteur(1,0);
+    REQUIRE(p.aire() == 0);
+
+    p += Vecteur(1,1);
+    REQUIRE(p.aire() == 0.5);
+
+    p += Vecteur(0,1);
+    REQUIRE(p.aire() == 1);
+}

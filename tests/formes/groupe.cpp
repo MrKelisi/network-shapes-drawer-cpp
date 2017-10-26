@@ -1,6 +1,7 @@
 #include <catch.hpp>
 #include <formes/groupe.h>
 #include <formes/segment.h>
+#include <formes/triangle.h>
 
 TEST_CASE("Test ajout/suppression de formes dans groupe", "[GROUPE]") {
     Segment s(BLUE, Vecteur(0, 0), Vecteur(10, 10));
@@ -33,4 +34,17 @@ TEST_CASE("Test ajout/suppression de formes dans groupe", "[GROUPE]") {
     }
 
     REQUIRE(s.groupe() == nullptr);
+}
+
+TEST_CASE("Test aire groupe", "[GROUPE]") {
+    Groupe g(RED);
+    Triangle t1(RED, Vecteur(0, 0), Vecteur(1, 0), Vecteur(0, 1));
+    Triangle t2(RED, Vecteur(2, 2), Vecteur(3, 2), Vecteur(2, 3));
+    REQUIRE(g.aire() == 0);
+
+    t1.setGroupe(&g);
+    REQUIRE(g.aire() == 0.5);
+
+    t2.setGroupe(&g);
+    REQUIRE(g.aire() == 1);
 }

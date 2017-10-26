@@ -25,3 +25,7 @@ void Segment::modifier(const ModificateurForme& modificateur) {
 void Segment::visiter(const VisiteurForme& visiteur) const {
     visiteur.visiter(this);
 }
+
+double Segment::aire() const {
+    return 0;
+}

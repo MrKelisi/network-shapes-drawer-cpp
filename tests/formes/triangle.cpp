@@ -7,6 +7,7 @@ TEST_CASE("Test triangle", "[TRIANGLE]") {
     REQUIRE(t.p1() == Vecteur(0,0));
     REQUIRE(t.p2() == Vecteur(10,0));
     REQUIRE(t.p3() == Vecteur(10,10));
+    REQUIRE(t.aire() == 50);
 
     Triangle t2(t);
     REQUIRE(t2.p1() == Vecteur(0,0));

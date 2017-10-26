@@ -13,8 +13,9 @@ class Polygone : public Forme {
         //Pas besoin de constructeur par copie
         //Pas besoin de destructeur
 
-        unsigned long nombrePoints() const;
+        inline unsigned long nombrePoints() const;
         Vecteur point(unsigned long index) const;
+        double aire() const override;
 
         void ajouter(const Vecteur& point);
         void remplacer(unsigned long index, const Vecteur& point);
@@ -36,3 +37,7 @@ class Polygone : public Forme {
 
         //Pas besoin de l'operateur =
 };
+
+unsigned long Polygone::nombrePoints() const {
+    return _points.size();
+}

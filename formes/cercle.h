@@ -23,6 +23,7 @@ class Cercle : public Forme {
         virtual void modifier(const ModificateurForme& modificateur) override;
         virtual void visiter(const VisiteurForme& visiteur) const override;
         void afficher(std::ostream& o) const override;
+        double aire() const override;
 
         virtual bool operator == (const Cercle& cercle) const;
         virtual bool operator != (const Cercle& cercle) const;

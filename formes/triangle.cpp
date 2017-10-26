@@ -52,3 +52,7 @@ void Triangle::modifier(const ModificateurForme& modificateur) {
 void Triangle::visiter(const VisiteurForme& visiteur) const {
     visiteur.visiter(this);
 }
+
+double Triangle::aire() const {
+    return (p2() - p1()).determinant(p3() - p1()) / 2;
+}

@@ -99,3 +99,7 @@ std::ostream& operator<<(std::ostream& o, const Vecteur& vecteur) {
     o << (std::string) vecteur;
     return o;
 }
+
+double Vecteur::determinant(const Vecteur& other) const {
+    return x() * other.y() - y() * other.x();
+}

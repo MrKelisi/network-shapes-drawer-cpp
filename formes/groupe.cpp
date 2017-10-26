@@ -84,3 +84,13 @@ void Groupe::visiter(const VisiteurForme& visiteur) const {
     visiteur.visiter(this);
 }
 
+double Groupe::aire() const {
+    double aire = 0;
+
+    for(Forme* forme : _formes) {
+        aire += forme->aire();
+    }
+
+    return aire;
+}
+

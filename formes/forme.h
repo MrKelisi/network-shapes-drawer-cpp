@@ -20,6 +20,7 @@ class Forme {
         inline Couleur couleur() const;
         inline const Groupe* groupe() const;
         inline Groupe* groupe();
+        virtual double aire() const = 0;
 
         void setCouleur(Couleur couleur);
         void setGroupe(Groupe* groupe);

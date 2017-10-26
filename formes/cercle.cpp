@@ -1,4 +1,6 @@
 #include "cercle.h"
+#include <const.h>
+#include <math.h>
 
 Cercle::Cercle(Couleur couleur, const Vecteur& centre, double rayon) :
     Forme(couleur),
@@ -35,4 +37,8 @@ void Cercle::modifier(const ModificateurForme& modificateur) {
 
 void Cercle::visiter(const VisiteurForme& visiteur) const {
     visiteur.visiter(this);
+}
+
+double Cercle::aire() const {
+    return M_PI * pow(rayon(), 2);
 }

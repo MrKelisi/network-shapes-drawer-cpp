@@ -1,13 +1,10 @@
 #include "polygone.h"
+#include "triangle.h"
 #include <algorithm>
 
 Polygone::Polygone(Couleur couleur) :
         Forme(couleur) {
 
-}
-
-unsigned long Polygone::nombrePoints() const {
-    return _points.size();
 }
 
 Vecteur Polygone::point(unsigned long index) const {
@@ -89,4 +86,28 @@ void Polygone::modifier(const ModificateurForme& modificateur) {
 
 void Polygone::visiter(const VisiteurForme& visiteur) const {
     visiteur.visiter(this);
+}
+
+double Polygone::aire() const {
+    double aire = 0;
+
+    if(nombrePoints() < 3) {
+        return 0;
+    }
+
+    std::vector<Vecteur>::const_iterator it = _points.begin();
+    Vecteur base = *it;
+    it++;
+    Vecteur tmp = *it;
+    it++;
+
+    while(it != _points.end()) {
+        Triangle t(RED, base, tmp, *it);
+        aire += t.aire();
+
+        tmp = *it;
+        it++;
+    }
+
+    return aire;
 }

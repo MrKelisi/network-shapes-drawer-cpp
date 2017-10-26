@@ -13,6 +13,7 @@ class Segment : public Forme {
 
         inline const Vecteur& debut() const;
         inline const Vecteur& fin() const;
+        double aire() const override;
 
         void setDebut(const Vecteur& debut);
         void setFin(const Vecteur& fin);

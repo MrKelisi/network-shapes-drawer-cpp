@@ -20,6 +20,7 @@ class Groupe : public Forme {
         unsigned long nombreFormes() const;
         const Forme* forme(unsigned long index) const;
         Forme* forme(unsigned long index);
+        double aire() const override;
 
         virtual void modifier(const ModificateurForme& modificateur) override;
         virtual void visiter(const VisiteurForme& visiteur) const override;

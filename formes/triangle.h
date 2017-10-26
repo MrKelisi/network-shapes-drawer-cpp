@@ -17,6 +17,7 @@ class Triangle : public Forme {
         inline Vecteur p1() const;
         inline Vecteur p2() const;
         inline Vecteur p3() const;
+        double aire() const override;
 
         void setP1(const Vecteur& p1);
         void setP2(const Vecteur& p2);
