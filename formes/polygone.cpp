@@ -56,10 +56,6 @@ Vecteur Polygone::operator[](unsigned long index) const {
     return point(index);
 }
 
-void Polygone::transformer(const Transformation& transformation) {
-    transformation.transformer(this);
-}
-
 void Polygone::afficher(std::ostream& o) const {
     o << "Polygone(";
 
@@ -87,6 +83,10 @@ bool Polygone::operator!=(const Polygone& polygone) const {
     return !(*this == polygone);
 }
 
-void Polygone::afficher(Afficheur* afficheur) const {
-    afficheur->afficher(this);
+void Polygone::modifier(const ModificateurForme& modificateur) {
+    modificateur.modifier(this);
+}
+
+void Polygone::visiter(const VisiteurForme& visiteur) const {
+    visiteur.visiter(this);
 }

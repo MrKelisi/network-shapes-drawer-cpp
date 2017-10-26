@@ -14,14 +14,14 @@ void Segment::setFin(const Vecteur& fin) {
     _fin = fin;
 }
 
-void Segment::transformer(const Transformation& transformation) {
-    transformation.transformer(this);
-}
-
 void Segment::afficher(std::ostream& o) const {
     o << "Segment(" << debut() << ";" << fin() << ")";
 }
 
-void Segment::afficher(Afficheur* afficheur) const {
-    afficheur->afficher(this);
+void Segment::modifier(const ModificateurForme& modificateur) {
+    modificateur.modifier(this);
+}
+
+void Segment::visiter(const VisiteurForme& visiteur) const {
+    visiteur.visiter(this);
 }

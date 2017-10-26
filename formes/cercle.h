@@ -20,10 +20,9 @@ class Cercle : public Forme {
         void setCentre(const Vecteur& centre);
         void setRayon(double rayon);
 
-        void transformer(const Transformation& transformation) override;
+        virtual void modifier(const ModificateurForme& modificateur) override;
+        virtual void visiter(const VisiteurForme& visiteur) const override;
         void afficher(std::ostream& o) const override;
-
-        virtual void afficher(Afficheur* afficheur) const override;
 
         virtual bool operator == (const Cercle& cercle) const;
         virtual bool operator != (const Cercle& cercle) const;

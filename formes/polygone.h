@@ -19,10 +19,9 @@ class Polygone : public Forme {
         void ajouter(const Vecteur& point);
         void remplacer(unsigned long index, const Vecteur& point);
 
-        void transformer(const Transformation& transformation) override;
+        virtual void modifier(const ModificateurForme& modificateur) override;
+        virtual void visiter(const VisiteurForme& visiteur) const override;
         void afficher(std::ostream& o) const override;
-
-        virtual void afficher(Afficheur* afficheur) const override;
 
         Polygone operator + (const Vecteur& point) const;
         Polygone operator += (const Vecteur& point);

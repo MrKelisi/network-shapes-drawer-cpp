@@ -15,8 +15,8 @@ class Rotation : public Transformation {
     public:
         Rotation(const Vecteur& centre, double angle);
 
-        virtual void transformer(Segment* segment) const override;
-        virtual void transformer(Cercle* cercle) const override;
-        virtual void transformer(Triangle* triangle) const override;
-        virtual void transformer(Polygone* polygone) const override;
+        virtual void modifier(Segment* segment) const override;
+        virtual void modifier(Cercle* cercle) const override;
+        virtual void modifier(Triangle* triangle) const override;
+        virtual void modifier(Polygone* polygone) const override;
 };

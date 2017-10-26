@@ -41,12 +41,6 @@ void Groupe::removeForme(Forme* forme) {
     }
 }
 
-void Groupe::transformer(const Transformation& transformation) {
-    for(Forme* forme : _formes) {
-        forme->transformer(transformation);
-    }
-}
-
 void Groupe::afficher(std::ostream& o) const {
     o << "Groupe(";
 
@@ -82,7 +76,11 @@ Groupe& Groupe::operator-=(Forme* forme) {
     return *this;
 }
 
-void Groupe::afficher(Afficheur* afficheur) const {
-    afficheur->afficher(this);
+void Groupe::modifier(const ModificateurForme& modificateur) {
+    modificateur.modifier(this);
+}
+
+void Groupe::visiter(const VisiteurForme& visiteur) const {
+    visiteur.visiter(this);
 }
 

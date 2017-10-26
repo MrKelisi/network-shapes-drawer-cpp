@@ -21,10 +21,9 @@ class Groupe : public Forme {
         const Forme* forme(unsigned long index) const;
         Forme* forme(unsigned long index);
 
-        void transformer(const Transformation& transformation) override;
+        virtual void modifier(const ModificateurForme& modificateur) override;
+        virtual void visiter(const VisiteurForme& visiteur) const override;
         void afficher(std::ostream& o) const override;
-
-        virtual void afficher(Afficheur* afficheur) const override;
 
         Forme* operator [] (unsigned long index);
         const Forme* operator [] (unsigned long index) const;

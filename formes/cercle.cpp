@@ -25,14 +25,14 @@ bool Cercle::operator != (const Cercle& cercle) const {
     return !(*this == cercle);
 }
 
-void Cercle::transformer(const Transformation& transformation) {
-    transformation.transformer(this);
-}
-
 void Cercle::afficher(std::ostream& o) const {
     o << "Cercle(centre:" << _centre << "; rayon:" << _rayon << ")";
 }
 
-void Cercle::afficher(Afficheur* afficheur) const {
-    afficheur->afficher(this);
+void Cercle::modifier(const ModificateurForme& modificateur) {
+    modificateur.modifier(this);
+}
+
+void Cercle::visiter(const VisiteurForme& visiteur) const {
+    visiteur.visiter(this);
 }

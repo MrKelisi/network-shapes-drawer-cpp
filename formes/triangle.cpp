@@ -20,10 +20,6 @@ void Triangle::setP3(const Vecteur& p3) {
     Triangle::_p3 = p3;
 }
 
-void Triangle::transformer(const Transformation& transformation) {
-    transformation.transformer(this);
-}
-
 void Triangle::afficher(std::ostream& o) const {
     o << "Triangle(" << _p1 << ";" << _p2 << ";" << _p3 << ")";
 }
@@ -49,6 +45,10 @@ bool Triangle::operator != (const Triangle& triangle) const {
     return !(triangle == *this);
 }
 
-void Triangle::afficher(Afficheur* afficheur) const {
-    afficheur->afficher(this);
+void Triangle::modifier(const ModificateurForme& modificateur) {
+    modificateur.modifier(this);
+}
+
+void Triangle::visiter(const VisiteurForme& visiteur) const {
+    visiteur.visiter(this);
 }

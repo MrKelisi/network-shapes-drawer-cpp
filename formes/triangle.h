@@ -22,10 +22,9 @@ class Triangle : public Forme {
         void setP2(const Vecteur& p2);
         void setP3(const Vecteur& p3);
 
-        void transformer(const Transformation& transformation) override;
+        virtual void modifier(const ModificateurForme& modificateur) override;
+        virtual void visiter(const VisiteurForme& visiteur) const override;
         void afficher(std::ostream& o) const override;
-
-        virtual void afficher(Afficheur* afficheur) const override;
 
         bool operator == (const Triangle& triangle) const;
         bool operator != (const Triangle& triangle) const;

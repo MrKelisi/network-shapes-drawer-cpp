@@ -1,12 +1,11 @@
 #pragma once
 
-#include <transformation/transformation.h>
 #include <couleur.h>
 #include <iostream>
-#include <affichage/afficheur.h>
+#include "visiteurforme.h"
+#include "modificateurforme.h"
 
 class Groupe;
-
 
 class Forme {
     private:
@@ -25,9 +24,9 @@ class Forme {
         void setCouleur(Couleur couleur);
         void setGroupe(Groupe* groupe);
 
-        virtual void transformer(const Transformation& transformation) = 0;
+        virtual void modifier(const ModificateurForme& modificateur) = 0;
+        virtual void visiter(const VisiteurForme& visiteur) const = 0;
         virtual void afficher(std::ostream& o) const = 0;
-        virtual void afficher(Afficheur* afficheur) const = 0;
 
         bool equals(const Forme& base) const;
         bool operator == (const Forme& base) const;

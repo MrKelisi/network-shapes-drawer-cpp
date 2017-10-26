@@ -1,14 +1,17 @@
 #pragma once
 
-class Segment;
-class Cercle;
-class Triangle;
-class Polygone;
+#include <formes/modificateurforme.h>
+#include <formes/groupe.h>
+#include <formes/segment.h>
+#include <formes/cercle.h>
+#include <formes/triangle.h>
+#include <formes/polygone.h>
 
-class Transformation {
+class Transformation : public ModificateurForme {
     public:
-        virtual void transformer(Segment* segment) const = 0;
-        virtual void transformer(Cercle* cercle) const = 0;
-        virtual void transformer(Triangle* triangle) const = 0;
-        virtual void transformer(Polygone* polygone) const = 0;
+        virtual void modifier(Groupe* groupe) const override {
+            for(unsigned long i = 0; i < groupe->nombreFormes(); i++) {
+                groupe->forme(i)->modifier(*this);
+            }
+        }
 };

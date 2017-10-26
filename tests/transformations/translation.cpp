@@ -17,7 +17,7 @@ TEST_CASE("Test translation groupe", "[TRANSLATION]") {
     g += &t;
     g += &p;
 
-    g.transformer(translation);
+    g.modifier(translation);
 
     REQUIRE(c.centre() == Vecteur(0, 10));
     REQUIRE(s.debut() == Vecteur(0, 10));

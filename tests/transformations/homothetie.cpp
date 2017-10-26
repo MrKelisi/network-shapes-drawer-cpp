@@ -11,10 +11,10 @@ TEST_CASE("Test transformations", "[HOMOTHETIE]") {
     Polygone p(RED);
     p.ajouter(Vecteur(0,0));
 
-    c.transformer(h);
-    s.transformer(h);
-    t.transformer(h);
-    p.transformer(h);
+    c.modifier(h);
+    s.modifier(h);
+    t.modifier(h);
+    p.modifier(h);
 
     REQUIRE(c.centre() == Vecteur(20, 20));
     REQUIRE(c.rayon() == 20);

@@ -10,10 +10,10 @@ TEST_CASE("Test rotation", "[HOMOTHETIE]") {
     Polygone p(RED);
     p.ajouter(Vecteur(0,0));
 
-    c.transformer(r);
-    s.transformer(r);
-    t.transformer(r);
-    p.transformer(r);
+    c.modifier(r);
+    s.modifier(r);
+    t.modifier(r);
+    p.modifier(r);
 
     REQUIRE(c.centre() == Vecteur(-10, 10));
     REQUIRE(c.rayon() == 10);
@@ -29,7 +29,7 @@ TEST_CASE("Test rotation 2", "[ROTATION]") {
     Rotation r(Vecteur(10, 10), M_PI);
     Cercle c(RED, Vecteur(0, 0), 10);
 
-    c.transformer(r);
+    c.modifier(r);
 
     REQUIRE(c.centre() == Vecteur(20, 20));
 }

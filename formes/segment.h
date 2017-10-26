@@ -17,9 +17,9 @@ class Segment : public Forme {
         void setDebut(const Vecteur& debut);
         void setFin(const Vecteur& fin);
 
-        virtual void transformer(const Transformation& transformation) override;
+        virtual void modifier(const ModificateurForme& modificateur) override;
+        virtual void visiter(const VisiteurForme& visiteur) const override;
         virtual void afficher(std::ostream& o) const override;
-        virtual void afficher(Afficheur* afficheur) const override;
 };
 
 const Vecteur& Segment::debut() const {
