@@ -111,7 +111,9 @@ void AffichageDistant::visiter(const Triangle* triangle) const {
 }
 
 void AffichageDistant::visiter(const Groupe* groupe) const {
-
+    for(unsigned long i = 0; i < groupe->nombreFormes(); i++) {
+        groupe->forme(i)->visiter(*this);
+    }
 }
 
 std::string AffichageDistant::visiterForme(const Forme* forme) const {
