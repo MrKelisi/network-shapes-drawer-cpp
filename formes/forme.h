@@ -21,9 +21,10 @@ class Forme {
         inline const Groupe* groupe() const;
         inline Groupe* groupe();
         virtual double aire() const = 0;
+        Couleur couleurAffichee() const;
 
         void setCouleur(Couleur couleur);
-        void setGroupe(Groupe* groupe);
+        void setGroupe(Groupe* groupe); //TODO: empêcher de faire un cycle de groupes
 
         virtual void modifier(const ModificateurForme& modificateur) = 0;
         virtual void visiter(const VisiteurForme& visiteur) const = 0;

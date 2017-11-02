@@ -1,5 +1,13 @@
-#include <affichage/clientreseau.h>
+#include <affichage/affichagedistant.h>
+#include <formes/polygone.h>
 
 int main(int argc, char** argv) {
-    ClientReseau::instance().setServeur("127.0.0.1", 1952);
+    AffichageDistant affichageDistant("127.0.0.1", 1952);
+
+    Polygone p(RED);
+    p.ajouter(Vecteur(0,0));
+    p.ajouter(Vecteur(0,10));
+    p.ajouter(Vecteur(10,10));
+
+    p.visiter(affichageDistant);
 }

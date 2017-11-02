@@ -13,6 +13,21 @@ Forme::Forme(const Forme& forme) :
 
 }
 
+Couleur Forme::couleurAffichee() const {
+    const Groupe* first = groupe();
+
+    if(first == nullptr) {
+        return couleur();
+    }
+    else {
+        while(first->groupe() != nullptr) {
+            first = first->groupe();
+        }
+
+        return first->couleur();
+    }
+}
+
 void Forme::setCouleur(Couleur couleur) {
     _couleur = couleur;
 }

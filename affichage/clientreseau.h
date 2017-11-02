@@ -1,5 +1,8 @@
 #pragma once
 
+#include <vector>
+#include <string>
+
 #ifdef WIN32
     #include <winsock2.h>
 #else
@@ -9,6 +12,7 @@
     #include <arpa/inet.h>
     #include <unistd.h>
     #include <netdb.h>
+
     #define INVALID_SOCKET -1
     #define SOCKET_ERROR -1
     #define closesocket(s) close(s)
@@ -21,12 +25,12 @@
 class ClientReseau {
     public:
         static ClientReseau& instance();
-        virtual ~ClientReseau();
-        void setServeur(const char* serveur, unsigned short port);
 
     private:
         ClientReseau();
-        static ClientReseau _instance;
+        virtual ~ClientReseau();
+        ClientReseau(const ClientReseau& other);
+        ClientReseau operator = (const ClientReseau& other);
 
-        SOCKET _socket;
+        static ClientReseau _instance;
 };
