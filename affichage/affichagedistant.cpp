@@ -90,7 +90,24 @@ void AffichageDistant::visiter(const Segment* segment) const {
 }
 
 void AffichageDistant::visiter(const Triangle* triangle) const {
+    std::string data = "TRIANGLE\n";
 
+    data += visiterForme(triangle);
+
+    data += "p1=";
+    data += visiterVecteur(triangle->p1());
+    data += '\n';
+
+    data += "p2=";
+    data += visiterVecteur(triangle->p2());
+    data += '\n';
+
+    data += "p3=";
+    data += visiterVecteur(triangle->p3());
+    data += '\n';
+
+    data += "FIN\n";
+    envoyer(data);
 }
 
 void AffichageDistant::visiter(const Groupe* groupe) const {
