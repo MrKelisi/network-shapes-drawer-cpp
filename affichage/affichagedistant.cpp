@@ -73,7 +73,20 @@ void AffichageDistant::visiter(const Polygone* polygone) const {
 }
 
 void AffichageDistant::visiter(const Segment* segment) const {
+    std::string data = "SEGMENT\n";
 
+    data += visiterForme(segment);
+
+    data += "debut=";
+    data += visiterVecteur(segment->debut());
+    data += "\n";
+
+    data += "fin=";
+    data += visiterVecteur(segment->fin());
+    data += "\n";
+
+    data += "FIN\n";
+    envoyer(data);
 }
 
 void AffichageDistant::visiter(const Triangle* triangle) const {
