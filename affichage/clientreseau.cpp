@@ -1,3 +1,4 @@
+#include <stdexcept>
 #include "clientreseau.h"
 
 #ifdef _WIN32

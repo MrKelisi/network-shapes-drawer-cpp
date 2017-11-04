@@ -30,7 +30,7 @@ AffichageDistant::AffichageDistant(const char* serveur, unsigned short port) {
 }
 
 AffichageDistant::~AffichageDistant() {
-    close(_socket);
+    closesocket(_socket);
 }
 
 void AffichageDistant::envoyer(const std::string& data) const {
