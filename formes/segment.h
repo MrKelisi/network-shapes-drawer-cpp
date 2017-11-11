@@ -11,11 +11,29 @@ class Segment : public Forme {
     public:
         Segment(Couleur couleur, const Vecteur& debut, const Vecteur& fin);
 
+        /**
+         * @brief Donne le point de départ du segment
+         * @return Point de départ
+         */
         inline const Vecteur& debut() const;
+
+        /**
+         * @brief Donne le point d'arrivée du segment
+         * @return Point d'arrivée
+         */
         inline const Vecteur& fin() const;
         double aire() const override;
 
+        /**
+         * @brief Définit le début du segment
+         * @param debut Nouveau point de départ
+         */
         void setDebut(const Vecteur& debut);
+
+        /**
+         * @brief Définit la fin du segment
+         * @param fin Nouveau point d'arrivée
+         */
         void setFin(const Vecteur& fin);
 
         virtual void modifier(const ModificateurForme& modificateur) override;

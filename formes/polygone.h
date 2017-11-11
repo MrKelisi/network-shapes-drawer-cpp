@@ -13,11 +13,31 @@ class Polygone : public Forme {
         //Pas besoin de constructeur par copie
         //Pas besoin de destructeur
 
+        /**
+         * @brief Donne le nombre de points du polygone
+         * @return Nombre de points
+         */
         inline unsigned long nombrePoints() const;
+
+        /**
+         * @brief Donne le point à l'indice donné
+         * @param index Indice du point
+         * @return Vecteur
+         */
         Vecteur point(unsigned long index) const;
         double aire() const override;
 
+        /**
+         * @brief Ajoute un point
+         * @param point à ajouter
+         */
         void ajouter(const Vecteur& point);
+
+        /**
+         * @brief Remplace un point par un autre
+         * @param index Indice du point à remplacer
+         * @param point Nouveau point
+         */
         void remplacer(unsigned long index, const Vecteur& point);
 
         virtual void modifier(const ModificateurForme& modificateur) override;

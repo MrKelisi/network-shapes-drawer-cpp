@@ -14,6 +14,11 @@ class Homothetie : public Transformation {
         double _facteur;
 
     public:
+        /**
+         * @brief Crée une opération d'homothétie
+         * @param centre Centre de l'homothétie
+         * @param facteur Facteur d'agrandissement
+         */
         Homothetie(const Vecteur& centre, double facteur);
 
         virtual void modifier(Segment* segment) const override;

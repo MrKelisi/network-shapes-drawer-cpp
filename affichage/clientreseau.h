@@ -24,6 +24,10 @@
 
 class ClientReseau {
     public:
+        /**
+         * @brief Donne l'instance du client réseau
+         * @return ClientReseau
+         */
         static ClientReseau& instance();
 
     private:
