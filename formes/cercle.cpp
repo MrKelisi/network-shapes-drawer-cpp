@@ -2,7 +2,7 @@
 #include <const.h>
 #include <math.h>
 
-Cercle::Cercle(Couleur couleur, const Vecteur& centre, double rayon) :
+Cercle::Cercle(const char* couleur, const Vecteur& centre, double rayon) :
     Forme(couleur),
     _centre(centre),
     _rayon(rayon) {

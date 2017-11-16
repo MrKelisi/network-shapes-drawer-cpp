@@ -2,7 +2,7 @@
 #include "triangle.h"
 #include <algorithm>
 
-Polygone::Polygone(Couleur couleur) :
+Polygone::Polygone(const char* couleur) :
         Forme(couleur) {
 
 }
@@ -102,7 +102,7 @@ double Polygone::aire() const {
     it++;
 
     while(it != _points.end()) {
-        Triangle t(RED, base, tmp, *it);
+        Triangle t("red", base, tmp, *it);
         aire += t.aire();
 
         tmp = *it;

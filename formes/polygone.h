@@ -9,7 +9,7 @@ class Polygone : public Forme {
         std::vector<Vecteur> _points;
 
     public:
-        Polygone(Couleur couleur);
+        Polygone(const char* couleur);
         //Pas besoin de constructeur par copie
         //Pas besoin de destructeur
 

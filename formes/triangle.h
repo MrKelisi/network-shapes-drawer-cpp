@@ -10,7 +10,7 @@ class Triangle : public Forme {
         Vecteur _p3;
 
     public:
-        Triangle(Couleur couleur, const Vecteur& p1, const Vecteur& p2, const Vecteur& p3);
+        Triangle(const char* couleur, const Vecteur& p1, const Vecteur& p2, const Vecteur& p3);
         //Pas besoin de constructeur par copie
         //Pas besoin de destructeur
 

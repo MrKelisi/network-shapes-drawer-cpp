@@ -14,7 +14,7 @@ class Groupe : public Forme {
         void removeForme(Forme* forme);
 
     public:
-        Groupe(Couleur couleur);
+        Groupe(const char* couleur);
         ~Groupe();
 
         /**

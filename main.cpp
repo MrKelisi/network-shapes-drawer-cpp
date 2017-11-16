@@ -10,19 +10,19 @@
 int main(int argc, char** argv) {
     AffichageDistant affichageDistant("127.0.0.1", 1952);
 
-    Triangle t(GREEN, Vecteur(110,0), Vecteur(60, 100), Vecteur(160, 100));
+    Triangle t("aqua", Vecteur(110,0), Vecteur(60, 100), Vecteur(160, 100));
 
-    Polygone p(CYAN);
+    Polygone p("cyan");
     p.ajouter(Vecteur(105, 0));
     p.ajouter(Vecteur(115, 0));
     p.ajouter(Vecteur(115, 10));
     p.ajouter(Vecteur(105, 10));
 
-    Segment s1(BLACK, Vecteur(60, 100), Vecteur(60, 200));
-    Segment s2(YELLOW, Vecteur(160, 100), Vecteur(160, 200));
+    Segment s1("black", Vecteur(60, 100), Vecteur(60, 200));
+    Segment s2("yellow", Vecteur(160, 100), Vecteur(160, 200));
 
-    Cercle c1(RED, Vecteur(60, 250), 50);
-    Cercle c2(BLUE, Vecteur(160, 250), 50);
+    Cercle c1("red", Vecteur(60, 250), 50);
+    Cercle c2("blue", Vecteur(160, 250), 50);
 
     t.visiter(affichageDistant);
     s1.visiter(affichageDistant);

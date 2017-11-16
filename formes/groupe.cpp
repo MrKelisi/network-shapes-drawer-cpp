@@ -1,7 +1,7 @@
 #include "groupe.h"
 #include <algorithm>
 
-Groupe::Groupe(Couleur couleur) :
+Groupe::Groupe(const char* couleur) :
     Forme(couleur) {
 
 }

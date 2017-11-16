@@ -10,7 +10,7 @@ class Cercle : public Forme {
         double _rayon;
 
     public:
-        Cercle(Couleur couleur, const Vecteur& centre, double rayon);
+        Cercle(const char* couleur, const Vecteur& centre, double rayon);
         //Pas besoin de constructeur par copie
         //Pas besoin de destructeur
 

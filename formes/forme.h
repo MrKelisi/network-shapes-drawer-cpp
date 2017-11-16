@@ -9,11 +9,11 @@ class Groupe;
 
 class Forme {
     private:
-        Couleur _couleur;
+        const char* _couleur;
         Groupe* _groupe;
 
     protected:
-        Forme(Couleur couleur);
+        Forme(const char* couleur);
         Forme(const Forme& forme);
 
     public:
@@ -21,7 +21,7 @@ class Forme {
          * @brief Donne la couleur de la forme
          * @return Couleur
          */
-        inline Couleur couleur() const;
+        inline const char* couleur() const;
 
         /**
          * @brief Donne le groupe de la forme
@@ -45,13 +45,13 @@ class Forme {
          * @brief Donne la couleur à afficher de la forme
          * @return Couleur
          */
-        Couleur couleurAffichee() const;
+        const char* couleurAffichee() const;
 
         /**
          * @brief Change la couleur de la forme
          * @param couleur Nouvelle couleur
          */
-        void setCouleur(Couleur couleur);
+        void setCouleur(const char* couleur);
 
         /**
          * @brief Change le groupe de la forme
@@ -96,6 +96,6 @@ Groupe* Forme::groupe() {
     return _groupe;
 }
 
-Couleur Forme::couleur() const {
+const char* Forme::couleur() const {
     return _couleur;
 }

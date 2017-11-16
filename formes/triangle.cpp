@@ -1,6 +1,6 @@
 #include "triangle.h"
 
-Triangle::Triangle(Couleur couleur, const Vecteur& p1, const Vecteur& p2, const Vecteur& p3) :
+Triangle::Triangle(const char* couleur, const Vecteur& p1, const Vecteur& p2, const Vecteur& p3) :
         Forme(couleur),
         _p1(p1),
         _p2(p2),

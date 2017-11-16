@@ -9,7 +9,7 @@ class Segment : public Forme {
         Vecteur _fin;
 
     public:
-        Segment(Couleur couleur, const Vecteur& debut, const Vecteur& fin);
+        Segment(const char* couleur, const Vecteur& debut, const Vecteur& fin);
 
         /**
          * @brief Donne le point de départ du segment

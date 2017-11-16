@@ -120,7 +120,7 @@ std::string AffichageDistant::visiterForme(const Forme* forme) const {
     std::string data;
 
     data += "couleur=";
-    data += getChaineCouleur(forme->couleurAffichee());
+    data += forme->couleurAffichee();
     data += '\n';
 
     return data;

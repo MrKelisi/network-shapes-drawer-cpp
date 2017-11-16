@@ -1,7 +1,7 @@
 #include "forme.h"
 #include "groupe.h"
 
-Forme::Forme(Couleur couleur) :
+Forme::Forme(const char* couleur) :
     _couleur(couleur),
     _groupe(nullptr) {
 
@@ -13,7 +13,7 @@ Forme::Forme(const Forme& forme) :
 
 }
 
-Couleur Forme::couleurAffichee() const {
+const char* Forme::couleurAffichee() const {
     const Groupe* first = groupe();
 
     if(first == nullptr) {
@@ -28,7 +28,7 @@ Couleur Forme::couleurAffichee() const {
     }
 }
 
-void Forme::setCouleur(Couleur couleur) {
+void Forme::setCouleur(const char* couleur) {
     _couleur = couleur;
 }
 
@@ -57,7 +57,7 @@ bool Forme::operator!=(const Forme& base) const {
 }
 
 std::ostream& operator<<(std::ostream& o, const Forme& base) {
-    o << "Forme(couleur=" << getChaineCouleur(base.couleur()) << "; ";
+    o << "Forme(couleur=" << base._couleur << "; ";
     base.afficher(o);
     o << ")";
 
