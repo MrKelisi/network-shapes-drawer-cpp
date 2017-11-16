@@ -19,5 +19,7 @@ class Homothetie : public Transformation {
         virtual void modifier(Segment* segment) const override;
         virtual void modifier(Cercle* cercle) const override;
         virtual void modifier(Triangle* triangle) const override;
-        virtual void modifier(Polygone* polygone) const override;
+
+    protected:
+        virtual Vecteur nouveauPointPolygone(const Vecteur& point) const override;
 };

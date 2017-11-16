@@ -20,8 +20,6 @@ void Translation::modifier(Triangle* triangle) const {
     triangle->setP3(triangle->p3() + _translation);
 }
 
-void Translation::modifier(Polygone* polygone) const {
-    for(unsigned long i = 0; i < polygone->nombrePoints(); i++) {
-        polygone->remplacer(i, polygone->point(i).translate(_translation));
-    }
+Vecteur Translation::nouveauPointPolygone(const Vecteur& point) const {
+    return point.translate(_translation);
 }

@@ -14,4 +14,13 @@ class Transformation : public ModificateurForme {
                 groupe->forme(i)->modifier(*this);
             }
         }
+
+        virtual void modifier(Polygone* polygone) const override {
+            for(unsigned long i = 0; i < polygone->nombrePoints(); i++) {
+                polygone->remplacer(i, nouveauPointPolygone(polygone->point(i)));
+            }
+        }
+
+    protected:
+        virtual Vecteur nouveauPointPolygone(const Vecteur& point) const = 0;
 };

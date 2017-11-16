@@ -22,8 +22,6 @@ void Homothetie::modifier(Triangle* triangle) const {
     triangle->setP3(triangle->p3().homothetie(_centre, _facteur));
 }
 
-void Homothetie::modifier(Polygone* polygone) const {
-    for(unsigned long i = 0; i < polygone->nombrePoints(); i++) {
-        polygone->remplacer(i, polygone->point(i).homothetie(_centre, _facteur));
-    }
+Vecteur Homothetie::nouveauPointPolygone(const Vecteur& point) const {
+    return point.homothetie(_centre, _facteur);
 }

@@ -17,5 +17,7 @@ class Translation : public Transformation {
         void modifier(Segment* segment) const override;
         void modifier(Cercle* cercle) const override;
         void modifier(Triangle* triangle) const override;
-        void modifier(Polygone* polygone) const override;
+
+    protected:
+        virtual Vecteur nouveauPointPolygone(const Vecteur& point) const override;
 };

@@ -2,7 +2,9 @@
 
 Rotation::Rotation(const Vecteur& centre, double angle) :
         _centre(centre),
-        _angle(angle) {}
+        _angle(angle) {
+
+}
 
 void Rotation::modifier(Segment* segment) const {
     segment->setDebut(segment->debut().rotation(_centre, _angle));
@@ -19,8 +21,8 @@ void Rotation::modifier(Triangle* triangle) const {
     triangle->setP3(triangle->p3().rotation(_centre, _angle));
 }
 
-void Rotation::modifier(Polygone* polygone) const {
-    for(unsigned long i = 0; i < polygone->nombrePoints(); i++) {
-        polygone->remplacer(i, polygone->point(i).rotation(_centre, _angle));
-    }
+Vecteur Rotation::nouveauPointPolygone(const Vecteur& point) const {
+    return point.rotation(_centre, _angle);
 }
+
+
