@@ -14,6 +14,11 @@ class Rotation : public Transformation {
         //TODO: cosinus/sinus
 
     public:
+        /**
+         * @brief Crée une opération de rotation
+         * @param centre Centre de la rotation
+         * @param angle Angle de rotation
+         */
         Rotation(const Vecteur& centre, double angle);
 
         virtual void modifier(Segment* segment) const override;

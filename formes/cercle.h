@@ -14,10 +14,28 @@ class Cercle : public Forme {
         //Pas besoin de constructeur par copie
         //Pas besoin de destructeur
 
+        /**
+         * @brief Donne le centre du cercle
+         * @return Centre
+         */
         inline const Vecteur& centre() const;
+
+        /**
+         * @brief Donne le rayon du cercle
+         * @return Rayon
+         */
         inline double rayon() const;
 
+        /**
+         * @brief Définit le centre du cercle
+         * @param centre Centre
+         */
         void setCentre(const Vecteur& centre);
+
+        /**
+         * @brief Définit le rayon du cercle
+         * @param rayon Rayon
+         */
         void setRayon(double rayon);
 
         virtual void modifier(const ModificateurForme& modificateur) override;

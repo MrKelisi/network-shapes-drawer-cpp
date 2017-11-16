@@ -17,19 +17,71 @@ class Forme {
         Forme(const Forme& forme);
 
     public:
+        /**
+         * @brief Donne la couleur de la forme
+         * @return Couleur
+         */
         inline Couleur couleur() const;
+
+        /**
+         * @brief Donne le groupe de la forme
+         * @return Groupe
+         */
         inline const Groupe* groupe() const;
+
+        /**
+         * @brief Donne le groupe de la forme
+         * @return Groupe
+         */
         inline Groupe* groupe();
+
+        /**
+         * @brief Donne l'aire de la forme
+         * @return Aire
+         */
         virtual double aire() const = 0;
+
+        /**
+         * @brief Donne la couleur à afficher de la forme
+         * @return Couleur
+         */
         Couleur couleurAffichee() const;
 
+        /**
+         * @brief Change la couleur de la forme
+         * @param couleur Nouvelle couleur
+         */
         void setCouleur(Couleur couleur);
+
+        /**
+         * @brief Change le groupe de la forme
+         * @param groupe Nouveau groupe
+         */
         void setGroupe(Groupe* groupe); //TODO: empêcher de faire un cycle de groupes
 
+        /**
+         * @brief Modifie la forme
+         * @param modificateur Objet qui va modifier la forme
+         */
         virtual void modifier(const ModificateurForme& modificateur) = 0;
+
+        /**
+         * @brief Visite la forme
+         * @param visiteur Objet qui va visiter la forme
+         */
         virtual void visiter(const VisiteurForme& visiteur) const = 0;
+
+        /**
+         * @brief Affiche la forme sur le flux donné
+         * @param o Flux de sortie
+         */
         virtual void afficher(std::ostream& o) const = 0;
 
+        /**
+         * @brief Vérifie l'égalité de la forme avec une autre
+         * @param base Autre forme
+         * @return Vrai si les formes sont égales
+         */
         bool equals(const Forme& base) const;
         bool operator == (const Forme& base) const;
         bool operator != (const Forme& base) const;

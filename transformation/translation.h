@@ -12,6 +12,10 @@ class Translation : public Transformation {
         Vecteur _translation;
 
     public:
+        /**
+         * @brief Crée une opération de translation
+         * @param translation Vecteur de translation
+         */
         Translation(const Vecteur& translation);
 
         void modifier(Segment* segment) const override;
