@@ -2,11 +2,11 @@
 #include <formes/segment.h>
 
 TEST_CASE("Test segment", "[SEGMENT]") {
-    Segment s1(RED, Vecteur(0,0), Vecteur(10, 10));
+    Segment s1("red", Vecteur(0,0), Vecteur(10, 10));
     Segment s2(s1);
 
     REQUIRE(s1 == s2);
-    s2.setCouleur(BLUE);
+    s2.setCouleur("blue");
     REQUIRE(s1 != s2);
     s2 = s1;
     REQUIRE(s1 == s2);

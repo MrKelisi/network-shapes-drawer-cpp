@@ -2,12 +2,12 @@
 #include <formes/polygone.h>
 
 TEST_CASE("Tests polygone", "[POLYGONE]") {
-    Polygone p1(BLUE);
-    Polygone p2(RED);
+    Polygone p1("blue");
+    Polygone p2("red");
 
     REQUIRE(p1 != p2);
 
-    p1.setCouleur(RED);
+    p1.setCouleur("red");
     REQUIRE(p1 == p2);
     REQUIRE(p1.nombrePoints() == 0);
 
@@ -35,7 +35,7 @@ TEST_CASE("Tests polygone", "[POLYGONE]") {
 }
 
 TEST_CASE("Aire polygones", "[POLYGONE]") {
-    Polygone p(RED);
+    Polygone p("red");
     REQUIRE(p.aire() == 0);
 
     p += Vecteur(0,0);

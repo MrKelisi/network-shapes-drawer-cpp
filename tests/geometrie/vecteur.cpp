@@ -53,5 +53,6 @@ TEST_CASE("Test vecteurs", "[VECTEUR]") {
 
     //Test angle
     v1 = Vecteur(10,0);
-    REQUIRE(v1.rotation(0.5 * M_PI) == Vecteur(0, 10));
+    double angle = 0.5 * M_PI;
+    REQUIRE(v1.rotation(std::cos(angle), std::sin(angle)) == Vecteur(0, 10));
 }

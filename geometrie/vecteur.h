@@ -71,18 +71,20 @@ class Vecteur {
 
         /**
          * @brief Effectue une rotation autour du point (0; 0)
-         * @param angle Angle de rotation
+         * @param cos Cosinus de l'angle
+         * @param sin Sinus de l'angle
          * @return Nouveau vecteur
          */
-        Vecteur rotation(double angle) const;
+        Vecteur rotation(double cos, double sin) const;
 
         /**
          * @brief Effectue une rotation autour du point donné
          * @param centre Centre de la rotation
-         * @param angle Angle de rotation
+         * @param cos Cosinus de l'angle
+         * @param sin Sinus de l'angle
          * @return Nouveau vecteur
          */
-        Vecteur rotation(const Vecteur& centre, double angle) const;
+        Vecteur rotation(const Vecteur& centre, double cos, double sin) const;
 
         /**
          * @brief Additionne deux vecteurs

@@ -5,10 +5,10 @@
 TEST_CASE("Test transformations", "[HOMOTHETIE]") {
     Homothetie h(Vecteur(0, 0), 2);
 
-    Cercle c(RED, Vecteur(10, 10), 10);
-    Segment s(RED, Vecteur(0, 0), Vecteur(10, 10));
-    Triangle t(RED, Vecteur(0, 0), Vecteur(10, 10), Vecteur(10, 0));
-    Polygone p(RED);
+    Cercle c("red", Vecteur(10, 10), 10);
+    Segment s("red", Vecteur(0, 0), Vecteur(10, 10));
+    Triangle t("red", Vecteur(0, 0), Vecteur(10, 10), Vecteur(10, 0));
+    Polygone p("red");
     p.ajouter(Vecteur(0,0));
 
     c.modifier(h);

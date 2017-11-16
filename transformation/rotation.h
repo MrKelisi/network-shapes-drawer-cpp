@@ -10,8 +10,8 @@
 class Rotation : public Transformation {
     private:
         Vecteur _centre;
-        double _angle;
-        //TODO: cosinus/sinus
+        double _cos;
+        double _sin;
 
     public:
         /**

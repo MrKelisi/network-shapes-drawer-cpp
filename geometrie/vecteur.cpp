@@ -30,14 +30,12 @@ Vecteur Vecteur::homothetie(const Vecteur& centre, double facteur) const {
     return centre + ((*this - centre) * facteur);
 }
 
-Vecteur Vecteur::rotation(double angle) const {
-    double cosa = std::cos(angle);
-    double sina = std::sin(angle);
-    return Vecteur(x() * cosa - y() * sina, x() * sina + y() * cosa);
+Vecteur Vecteur::rotation(double cos, double sin) const {
+    return Vecteur(x() * cos - y() * sin, x() * sin + y() * cos);
 }
 
-Vecteur Vecteur::rotation(const Vecteur& centre, double angle) const {
-    return centre + (*this - centre).rotation(angle);
+Vecteur Vecteur::rotation(const Vecteur& centre, double cos, double sin) const {
+    return centre + (*this - centre).rotation(cos, sin);
 }
 
 Vecteur Vecteur::operator+(const Vecteur& vecteur) const {

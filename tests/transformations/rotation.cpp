@@ -4,10 +4,10 @@
 TEST_CASE("Test rotation", "[HOMOTHETIE]") {
     Rotation r(Vecteur(0, 0), 0.5 * M_PI);
 
-    Cercle c(RED, Vecteur(10, 10), 10);
-    Segment s(RED, Vecteur(0, 0), Vecteur(10, 10));
-    Triangle t(RED, Vecteur(0, 0), Vecteur(10, 10), Vecteur(10, 0));
-    Polygone p(RED);
+    Cercle c("red", Vecteur(10, 10), 10);
+    Segment s("red", Vecteur(0, 0), Vecteur(10, 10));
+    Triangle t("red", Vecteur(0, 0), Vecteur(10, 10), Vecteur(10, 0));
+    Polygone p("red");
     p.ajouter(Vecteur(0,0));
 
     c.modifier(r);
@@ -27,7 +27,7 @@ TEST_CASE("Test rotation", "[HOMOTHETIE]") {
 
 TEST_CASE("Test rotation 2", "[ROTATION]") {
     Rotation r(Vecteur(10, 10), M_PI);
-    Cercle c(RED, Vecteur(0, 0), 10);
+    Cercle c("red", Vecteur(0, 0), 10);
 
     c.modifier(r);
 

@@ -40,5 +40,5 @@ void Cercle::visiter(const VisiteurForme& visiteur) const {
 }
 
 double Cercle::aire() const {
-    return M_PI * pow(rayon(), 2);
+    return M_PI * rayon() * rayon();
 }

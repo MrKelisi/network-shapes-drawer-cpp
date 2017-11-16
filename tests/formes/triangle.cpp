@@ -2,7 +2,7 @@
 #include <formes/triangle.h>
 
 TEST_CASE("Test triangle", "[TRIANGLE]") {
-    Triangle t(BLUE, Vecteur(0, 0), Vecteur(10, 0), Vecteur(10, 10));
+    Triangle t("blue", Vecteur(0, 0), Vecteur(10, 0), Vecteur(10, 10));
 
     REQUIRE(t.p1() == Vecteur(0,0));
     REQUIRE(t.p2() == Vecteur(10,0));
@@ -29,12 +29,12 @@ TEST_CASE("Test triangle", "[TRIANGLE]") {
 
 TEST_CASE("Tests egalite triangles", "[TRIANGLES]") {
     Triangle egaux[6] = {
-            Triangle(BLUE, Vecteur(0, 0), Vecteur(10, 0), Vecteur(10, 10)),
-            Triangle(BLUE, Vecteur(0, 0), Vecteur(10, 10), Vecteur(10, 0)),
-            Triangle(BLUE, Vecteur(10, 0), Vecteur(0, 0), Vecteur(10, 10)),
-            Triangle(BLUE, Vecteur(10, 0), Vecteur(10, 10), Vecteur(0, 0)),
-            Triangle(BLUE, Vecteur(10, 10), Vecteur(0, 0), Vecteur(10, 0)),
-            Triangle(BLUE, Vecteur(10, 10), Vecteur(10, 0), Vecteur(0, 0)),
+            Triangle("blue", Vecteur(0, 0), Vecteur(10, 0), Vecteur(10, 10)),
+            Triangle("blue", Vecteur(0, 0), Vecteur(10, 10), Vecteur(10, 0)),
+            Triangle("blue", Vecteur(10, 0), Vecteur(0, 0), Vecteur(10, 10)),
+            Triangle("blue", Vecteur(10, 0), Vecteur(10, 10), Vecteur(0, 0)),
+            Triangle("blue", Vecteur(10, 10), Vecteur(0, 0), Vecteur(10, 0)),
+            Triangle("blue", Vecteur(10, 10), Vecteur(10, 0), Vecteur(0, 0)),
     };
 
     for(int i = 0; i < 6; i++) {
@@ -43,12 +43,12 @@ TEST_CASE("Tests egalite triangles", "[TRIANGLES]") {
         }
     }
 
-    Triangle t1(BLUE, Vecteur(0, 0), Vecteur(10, 0), Vecteur(10, 10));
-    Triangle t2(RED, Vecteur(0, 0), Vecteur(10, 0), Vecteur(10, 10));
+    Triangle t1("blue", Vecteur(0, 0), Vecteur(10, 0), Vecteur(10, 10));
+    Triangle t2("red", Vecteur(0, 0), Vecteur(10, 0), Vecteur(10, 10));
 
     REQUIRE(t1 != t2);
 
-    t2.setCouleur(BLUE);
+    t2.setCouleur("blue");
     t2.setP1(Vecteur(10, 10));
     REQUIRE(t1 != t2);
 

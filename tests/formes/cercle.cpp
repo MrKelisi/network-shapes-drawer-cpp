@@ -3,39 +3,39 @@
 #include <const.h>
 
 TEST_CASE("Test cercle", "[CERCLE]") {
-    Cercle c(BLUE, Vecteur(0, 0), 10.5);
+    Cercle c("blue", Vecteur(0, 0), 10.5);
 
     REQUIRE(c.centre() == Vecteur(0, 0));
     REQUIRE(c.rayon() == 10.5);
-    REQUIRE(c.couleur() == BLUE);
+    REQUIRE(c.couleur() == std::string("blue"));
     REQUIRE(std::abs(c.aire() - 346.360590058) < PRECISION);
 
     Cercle c2(c);
     REQUIRE(c2.centre() == Vecteur(0, 0));
     REQUIRE(c2.rayon() == 10.5);
-    REQUIRE(c2.couleur() == BLUE);
+    REQUIRE(c.couleur() == std::string("blue"));
 
     Cercle c3 = c;
     REQUIRE(c3.centre() == Vecteur(0, 0));
     REQUIRE(c3.rayon() == 10.5);
-    REQUIRE(c3.couleur() == BLUE);
+    REQUIRE(c.couleur() == std::string("blue"));
 
     c.setCentre(Vecteur(-50, 50));
-    c.setCouleur(RED);
+    c.setCouleur("red");
     c.setRayon(0.5);
 
     REQUIRE(c.centre() == Vecteur(-50, 50));
     REQUIRE(c.rayon() == 0.5);
-    REQUIRE(c.couleur() == RED);
+    REQUIRE(c.couleur() == std::string("red"));
     REQUIRE(std::abs(c.aire() - 0.785398163397) < PRECISION);
 }
 
 TEST_CASE("Test egalite cercles", "[CERCLES]") {
     Cercle c[4] = {
-        Cercle(BLUE, Vecteur(0, 0), 10),
-        Cercle(RED, Vecteur(0, 0), 10),
-        Cercle(BLUE, Vecteur(10, 10), 10),
-        Cercle(BLUE, Vecteur(0, 0), 0),
+        Cercle("blue", Vecteur(0, 0), 10),
+        Cercle("red", Vecteur(0, 0), 10),
+        Cercle("blue", Vecteur(10, 10), 10),
+        Cercle("blue", Vecteur(0, 0), 0),
     };
 
     for(int i = 0; i < 4; i++) {

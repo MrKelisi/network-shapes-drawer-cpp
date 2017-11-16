@@ -4,9 +4,9 @@
 #include <formes/triangle.h>
 
 TEST_CASE("Test ajout/suppression de formes dans groupe", "[GROUPE]") {
-    Segment s(BLUE, Vecteur(0, 0), Vecteur(10, 10));
+    Segment s("blue", Vecteur(0, 0), Vecteur(10, 10));
     {
-        Groupe g(RED);
+        Groupe g("red");
 
         REQUIRE(g.nombreFormes() == 0);
 
@@ -37,9 +37,9 @@ TEST_CASE("Test ajout/suppression de formes dans groupe", "[GROUPE]") {
 }
 
 TEST_CASE("Test aire groupe", "[GROUPE]") {
-    Groupe g(RED);
-    Triangle t1(RED, Vecteur(0, 0), Vecteur(1, 0), Vecteur(0, 1));
-    Triangle t2(RED, Vecteur(2, 2), Vecteur(3, 2), Vecteur(2, 3));
+    Groupe g("red");
+    Triangle t1("red", Vecteur(0, 0), Vecteur(1, 0), Vecteur(0, 1));
+    Triangle t2("red", Vecteur(2, 2), Vecteur(3, 2), Vecteur(2, 3));
     REQUIRE(g.aire() == 0);
 
     t1.setGroupe(&g);
