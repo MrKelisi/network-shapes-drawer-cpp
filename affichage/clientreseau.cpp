@@ -21,7 +21,7 @@ ClientReseau::ClientReseau() {
     #ifdef WIN32
         WSADATA wsa;
         if(WSAStartup(MAKEWORD(2, 2), &wsa) < 0) {
-            throw std::runtime_error("WSAStartup failed !"); //TODO: exception
+            throw SocketException("WSAStartup failed !");
         }
     #endif
 }

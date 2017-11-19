@@ -6,18 +6,19 @@
 #include <formes/segment.h>
 #include <formes/triangle.h>
 #include <formes/groupe.h>
+#include <exceptions/socketexception.h>
 
 AffichageDistant::AffichageDistant(const char* serveur, unsigned short port) {
     struct hostent *hostinfo = NULL;
     SOCKADDR_IN sin = { 0 };
     _socket = socket(AF_INET, SOCK_STREAM, 0);
     if(_socket == INVALID_SOCKET) {
-        throw std::runtime_error("Socket"); //TODO: exception
+        throw SocketException("Socket");
     }
 
     hostinfo = gethostbyname(serveur);
     if (hostinfo == NULL) {
-        throw std::runtime_error("Unknown host");
+        throw SocketException("Unknown host");
     }
 
     sin.sin_addr = *(IN_ADDR *) hostinfo->h_addr;
@@ -25,7 +26,7 @@ AffichageDistant::AffichageDistant(const char* serveur, unsigned short port) {
     sin.sin_family = AF_INET;
 
     if(connect(_socket,(SOCKADDR *) &sin, sizeof(SOCKADDR)) == SOCKET_ERROR) {
-        throw std::runtime_error("Connect");
+        throw SocketException("Connect");
     }
 }
 
@@ -35,7 +36,7 @@ AffichageDistant::~AffichageDistant() {
 
 void AffichageDistant::envoyer(const std::string& data) const {
     if(send(_socket, data.c_str(), data.size(), 0) < 0) {
-        throw std::runtime_error("Send");
+        throw SocketException("Send");
     }
 }
 
