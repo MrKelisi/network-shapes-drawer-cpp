@@ -18,14 +18,14 @@ unsigned long Groupe::nombreFormes() const {
 
 const Forme* Groupe::forme(unsigned long index) const {
     if(index >= _formes.size()) {
-        throw std::runtime_error("Indice invalide"); //TODO: exception
+        throw std::out_of_range("Indice invalide");
     }
     return _formes[index];
 }
 
 Forme* Groupe::forme(unsigned long index) {
     if(index >= _formes.size()) {
-        throw std::runtime_error("Indice invalide"); //TODO: exception
+        throw std::out_of_range("Indice invalide");
     }
     return _formes[index];
 }

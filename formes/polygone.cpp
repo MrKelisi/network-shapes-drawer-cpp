@@ -9,7 +9,7 @@ Polygone::Polygone(const char* couleur) :
 
 Vecteur Polygone::point(unsigned long index) const {
     if(index >= _points.size()) {
-        throw std::runtime_error("Indice invalide"); //TODO: exception
+        throw std::out_of_range("Indice invalide"); //TODO: exception
     }
 
     return _points[index];
