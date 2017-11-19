@@ -29,23 +29,3 @@ TEST_CASE("Test cercle", "[CERCLE]") {
     REQUIRE(c.couleur() == std::string("red"));
     REQUIRE(std::abs(c.aire() - 0.785398163397) < PRECISION);
 }
-
-TEST_CASE("Test egalite cercles", "[CERCLES]") {
-    Cercle c[4] = {
-        Cercle("blue", Vecteur(0, 0), 10),
-        Cercle("red", Vecteur(0, 0), 10),
-        Cercle("blue", Vecteur(10, 10), 10),
-        Cercle("blue", Vecteur(0, 0), 0),
-    };
-
-    for(int i = 0; i < 4; i++) {
-        REQUIRE(c[i] == c[i]);
-    }
-
-    for(int i = 0; i < 4; i++) {
-        for(int j = i + 1; j < 4; j++) {
-            REQUIRE(c[i] != c[j]);
-            REQUIRE(!(c[i] == c[j]));
-        }
-    }
-}

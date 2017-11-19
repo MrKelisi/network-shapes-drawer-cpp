@@ -8,6 +8,9 @@ class Segment : public Forme {
         Vecteur _debut;
         Vecteur _fin;
 
+        bool operator == (const Segment&) const;
+        bool operator != (const Segment&) const;
+
     public:
         Segment(const char* couleur, const Vecteur& debut, const Vecteur& fin);
 

@@ -8,6 +8,9 @@ class Polygone : public Forme {
     private:
         std::vector<Vecteur> _points;
 
+        bool operator == (const Polygone&) const;
+        bool operator != (const Polygone&) const;
+
     public:
         Polygone(const char* couleur);
         //Pas besoin de constructeur par copie
@@ -51,9 +54,6 @@ class Polygone : public Forme {
         Polygone operator -= (const Vecteur& point);
 
         Vecteur operator [] (unsigned long index) const;
-
-        bool operator == (const Polygone& polygone) const;
-        bool operator != (const Polygone& polygone) const;
 
         //Pas besoin de l'operateur =
 };

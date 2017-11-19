@@ -24,27 +24,6 @@ void Triangle::afficher(std::ostream& o) const {
     o << "Triangle(" << _p1 << ";" << _p2 << ";" << _p3 << ")";
 }
 
-bool Triangle::operator == (const Triangle& triangle) const {
-    return Forme::equals(triangle) &&
-           (
-                _p1 == triangle._p1 &&
-                (_p2 == triangle._p2 && _p3 == triangle._p3) ||
-                (_p2 == triangle._p3 && _p3 == triangle._p2)
-           ) || (
-               _p1 == triangle._p2 &&
-               (_p2 == triangle._p1 && _p3 == triangle._p3) ||
-               (_p2 == triangle._p3 && _p3 == triangle._p1)
-           ) || (
-               _p1 == triangle._p3 &&
-               (_p2 == triangle._p1 && _p3 == triangle._p2) ||
-               (_p2 == triangle._p2 && _p3 == triangle._p1)
-           );
-}
-
-bool Triangle::operator != (const Triangle& triangle) const {
-    return !(triangle == *this);
-}
-
 void Triangle::modifier(const ModificateurForme& modificateur) {
     modificateur.modifier(this);
 }

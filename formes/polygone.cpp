@@ -9,7 +9,7 @@ Polygone::Polygone(const char* couleur) :
 
 Vecteur Polygone::point(unsigned long index) const {
     if(index >= _points.size()) {
-        throw std::out_of_range("Indice invalide"); //TODO: exception
+        throw std::out_of_range("Indice invalide");
     }
 
     return _points[index];
@@ -69,15 +69,6 @@ void Polygone::afficher(std::ostream& o) const {
     }
 
     o << ")";
-}
-
-bool Polygone::operator==(const Polygone& polygone) const {
-    return Forme::equals(polygone) &&
-           _points == polygone._points; //TODO: verify
-}
-
-bool Polygone::operator!=(const Polygone& polygone) const {
-    return !(*this == polygone);
 }
 
 void Polygone::modifier(const ModificateurForme& modificateur) {

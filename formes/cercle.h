@@ -9,6 +9,9 @@ class Cercle : public Forme {
         Vecteur _centre;
         double _rayon;
 
+        bool operator == (const Cercle&) const;
+        bool operator != (const Cercle&) const;
+
     public:
         Cercle(const char* couleur, const Vecteur& centre, double rayon);
         //Pas besoin de constructeur par copie
@@ -42,9 +45,6 @@ class Cercle : public Forme {
         virtual void visiter(const VisiteurForme& visiteur) const override;
         void afficher(std::ostream& o) const override;
         double aire() const override;
-
-        virtual bool operator == (const Cercle& cercle) const;
-        virtual bool operator != (const Cercle& cercle) const;
 };
 
 const Vecteur& Cercle::centre() const {

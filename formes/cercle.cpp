@@ -17,16 +17,6 @@ void Cercle::setRayon(double rayon) {
     _rayon = rayon;
 }
 
-bool Cercle::operator == (const Cercle& cercle) const {
-    return Forme::equals(cercle) &&
-           _centre == cercle._centre &&
-           _rayon == cercle._rayon;
-}
-
-bool Cercle::operator != (const Cercle& cercle) const {
-    return !(*this == cercle);
-}
-
 void Cercle::afficher(std::ostream& o) const {
     o << "Cercle(centre:" << _centre << "; rayon:" << _rayon << ")";
 }

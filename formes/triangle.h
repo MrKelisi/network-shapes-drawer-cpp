@@ -9,6 +9,9 @@ class Triangle : public Forme {
         Vecteur _p2;
         Vecteur _p3;
 
+        bool operator == (const Triangle&) const;
+        bool operator != (const Triangle&) const;
+
     public:
         Triangle(const char* couleur, const Vecteur& p1, const Vecteur& p2, const Vecteur& p3);
         //Pas besoin de constructeur par copie
@@ -54,9 +57,6 @@ class Triangle : public Forme {
         virtual void modifier(const ModificateurForme& modificateur) override;
         virtual void visiter(const VisiteurForme& visiteur) const override;
         void afficher(std::ostream& o) const override;
-
-        bool operator == (const Triangle& triangle) const;
-        bool operator != (const Triangle& triangle) const;
 };
 
 Vecteur Triangle::p1() const {

@@ -5,11 +5,8 @@ TEST_CASE("Test segment", "[SEGMENT]") {
     Segment s1("red", Vecteur(0,0), Vecteur(10, 10));
     Segment s2(s1);
 
-    REQUIRE(s1 == s2);
     s2.setCouleur("blue");
-    REQUIRE(s1 != s2);
     s2 = s1;
-    REQUIRE(s1 == s2);
 
     REQUIRE(s1.debut() == Vecteur(0, 0));
     REQUIRE(s1.fin() == Vecteur(10, 10));
