@@ -57,7 +57,7 @@ class Forme {
          * @brief Change le groupe de la forme
          * @param groupe Nouveau groupe
          */
-        void setGroupe(Groupe* groupe); //TODO: empêcher de faire un cycle de groupes
+        void setGroupe(Groupe* groupe);
 
         /**
          * @brief Modifie la forme

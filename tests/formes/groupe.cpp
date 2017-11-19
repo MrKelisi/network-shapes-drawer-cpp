@@ -2,6 +2,7 @@
 #include <formes/groupe.h>
 #include <formes/segment.h>
 #include <formes/triangle.h>
+#include <exceptions/modificationgroupeexception.h>
 
 TEST_CASE("Test ajout/suppression de formes dans groupe", "[GROUPE]") {
     Segment s("blue", Vecteur(0, 0), Vecteur(10, 10));
@@ -47,4 +48,19 @@ TEST_CASE("Test aire groupe", "[GROUPE]") {
 
     t2.setGroupe(&g);
     REQUIRE(g.aire() == 1);
+}
+
+TEST_CASE("Test cycle groupe", "[GROUPE]") {
+    Groupe g1("red");
+    Groupe g2("red");
+
+    g1.setGroupe(&g2);
+
+    try {
+        g2.setGroupe(&g1);
+        FAIL("Exception non levée");
+    }
+    catch(modificationgroupeexception exception) {
+
+    }
 }

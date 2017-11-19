@@ -1,3 +1,4 @@
+#include <exceptions/modificationgroupeexception.h>
 #include "forme.h"
 #include "groupe.h"
 
@@ -33,6 +34,14 @@ void Forme::setCouleur(const char* couleur) {
 }
 
 void Forme::setGroupe(Groupe* groupe) {
+    const Groupe* parent = groupe;
+    while(parent != nullptr) {
+        if(parent == this) {
+            throw modificationgroupeexception("Il ne peut pas y avoir de cycle de groupe");
+        }
+        parent = parent->groupe();
+    }
+
     if(_groupe != nullptr) {
         _groupe->removeForme(this);
     }
