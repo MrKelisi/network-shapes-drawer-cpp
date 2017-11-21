@@ -47,6 +47,8 @@ class Polygone : public Forme {
         virtual void visiter(const VisiteurForme& visiteur) const override;
         void afficher(std::ostream& o) const override;
 
+        virtual Forme* clone() const override;
+
         Polygone operator + (const Vecteur& point) const;
         Polygone operator += (const Vecteur& point);
 

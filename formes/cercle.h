@@ -45,6 +45,8 @@ class Cercle : public Forme {
         virtual void visiter(const VisiteurForme& visiteur) const override;
         void afficher(std::ostream& o) const override;
         double aire() const override;
+
+        virtual Forme* clone() const override;
 };
 
 const Vecteur& Cercle::centre() const {

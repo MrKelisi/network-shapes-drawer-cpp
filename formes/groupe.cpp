@@ -1,5 +1,6 @@
 #include "groupe.h"
 #include <algorithm>
+#include <exceptions/GroupeException.h>
 
 Groupe::Groupe(const char* couleur) :
     Forme(couleur) {
@@ -92,5 +93,9 @@ double Groupe::aire() const {
     }
 
     return aire;
+}
+
+Forme* Groupe::clone() const {
+    throw new GroupeException("Un groupe ne peut pas être cloné"); //TODO: ?
 }
 

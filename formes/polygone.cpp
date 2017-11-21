@@ -102,3 +102,7 @@ double Polygone::aire() const {
 
     return aire;
 }
+
+Forme* Polygone::clone() const {
+    return new Polygone(*this);
+}

@@ -66,6 +66,13 @@ class Forme {
         virtual void modifier(const ModificateurForme& modificateur) = 0;
 
         /**
+         * @brief Crée une nouvelle forme avec une transformation
+         * @param modificateurForme Objet de transformation
+         * @return Nouvelle forme
+         */
+        Forme* modifierNouveau(const ModificateurForme& modificateurForme) const;
+
+        /**
          * @brief Visite la forme
          * @param visiteur Objet qui va visiter la forme
          */
@@ -78,13 +85,10 @@ class Forme {
         virtual void afficher(std::ostream& o) const = 0;
 
         /**
-         * @brief Vérifie l'égalité de la forme avec une autre
-         * @param base Autre forme
-         * @return Vrai si les formes sont égales
+         * @brief Clone la forme actuelle
+         * @return Nouvelle forme
          */
-        bool equals(const Forme& base) const;
-        bool operator == (const Forme& base) const;
-        bool operator != (const Forme& base) const;
+        virtual Forme* clone() const = 0;
 
         friend std::ostream& operator << (std::ostream& o, const Forme& base);
 };

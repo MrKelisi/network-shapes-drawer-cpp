@@ -1,5 +1,6 @@
 #pragma once
 
+class Forme;
 class Cercle;
 class Polygone;
 class Segment;
@@ -8,6 +9,13 @@ class Groupe;
 
 class ModificateurForme {
     public:
+        /**
+         * @brief Donne une nouvelle forme avec la transformation
+         * @param forme Forme à transformer
+         * @return Nouvelle forme
+         */
+        Forme* modifier(const Forme* forme) const;
+
         /**
          * @brief Modifie un cercle
          * @param cercle Cercle

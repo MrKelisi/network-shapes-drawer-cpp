@@ -32,3 +32,7 @@ void Cercle::visiter(const VisiteurForme& visiteur) const {
 double Cercle::aire() const {
     return M_PI * rayon() * rayon();
 }
+
+Forme* Cercle::clone() const {
+    return new Cercle(*this);
+}

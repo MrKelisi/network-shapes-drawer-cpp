@@ -2,7 +2,7 @@
 #include <formes/groupe.h>
 #include <formes/segment.h>
 #include <formes/triangle.h>
-#include <exceptions/modificationgroupeexception.h>
+#include <exceptions/GroupeException.h>
 
 TEST_CASE("Test ajout/suppression de formes dans groupe", "[GROUPE]") {
     Segment s("blue", Vecteur(0, 0), Vecteur(10, 10));
@@ -60,7 +60,7 @@ TEST_CASE("Test cycle groupe", "[GROUPE]") {
         g2.setGroupe(&g1);
         FAIL("Exception non levée");
     }
-    catch(modificationgroupeexception exception) {
+    catch(GroupeException exception) {
 
     }
 }

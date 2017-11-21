@@ -1,4 +1,4 @@
-#include <exceptions/modificationgroupeexception.h>
+#include <exceptions/GroupeException.h>
 #include "forme.h"
 #include "groupe.h"
 
@@ -37,7 +37,7 @@ void Forme::setGroupe(Groupe* groupe) {
     const Groupe* parent = groupe;
     while(parent != nullptr) {
         if(parent == this) {
-            throw modificationgroupeexception("Il ne peut pas y avoir de cycle de groupe");
+            throw GroupeException("Il ne peut pas y avoir de cycle de groupe");
         }
         parent = parent->groupe();
     }
@@ -53,22 +53,14 @@ void Forme::setGroupe(Groupe* groupe) {
     }
 }
 
-bool Forme::equals(const Forme& base) const {
-    return couleur() == base.couleur();
-}
-
-bool Forme::operator == (const Forme& base) const {
-    return equals(base);
-}
-
-bool Forme::operator!=(const Forme& base) const {
-    return !equals(base);
-}
-
 std::ostream& operator<<(std::ostream& o, const Forme& base) {
     o << "Forme(couleur=" << base._couleur << "; ";
     base.afficher(o);
     o << ")";
 
     return o;
+}
+
+Forme* Forme::modifierNouveau(const ModificateurForme& modificateurForme) const {
+    return modificateurForme.modifier(this);
 }

@@ -35,3 +35,7 @@ void Triangle::visiter(const VisiteurForme& visiteur) const {
 double Triangle::aire() const {
     return (p2() - p1()).determinant(p3() - p1()) / 2;
 }
+
+Forme* Triangle::clone() const {
+    return new Triangle(*this);
+}

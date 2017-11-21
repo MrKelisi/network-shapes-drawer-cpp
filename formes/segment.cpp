@@ -29,3 +29,7 @@ void Segment::visiter(const VisiteurForme& visiteur) const {
 double Segment::aire() const {
     return 0;
 }
+
+Forme* Segment::clone() const {
+    return new Segment(*this);
+}
