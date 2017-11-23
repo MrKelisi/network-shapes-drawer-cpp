@@ -47,6 +47,8 @@ class Cercle : public Forme {
         double aire() const override;
 
         virtual Forme* clone() const override;
+
+        virtual std::string toString() const override;
 };
 
 const Vecteur& Cercle::centre() const {

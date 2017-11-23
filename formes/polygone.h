@@ -58,6 +58,8 @@ class Polygone : public Forme {
         Vecteur operator [] (unsigned long index) const;
 
         //Pas besoin de l'operateur =
+
+        virtual std::string toString() const override;
 };
 
 unsigned long Polygone::nombrePoints() const {

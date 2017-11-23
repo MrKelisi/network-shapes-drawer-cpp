@@ -3,6 +3,7 @@
 
 TEST_CASE("Test triangle", "[TRIANGLE]") {
     Triangle t("blue", Vecteur(0, 0), Vecteur(10, 0), Vecteur(10, 10));
+    std::cout << t << std::endl;
 
     REQUIRE(t.p1() == Vecteur(0,0));
     REQUIRE(t.p2() == Vecteur(10,0));

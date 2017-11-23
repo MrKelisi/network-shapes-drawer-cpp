@@ -44,6 +44,8 @@ class Segment : public Forme {
         virtual void afficher(std::ostream& o) const override;
 
         virtual Forme* clone() const override;
+
+        virtual std::string toString() const override;
 };
 
 const Vecteur& Segment::debut() const {

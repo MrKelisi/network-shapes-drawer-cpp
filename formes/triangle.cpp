@@ -39,3 +39,7 @@ double Triangle::aire() const {
 Forme* Triangle::clone() const {
     return new Triangle(*this);
 }
+
+std::string Triangle::toString() const {
+    return std::string("Triangle(p1=") + (std::string) p1() + ";p2=" + (std::string) p2() + ";p3=" + (std::string) p3() + ")";
+}

@@ -106,3 +106,23 @@ double Polygone::aire() const {
 Forme* Polygone::clone() const {
     return new Polygone(*this);
 }
+
+std::string Polygone::toString() const {
+    std::string res = "Polygone(";
+
+    std::vector<Vecteur>::const_iterator it = _points.begin();
+
+    if(it != _points.end()) {
+        res += *it;
+        it++;
+
+        while(it != _points.end()) {
+            res += ";";
+            res += *it;
+            it++;
+        }
+    }
+
+    res += ")";
+    return res;
+}

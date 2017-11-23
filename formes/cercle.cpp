@@ -36,3 +36,7 @@ double Cercle::aire() const {
 Forme* Cercle::clone() const {
     return new Cercle(*this);
 }
+
+std::string Cercle::toString() const {
+    return std::string("Cercle(centre=") + (std::string) centre() + ";rayon=" + std::to_string(rayon()) + ")";
+}

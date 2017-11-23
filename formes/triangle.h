@@ -59,6 +59,8 @@ class Triangle : public Forme {
         void afficher(std::ostream& o) const override;
 
         virtual Forme* clone() const override;
+
+        virtual std::string toString() const override;
 };
 
 Vecteur Triangle::p1() const {

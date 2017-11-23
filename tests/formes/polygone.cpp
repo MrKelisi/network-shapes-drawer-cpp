@@ -44,4 +44,5 @@ TEST_CASE("Aire polygones", "[POLYGONE]") {
 
     p += Vecteur(0,1);
     REQUIRE(p.aire() == 1);
+    std::cout << p << std::endl;
 }

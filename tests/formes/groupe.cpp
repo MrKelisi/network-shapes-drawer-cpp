@@ -12,6 +12,7 @@ TEST_CASE("Test ajout/suppression de formes dans groupe", "[GROUPE]") {
         REQUIRE(g.nombreFormes() == 0);
 
         s.setGroupe(&g);
+        std::cout << g << std::endl;
         REQUIRE(s.groupe() == &g);
         REQUIRE(g.nombreFormes() == 1);
         REQUIRE(g.forme(0) == &s);

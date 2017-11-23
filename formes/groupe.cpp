@@ -99,3 +99,22 @@ Forme* Groupe::clone() const {
     throw new GroupeException("Un groupe ne peut pas être cloné"); //TODO: ?
 }
 
+std::string Groupe::toString() const {
+    std::string res = "Groupe(";
+
+    std::vector<Forme*>::const_iterator it = _formes.begin();
+
+    if(it != _formes.end()) {
+        res += (*it)->toString();
+        it++;
+
+        while(it != _formes.end()) {
+            res += ";" + (*it)->toString();
+            it++;
+        }
+    }
+
+    res += ")";
+    return res;
+}
+

@@ -1,8 +1,9 @@
 #include <exceptions/GroupeException.h>
+#include <memory.h>
 #include "forme.h"
 #include "groupe.h"
 
-Forme::Forme(const char* couleur) :
+Forme::Forme(const std::string& couleur) :
     _couleur(couleur),
     _groupe(nullptr) {
 
@@ -14,7 +15,7 @@ Forme::Forme(const Forme& forme) :
 
 }
 
-const char* Forme::couleurAffichee() const {
+std::string Forme::couleurAffichee() const {
     const Groupe* first = groupe();
 
     if(first == nullptr) {
@@ -63,4 +64,8 @@ std::ostream& operator<<(std::ostream& o, const Forme& base) {
 
 Forme* Forme::modifierNouveau(const ModificateurForme& modificateurForme) const {
     return modificateurForme.modifier(this);
+}
+
+Forme::operator std::string() const {
+    return std::string("Forme(couleur=") + _couleur + ";" + toString() + std::string(")");
 }

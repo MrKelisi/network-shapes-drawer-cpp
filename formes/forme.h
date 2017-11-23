@@ -9,11 +9,11 @@ class Groupe;
 
 class Forme {
     private:
-        const char* _couleur;
+        std::string _couleur;
         Groupe* _groupe;
 
     protected:
-        Forme(const char* couleur);
+        Forme(const std::string& couleur);
         Forme(const Forme& forme);
 
     public:
@@ -21,7 +21,7 @@ class Forme {
          * @brief Donne la couleur de la forme
          * @return Couleur
          */
-        inline const char* couleur() const;
+        inline std::string couleur() const;
 
         /**
          * @brief Donne le groupe de la forme
@@ -45,7 +45,7 @@ class Forme {
          * @brief Donne la couleur à afficher de la forme
          * @return Couleur
          */
-        const char* couleurAffichee() const;
+        std::string couleurAffichee() const;
 
         /**
          * @brief Change la couleur de la forme
@@ -90,6 +90,14 @@ class Forme {
          */
         virtual Forme* clone() const = 0;
 
+        operator std::string() const;
+
+        /**
+         * @brief Converti la forme en std::string
+         * @return std::string
+         */
+        virtual std::string toString() const = 0;
+
         friend std::ostream& operator << (std::ostream& o, const Forme& base);
 };
 const Groupe* Forme::groupe() const {
@@ -100,6 +108,6 @@ Groupe* Forme::groupe() {
     return _groupe;
 }
 
-const char* Forme::couleur() const {
+std::string Forme::couleur() const {
     return _couleur;
 }
