@@ -5,6 +5,8 @@ TEST_CASE("Test segment", "[SEGMENT]") {
     Segment s1("red", Vecteur(0,0), Vecteur(10, 10));
     Segment s2(s1);
 
+    std::cout << s1 << std::endl;
+
     s2.setCouleur("blue");
     s2 = s1;
 

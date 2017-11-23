@@ -4,6 +4,7 @@
 
 TEST_CASE("Test cercle", "[CERCLE]") {
     Cercle c("blue", Vecteur(0, 0), 10.5);
+    std::cout << c << std::endl;
 
     REQUIRE(c.centre() == Vecteur(0, 0));
     REQUIRE(c.rayon() == 10.5);

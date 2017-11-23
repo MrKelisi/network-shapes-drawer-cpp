@@ -33,3 +33,7 @@ double Segment::aire() const {
 Forme* Segment::clone() const {
     return new Segment(*this);
 }
+
+std::string Segment::toString() const {
+    return std::string("Segment(debut=") + (std::string) debut() + ";fin=" + (std::string) fin() + ")";
+}

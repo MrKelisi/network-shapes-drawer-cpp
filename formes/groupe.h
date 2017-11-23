@@ -56,4 +56,6 @@ class Groupe : public Forme {
         Groupe& operator -= (Forme* forme);
 
         friend void Forme::setGroupe(Groupe* groupe);
+
+        virtual std::string toString() const override;
 };
