@@ -6,11 +6,13 @@
 #include <formes/groupe.h>
 #include <transformation/rotation.h>
 #include <math.h>
+#include <formes/sauveurforme.h>
 
 int main(int argc, char** argv) {
     AffichageDistant affichageDistant("127.0.0.1", 1952);
+    SauveurForme sauveurForme("test_export.txt");
 
-    Triangle t("aqua", Vecteur(110,0), Vecteur(60, 100), Vecteur(160, 100));
+    Triangle t("green", Vecteur(110,0), Vecteur(60, 100), Vecteur(160, 100));
 
     Polygone p("cyan");
     p.ajouter(Vecteur(105, 0));
@@ -27,4 +29,13 @@ int main(int argc, char** argv) {
     t.visiter(affichageDistant);
     s1.visiter(affichageDistant);
     s2.visiter(affichageDistant);
+    c1.visiter(affichageDistant);
+    c2.visiter(affichageDistant);
+    p.visiter(affichageDistant);
+
+    t.visiter(sauveurForme);
+    s1.visiter(sauveurForme);
+    s2.visiter(sauveurForme);
+    c1.visiter(sauveurForme);
+    p.visiter(sauveurForme);
 }

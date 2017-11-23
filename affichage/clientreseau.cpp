@@ -1,5 +1,5 @@
-#include <stdexcept>
 #include "clientreseau.h"
+#include "exceptions/socketexception.h"
 
 #ifdef _WIN32
     #include <winsock2.h>
@@ -12,8 +12,8 @@
 #include <stdexcept>
 #include <cstring>
 #include <iostream>
-
 #endif
+
 
 ClientReseau ClientReseau::_instance;
 
