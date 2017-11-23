@@ -8,7 +8,7 @@ add_subdirectory("tests")
 include_directories("${CMAKE_SOURCE_DIR}")
 
 set(SOURCE_FILES main.cpp formes/forme.cpp formes/forme.h geometrie/vecteur.cpp geometrie/vecteur.h couleur.h formes/segment.cpp formes/segment.h formes/cercle.cpp formes/cercle.h formes/triangle.cpp formes/triangle.h formes/polygone.cpp formes/polygone.h transformation/transformation.h formes/groupe.cpp formes/groupe.h transformation/translation.cpp transformation/translation.h transformation/homothetie.h transformation/homothetie.cpp transformation/rotation.cpp transformation/rotation.h formes/visiteurforme.h formes/modificateurforme.h affichage/clientreseau.cpp affichage/clientreseau.h affichage/affichagedistant.cpp affichage/affichagedistant.h exceptions/GroupeException.h exceptions/socketexception.h formes/modificateurforme.cpp)
-add_library(libmartin_cpp ${SOURCE_FILES})
+add_library(libmartin_cpp ${SOURCE_FILES} exceptions/argumentexception.h)
 add_executable(martin_cpp ${SOURCE_FILES})
 
 if(WIN32)

@@ -1,12 +1,15 @@
 #include "cercle.h"
 #include <const.h>
 #include <math.h>
+#include <exceptions/argumentexception.h>
 
 Cercle::Cercle(const char* couleur, const Vecteur& centre, double rayon) :
     Forme(couleur),
     _centre(centre),
     _rayon(rayon) {
-
+    if(_rayon <= 0) {
+        throw ArgumentException("Le rayon est null");
+    }
 }
 
 void Cercle::setCentre(const Vecteur& centre) {
