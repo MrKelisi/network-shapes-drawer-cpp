@@ -11,6 +11,7 @@
 int main(int argc, char** argv) {
     AffichageDistant affichageDistant("127.0.0.1", 1952);
     SauveurForme sauveurForme("test_export.txt");
+    sauveurForme.vider();
 
     Triangle t("green", Vecteur(110,0), Vecteur(60, 100), Vecteur(160, 100));
 
