@@ -23,7 +23,7 @@ public:
     /**
      * @brief Charge les formes du fichier de sauvegarde
      */
-    void charger() const;
+    int charger(Forme ** &formes) const;
 
     /**
      * @brief Vide le fichier de sauvegarde

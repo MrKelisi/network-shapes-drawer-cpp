@@ -8,6 +8,9 @@
 #include <formes/groupe.h>
 #include <fstream>
 #include <chargerDonnees/ChargerDonneesCercle.h>
+#include <chargerDonnees/ChargerDonneesSegment.h>
+#include <chargerDonnees/ChargerDonneesTriangle.h>
+#include <chargerDonnees/ChargerDonneesPolygone.h>
 
 class chargerDonneesCercle;
 
@@ -15,15 +18,14 @@ SauveurForme::SauveurForme(std::string nomFichier) {
 
     _filename = nomFichier;
 
-    ChargerDonneesCOR *chargerDonneesCercle, *chargerDonneesPolygone, *chargerDonneesSegment, *chargerDonneesTriangle;
+    ChargerDonneesCOR *chargerDonneesCercle, *chargerDonneesSegment, *chargerDonneesTriangle, *chargerDonneesPolygone;
 
-    chargerDonneesCercle = new ChargerDonneesCercle(NULL);  //TODO: Y'a un problème ici mais je comprends pas :(
-    /*chargerDonneesPolygone = new ChargerDonneesPolygone(chargerDonneesCercle);
-    chargerDonneesSegment = new ChargerDonneesSegment(chargerDonneesPolygone);
+    chargerDonneesCercle = new ChargerDonneesCercle(NULL);
+    chargerDonneesSegment = new ChargerDonneesSegment(chargerDonneesCercle);
     chargerDonneesTriangle = new ChargerDonneesTriangle(chargerDonneesSegment);
+    chargerDonneesPolygone = new ChargerDonneesPolygone(chargerDonneesTriangle);
 
-    _chargerDonnees = chargerDonneesTriangle;*/  //TODO: Faire les autres
-    _chargerDonnees = chargerDonneesCercle;
+    _chargerDonnees = chargerDonneesPolygone;
 }
 
 SauveurForme::~SauveurForme() {}
@@ -34,14 +36,18 @@ void SauveurForme::enregistrer(const std::string& data) const {
     f_out.close();
 }
 
-void SauveurForme::charger() const {
+int SauveurForme::charger(Forme ** &formes) const {
     std::ifstream f_in(_filename);
     std::string nomForme;
+    int i = 0;
 
     while (!f_in.eof()) {
         getline(f_in, nomForme, '\n');
-        _chargerDonnees->analyser(f_in, nomForme);
+        _chargerDonnees->analyser(f_in, nomForme, formes[i]);
+        i++;
     }
+
+    return (i - 1 < 0 ? 0 : i - 1);
 }
 
 void SauveurForme::vider() const {

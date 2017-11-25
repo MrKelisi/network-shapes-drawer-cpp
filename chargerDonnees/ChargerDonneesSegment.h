@@ -4,10 +4,10 @@
 
 #include "ChargerDonneesCOR.h"
 
-class ChargerDonneesCercle : public ChargerDonneesCOR {
+class ChargerDonneesSegment : public ChargerDonneesCOR {
 
     public :
-        ChargerDonneesCercle(ChargerDonneesCOR * suivant);
+        ChargerDonneesSegment(ChargerDonneesCOR * suivant);
         const std::string toString() const;
 
     protected :

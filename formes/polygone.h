@@ -13,7 +13,7 @@ class Polygone : public Forme {
 
     public:
         Polygone(const char* couleur);
-        //Pas besoin de constructeur par copie
+        Polygone(const Polygone &);
         //Pas besoin de destructeur
 
         /**

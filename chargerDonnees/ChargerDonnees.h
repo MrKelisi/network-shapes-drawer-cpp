@@ -9,5 +9,5 @@
 class ChargerDonnees {
 
 public:
-    virtual const Forme * analyser(std::ifstream & f_in, std::string nomForme) const = 0;
+    virtual const Forme * analyser(std::ifstream & f_in, std::string nomForme, Forme * &f) const = 0;
 };

@@ -7,6 +7,13 @@ Polygone::Polygone(const char* couleur) :
 
 }
 
+Polygone::Polygone(const Polygone & pol) :
+        Forme(pol.couleur()) {
+    for(int i = 0; i < nombrePoints(); i++) {
+        this->ajouter(pol.point(i));
+    }
+}
+
 Vecteur Polygone::point(unsigned long index) const {
     if(index >= _points.size()) {
         throw std::out_of_range("Indice invalide");
