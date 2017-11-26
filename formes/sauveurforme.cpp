@@ -44,10 +44,12 @@ int SauveurForme::charger(Forme ** &formes) const {
     while (!f_in.eof()) {
         getline(f_in, nomForme, '\n');
         _chargerDonnees->analyser(f_in, nomForme, formes[i]);
-        i++;
+
+        if(formes[i] != nullptr)
+            i++;
     }
 
-    return (i - 1 < 0 ? 0 : i - 1);
+    return i;
 }
 
 void SauveurForme::vider() const {

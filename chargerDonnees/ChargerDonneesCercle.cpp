@@ -33,14 +33,10 @@ const Forme * ChargerDonneesCercle::analyser1(std::ifstream & f_in, std::string 
 
         getline(f_in, line, '\n');  // }
 
-        Cercle c(couleur.c_str(), Vecteur(origine_x, origine_y), rayon);
-        std::cout << c << std::endl;  // Verifie que le cercle a été crée
-
-        //AffichageDistant affichageDistant("127.0.0.1", 1952);  // Test du cercle crée à partir du fichier
-        //c.visiter(affichageDistant);
-
         f = new Cercle(couleur.c_str(), Vecteur(origine_x, origine_y), rayon);
-        return &c;
+        std::cout << "Chargement de la forme : " << *f << std::endl;  // Verifie que le cercle a été crée
+
+        return f;
     }
     else {
         return nullptr;

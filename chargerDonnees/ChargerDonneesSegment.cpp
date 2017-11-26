@@ -35,14 +35,10 @@ const Forme * ChargerDonneesSegment::analyser1(std::ifstream & f_in, std::string
 
         getline(f_in, line, '\n');  // }
 
-        Segment s(couleur.c_str(), Vecteur(debut_x, debut_y), Vecteur(fin_x, fin_y));
-        std::cout << s << std::endl;  // Verifie que le segment a été crée
-
-        //AffichageDistant affichageDistant("127.0.0.1", 1952);  // Test du segment crée à partir du fichier
-        //s.visiter(affichageDistant);
-
         f = new Segment(couleur.c_str(), Vecteur(debut_x, debut_y), Vecteur(fin_x, fin_y));
-        return &s;
+        std::cout << "Chargement de la forme : " << *f << std::endl;  // Verifie que le segment a été crée
+
+        return f;
     }
     else {
         return nullptr;

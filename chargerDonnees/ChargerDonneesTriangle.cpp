@@ -41,14 +41,10 @@ const Forme * ChargerDonneesTriangle::analyser1(std::ifstream & f_in, std::strin
 
         getline(f_in, line, '\n');  // }
 
-        Triangle t(couleur.c_str(), Vecteur(p1_x, p1_y), Vecteur(p2_x, p2_y), Vecteur(p3_x, p3_y));
-        std::cout << t << std::endl;  // Verifie que le triangle a été crée
-
-        //AffichageDistant affichageDistant("127.0.0.1", 1952);  // Test du cercle crée à partir du fichier
-        //c.visiter(affichageDistant);
-
         f = new Triangle(couleur.c_str(), Vecteur(p1_x, p1_y), Vecteur(p2_x, p2_y), Vecteur(p3_x, p3_y));
-        return &t;
+        std::cout << "Chargement de la forme : " << *f << std::endl;  // Verifie que le triangle a été crée
+
+        return f;
     }
     else {
         return nullptr;

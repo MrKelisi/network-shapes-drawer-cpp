@@ -9,7 +9,7 @@ Polygone::Polygone(const char* couleur) :
 
 Polygone::Polygone(const Polygone & pol) :
         Forme(pol.couleur()) {
-    for(int i = 0; i < nombrePoints(); i++) {
+    for(int i = 0; i < pol.nombrePoints(); i++) {
         this->ajouter(pol.point(i));
     }
 }

@@ -41,13 +41,10 @@ const Forme * ChargerDonneesPolygone::analyser1(std::ifstream & f_in, std::strin
         for(int i = 0; i < nb; i++)
             p.ajouter(Vecteur(points_x[i], points_y[i]));
 
-        std::cout << p << std::endl;  // Verifie que le polygone a été crée
-
-        //AffichageDistant affichageDistant("127.0.0.1", 1952);  // Test du cercle crée à partir du fichier
-        //c.visiter(affichageDistant);
-
         f = new Polygone(p);
-        return &p;
+        std::cout << "Chargement de la forme : " << *f << std::endl;  // Verifie que le polygone a été crée
+
+        return f;
     }
     else {
         return nullptr;

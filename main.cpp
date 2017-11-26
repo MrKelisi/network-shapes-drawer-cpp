@@ -11,11 +11,10 @@
 int main(int argc, char** argv) {
     AffichageDistant affichageDistant("127.0.0.1", 1952);
     SauveurForme sauveurForme("test_export.txt");
-    //sauveurForme.vider();
 
     Triangle t("green", Vecteur(110,0), Vecteur(60, 100), Vecteur(160, 100));
 
-    Polygone p("cyan");
+    Polygone p("orange");
     p.ajouter(Vecteur(105, 0));
     p.ajouter(Vecteur(115, 0));
     p.ajouter(Vecteur(115, 10));
@@ -27,30 +26,36 @@ int main(int argc, char** argv) {
     Cercle c1("red", Vecteur(60, 250), 50);
     Cercle c2("blue", Vecteur(160, 250), 50);
 
-    /*
     t.visiter(affichageDistant);
     s1.visiter(affichageDistant);
     s2.visiter(affichageDistant);
     c1.visiter(affichageDistant);
     c2.visiter(affichageDistant);
     p.visiter(affichageDistant);
-     */
 
-    /*
+
+    /* === PARTIE TEST EXPORT === */
+
+    sauveurForme.vider();
+
     t.visiter(sauveurForme);
     s1.visiter(sauveurForme);
     s2.visiter(sauveurForme);
     c1.visiter(sauveurForme);
     c2.visiter(sauveurForme);
     p.visiter(sauveurForme);
-     */
+
+
+    /* === PARTIE TEST IMPORT === */
+
+    SauveurForme importerForme("test_import.txt");
 
     Forme ** FORMES = new Forme * [20];
-    int nb_formes = sauveurForme.charger(FORMES);
+    int nb_formes = importerForme.charger(FORMES);
 
-    for(int i = 0; i < nb_formes; i++)
+    for(int i = 0; i < nb_formes; i++) {
         FORMES[i]->visiter(affichageDistant); // Afficher la i-eme forme stockée dans le fichier
-
+    }
 
     for(int i = 0; i < nb_formes; i++)
         delete FORMES[i];
