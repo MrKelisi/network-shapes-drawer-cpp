@@ -9,7 +9,7 @@
 
 ChargerDonneesTriangle::ChargerDonneesTriangle(ChargerDonneesCOR * suivant) : ChargerDonneesCOR(suivant) {}
 
-const Forme * ChargerDonneesTriangle::analyser1(std::ifstream & f_in, std::string nomForme, Forme * &f) const {
+Forme * ChargerDonneesTriangle::analyser1(std::ifstream & f_in, std::string nomForme) const {
 
     if(nomForme == "Triangle") {
 
@@ -41,10 +41,7 @@ const Forme * ChargerDonneesTriangle::analyser1(std::ifstream & f_in, std::strin
 
         getline(f_in, line, '\n');  // }
 
-        f = new Triangle(couleur.c_str(), Vecteur(p1_x, p1_y), Vecteur(p2_x, p2_y), Vecteur(p3_x, p3_y));
-        std::cout << "Chargement de la forme : " << *f << std::endl;  // Verifie que le triangle a été crée
-
-        return f;
+        return new Triangle(couleur.c_str(), Vecteur(p1_x, p1_y), Vecteur(p2_x, p2_y), Vecteur(p3_x, p3_y));
     }
     else {
         return nullptr;

@@ -14,10 +14,10 @@ protected:
     ChargerDonneesCOR(ChargerDonneesCOR * suivant);
 
 public :
-    const Forme * analyser(std::ifstream & f_in, std::string nomForme, Forme * &f) const;
+    Forme * analyser(std::ifstream & f_in, std::string nomForme) const;
     virtual const std::string toString() const = 0;
 
 protected:
-    virtual const Forme * analyser1(std::ifstream & f_in, std::string nomForme, Forme * &f) const = 0;
+    virtual Forme * analyser1(std::ifstream & f_in, std::string nomForme) const = 0;
 
 };

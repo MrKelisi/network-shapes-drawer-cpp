@@ -11,5 +11,5 @@ public :
     const std::string toString() const;
 
 protected :
-    const Forme * analyser1(std::ifstream & f_in, std::string nomForme, Forme * &f) const;
+    Forme * analyser1(std::ifstream & f_in, std::string nomForme) const;
 };

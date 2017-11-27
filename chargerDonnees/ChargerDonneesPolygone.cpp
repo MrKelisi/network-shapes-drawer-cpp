@@ -9,7 +9,7 @@
 
 ChargerDonneesPolygone::ChargerDonneesPolygone(ChargerDonneesCOR * suivant) : ChargerDonneesCOR(suivant) {}
 
-const Forme * ChargerDonneesPolygone::analyser1(std::ifstream & f_in, std::string nomForme, Forme * &f) const {
+Forme * ChargerDonneesPolygone::analyser1(std::ifstream & f_in, std::string nomForme) const {
 
     if(nomForme == "Polygone") {
 
@@ -41,10 +41,7 @@ const Forme * ChargerDonneesPolygone::analyser1(std::ifstream & f_in, std::strin
         for(int i = 0; i < nb; i++)
             p.ajouter(Vecteur(points_x[i], points_y[i]));
 
-        f = new Polygone(p);
-        std::cout << "Chargement de la forme : " << *f << std::endl;  // Verifie que le polygone a été crée
-
-        return f;
+        return new Polygone(p);
     }
     else {
         return nullptr;

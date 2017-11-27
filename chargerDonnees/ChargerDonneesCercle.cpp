@@ -9,7 +9,7 @@
 
 ChargerDonneesCercle::ChargerDonneesCercle(ChargerDonneesCOR * suivant) : ChargerDonneesCOR(suivant) {}
 
-const Forme * ChargerDonneesCercle::analyser1(std::ifstream & f_in, std::string nomForme, Forme * &f) const {
+Forme * ChargerDonneesCercle::analyser1(std::ifstream & f_in, std::string nomForme) const {
 
     if(nomForme == "Cercle") {
 
@@ -33,10 +33,7 @@ const Forme * ChargerDonneesCercle::analyser1(std::ifstream & f_in, std::string 
 
         getline(f_in, line, '\n');  // }
 
-        f = new Cercle(couleur.c_str(), Vecteur(origine_x, origine_y), rayon);
-        std::cout << "Chargement de la forme : " << *f << std::endl;  // Verifie que le cercle a été crée
-
-        return f;
+        return new Cercle(couleur.c_str(), Vecteur(origine_x, origine_y), rayon);
     }
     else {
         return nullptr;

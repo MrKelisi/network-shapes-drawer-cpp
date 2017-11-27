@@ -9,7 +9,7 @@
 
 ChargerDonneesSegment::ChargerDonneesSegment(ChargerDonneesCOR * suivant) : ChargerDonneesCOR(suivant) {}
 
-const Forme * ChargerDonneesSegment::analyser1(std::ifstream & f_in, std::string nomForme, Forme * &f) const {
+Forme * ChargerDonneesSegment::analyser1(std::ifstream & f_in, std::string nomForme) const {
 
     if(nomForme == "Segment") {
 
@@ -35,10 +35,7 @@ const Forme * ChargerDonneesSegment::analyser1(std::ifstream & f_in, std::string
 
         getline(f_in, line, '\n');  // }
 
-        f = new Segment(couleur.c_str(), Vecteur(debut_x, debut_y), Vecteur(fin_x, fin_y));
-        std::cout << "Chargement de la forme : " << *f << std::endl;  // Verifie que le segment a été crée
-
-        return f;
+        return new Segment(couleur.c_str(), Vecteur(debut_x, debut_y), Vecteur(fin_x, fin_y));
     }
     else {
         return nullptr;

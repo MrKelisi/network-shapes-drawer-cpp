@@ -43,10 +43,12 @@ int SauveurForme::charger(Forme ** &formes) const {
 
     while (!f_in.eof()) {
         getline(f_in, nomForme, '\n');
-        _chargerDonnees->analyser(f_in, nomForme, formes[i]);
-
-        if(formes[i] != nullptr)
+        Forme * temp = _chargerDonnees->analyser(f_in, nomForme);
+        if (temp != NULL) {
+            std::cout << "Chargement de la forme : " << *temp << std::endl;  // Verifie que la forme a bien été crée
+            formes[i] = temp;
             i++;
+        }
     }
 
     return i;
