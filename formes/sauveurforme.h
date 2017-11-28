@@ -4,6 +4,7 @@
 #include <formes/forme.h>
 #include <geometrie/vecteur.h>
 #include <chargerDonnees/ChargerDonnees.h>
+#include <vector>
 
 class SauveurForme : public VisiteurForme {
 public:
@@ -23,7 +24,7 @@ public:
     /**
      * @brief Charge les formes du fichier de sauvegarde
      */
-    int charger(Forme ** &formes) const;
+    void charger(std::vector<Forme*> &formes) const;
 
     /**
      * @brief Vide le fichier de sauvegarde

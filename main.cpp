@@ -7,6 +7,7 @@
 #include <transformation/rotation.h>
 #include <math.h>
 #include <formes/sauveurforme.h>
+#include <transformation/homothetie.h>
 
 int main(int argc, char** argv) {
     AffichageDistant affichageDistant("127.0.0.1", 1952);
@@ -26,12 +27,18 @@ int main(int argc, char** argv) {
     Cercle c1("red", Vecteur(60, 250), 50);
     Cercle c2("blue", Vecteur(160, 250), 50);
 
+    /*
+    Groupe g("red");
+    c1.setGroupe(&g);
+    c2.setGroupe(&g);
+     */
+
     t.visiter(affichageDistant);
     s1.visiter(affichageDistant);
     s2.visiter(affichageDistant);
+    p.visiter(affichageDistant);
     c1.visiter(affichageDistant);
     c2.visiter(affichageDistant);
-    p.visiter(affichageDistant);
 
 
     /* === PARTIE TEST EXPORT === */
@@ -41,23 +48,26 @@ int main(int argc, char** argv) {
     t.visiter(sauveurForme);
     s1.visiter(sauveurForme);
     s2.visiter(sauveurForme);
+    p.visiter(sauveurForme);
     c1.visiter(sauveurForme);
     c2.visiter(sauveurForme);
-    p.visiter(sauveurForme);
 
 
     /* === PARTIE TEST IMPORT === */
 
+    std::vector<Forme*> FORMES;
     SauveurForme importerForme("test_import.txt");
+    importerForme.charger(FORMES);
 
-    Forme ** FORMES = new Forme * [20];
-    int nb_formes = importerForme.charger(FORMES);
-
-    for(int i = 0; i < nb_formes; i++) {
-        FORMES[i]->visiter(affichageDistant); // Afficher la i-eme forme stockée dans le fichier
+    for(std::vector<Forme*>::iterator it = FORMES.begin(); it != FORMES.end(); it++) {
+        //Rotation rot(Vecteur(350,150), 3.1415/4);
+        //(**it).modifier(rot);
+        (**it).visiter(affichageDistant);
     }
 
+    /*
     for(int i = 0; i < nb_formes; i++)
         delete FORMES[i];
     delete [] FORMES;
+     */
 }

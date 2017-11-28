@@ -11,6 +11,7 @@
 #include <chargerDonnees/ChargerDonneesSegment.h>
 #include <chargerDonnees/ChargerDonneesTriangle.h>
 #include <chargerDonnees/ChargerDonneesPolygone.h>
+#include <chargerDonnees/ChargerDonneesGroupe.h>
 
 class chargerDonneesCercle;
 
@@ -18,14 +19,15 @@ SauveurForme::SauveurForme(std::string nomFichier) {
 
     _filename = nomFichier;
 
-    ChargerDonneesCOR *chargerDonneesCercle, *chargerDonneesSegment, *chargerDonneesTriangle, *chargerDonneesPolygone;
+    ChargerDonneesCOR *chargerDonneesCercle, *chargerDonneesSegment, *chargerDonneesTriangle, *chargerDonneesPolygone, *chargerDonneesGroupe;
 
     chargerDonneesCercle = new ChargerDonneesCercle(NULL);
     chargerDonneesSegment = new ChargerDonneesSegment(chargerDonneesCercle);
     chargerDonneesTriangle = new ChargerDonneesTriangle(chargerDonneesSegment);
     chargerDonneesPolygone = new ChargerDonneesPolygone(chargerDonneesTriangle);
+    chargerDonneesGroupe = new ChargerDonneesGroupe(chargerDonneesPolygone);
 
-    _chargerDonnees = chargerDonneesPolygone;
+    _chargerDonnees = chargerDonneesGroupe;
 }
 
 SauveurForme::~SauveurForme() {}
@@ -36,22 +38,37 @@ void SauveurForme::enregistrer(const std::string& data) const {
     f_out.close();
 }
 
-int SauveurForme::charger(Forme ** &formes) const {
+void SauveurForme::charger(std::vector<Forme*> &formes) const {
     std::ifstream f_in(_filename);
     std::string nomForme;
-    int i = 0;
+    bool inGroupe = false;
+    Groupe * grp_ptr;
 
     while (!f_in.eof()) {
         getline(f_in, nomForme, '\n');
+
+        if(nomForme == "]") {
+            inGroupe = false;
+            getline(f_in, nomForme, '\n');
+        }
         Forme * temp = _chargerDonnees->analyser(f_in, nomForme);
+
         if (temp != NULL) {
-            std::cout << "Chargement de la forme : " << *temp << std::endl;  // Verifie que la forme a bien été crée
-            formes[i] = temp;
-            i++;
+            if(nomForme == "Groupe") {
+                grp_ptr = (Groupe *) temp;
+                inGroupe = true;
+                std::cout << "Chargement de la forme : " << *temp << std::endl;  // Verifie que la forme a bien été crée
+                formes.push_back(temp);
+            }
+            else if(inGroupe) {
+                temp->setGroupe(&*grp_ptr);
+            }
+            else {
+                std::cout << "Chargement de la forme : " << *temp << std::endl;  // Verifie que la forme a bien été crée
+                formes.push_back(temp);
+            }
         }
     }
-
-    return i;
 }
 
 void SauveurForme::vider() const {
@@ -130,9 +147,19 @@ void SauveurForme::visiter(const Triangle* triangle) const {
 }
 
 void SauveurForme::visiter(const Groupe* groupe) const {
+    std::string data = "Groupe\n[\n";
+
+    data += "couleur:";
+    data += groupe->couleurAffichee();
+    data += "\n";
+    enregistrer(data);
+
     for(unsigned long i = 0; i < groupe->nombreFormes(); i++) {
         groupe->forme(i)->visiter(*this);
     }
+
+    data = "]\n";
+    enregistrer(data);
 }
 
 std::string SauveurForme::visiterVecteur(const Vecteur& vecteur) const {
@@ -142,7 +169,7 @@ std::string SauveurForme::visiterForme(const Forme* forme) const {
     std::string data;
 
     data += "  couleur:";
-    data += forme->couleurAffichee();
+    data += forme->couleur();
     data += "\n";
 
     return data;
