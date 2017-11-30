@@ -43,25 +43,26 @@ int main(int argc, char** argv) {
 
     /* === PARTIE TEST EXPORT === */
 
-    sauveurForme.vider();
+    /*sauveurForme.vider();
 
     t.visiter(sauveurForme);
     s1.visiter(sauveurForme);
     s2.visiter(sauveurForme);
     p.visiter(sauveurForme);
     c1.visiter(sauveurForme);
-    c2.visiter(sauveurForme);
+    c2.visiter(sauveurForme);*/
 
 
     /* === PARTIE TEST IMPORT === */
 
-    std::vector<Forme*> FORMES;
+    /*std::vector<Forme*> FORMES;
     SauveurForme importerForme("test_import.txt");
     importerForme.charger(FORMES);
 
     for(std::vector<Forme*>::iterator it = FORMES.begin(); it != FORMES.end(); it++) {
         //Rotation rot(Vecteur(350,150), 3.1415/4);
-        //(**it).modifier(rot);
+        //(**it).modifier(rot); S                      `- zsh
+ 3836 florian   20   0   13,2m   1,7m
         (**it).visiter(affichageDistant);
     }
 
