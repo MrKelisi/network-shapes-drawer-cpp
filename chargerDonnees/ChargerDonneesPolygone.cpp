@@ -1,7 +1,3 @@
-//
-// Created by mrkel on 24/11/2017.
-//
-
 #include <geometrie/vecteur.h>
 #include <formes/polygone.h>
 #include <affichage/affichagedistant.h>

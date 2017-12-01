@@ -1,7 +1,3 @@
-//
-// Created by mrkel on 24/11/2017.
-//
-
 #include "ChargerDonneesCOR.h"
 
 class ChargerDonneesCercle : public ChargerDonneesCOR {
