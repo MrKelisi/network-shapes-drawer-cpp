@@ -12,7 +12,7 @@ class Polygone : public Forme {
         bool operator != (const Polygone&) const;
 
     public:
-        Polygone(const char* couleur);
+        Polygone(const std::string couleur);
         Polygone(const Polygone &);
         //Pas besoin de destructeur
 

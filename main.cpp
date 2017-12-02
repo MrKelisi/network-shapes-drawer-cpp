@@ -11,7 +11,6 @@
 
 int main(int argc, char** argv) {
     AffichageDistant affichageDistant("127.0.0.1", 1952);
-    SauveurForme sauveurForme("test_export.txt");
 
     Triangle t("green", Vecteur(110,0), Vecteur(60, 100), Vecteur(160, 100));
 
@@ -43,32 +42,26 @@ int main(int argc, char** argv) {
 
     /* === PARTIE TEST EXPORT === */
 
-    /*sauveurForme.vider();
+    SauveurForme sauveurForme("test_export.txt");
+    sauveurForme.vider();
 
     t.visiter(sauveurForme);
     s1.visiter(sauveurForme);
     s2.visiter(sauveurForme);
     p.visiter(sauveurForme);
     c1.visiter(sauveurForme);
-    c2.visiter(sauveurForme);*/
+    c2.visiter(sauveurForme);
+    /*g.visiter(sauveurForme);*/
 
 
     /* === PARTIE TEST IMPORT === */
 
-    /*std::vector<Forme*> FORMES;
     SauveurForme importerForme("test_import.txt");
+    std::vector<Forme*> FORMES;
     importerForme.charger(FORMES);
 
     for(std::vector<Forme*>::iterator it = FORMES.begin(); it != FORMES.end(); it++) {
-        //Rotation rot(Vecteur(350,150), 3.1415/4);
-        //(**it).modifier(rot); S                      `- zsh
- 3836 florian   20   0   13,2m   1,7m
         (**it).visiter(affichageDistant);
     }
 
-    /*
-    for(int i = 0; i < nb_formes; i++)
-        delete FORMES[i];
-    delete [] FORMES;
-     */
 }

@@ -51,7 +51,7 @@ class Forme {
          * @brief Change la couleur de la forme
          * @param couleur Nouvelle couleur
          */
-        void setCouleur(const char* couleur);
+        void setCouleur(const std::string couleur);
 
         /**
          * @brief Change le groupe de la forme

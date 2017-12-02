@@ -1,6 +1,6 @@
 #include "segment.h"
 
-Segment::Segment(const char* couleur, const Vecteur& debut, const Vecteur& fin) :
+Segment::Segment(const std::string couleur, const Vecteur& debut, const Vecteur& fin) :
     Forme(couleur),
     _debut(debut),
     _fin(fin) {

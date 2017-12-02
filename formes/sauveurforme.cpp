@@ -19,7 +19,11 @@ SauveurForme::SauveurForme(std::string nomFichier) {
 
     _filename = nomFichier;
 
-    ChargerDonneesCOR *chargerDonneesCercle, *chargerDonneesSegment, *chargerDonneesTriangle, *chargerDonneesPolygone, *chargerDonneesGroupe;
+    ChargerDonneesCOR *chargerDonneesCercle,
+            *chargerDonneesSegment,
+            *chargerDonneesTriangle,
+            *chargerDonneesPolygone,
+            *chargerDonneesGroupe;
 
     chargerDonneesCercle = new ChargerDonneesCercle(NULL);
     chargerDonneesSegment = new ChargerDonneesSegment(chargerDonneesCercle);
@@ -41,38 +45,40 @@ void SauveurForme::enregistrer(const std::string& data) const {
 void SauveurForme::charger(std::vector<Forme*> &formes) const {
     std::ifstream f_in(_filename);
     std::string nomForme;
+    Groupe * groupePtr;
     bool inGroupe = false;
-    Groupe * grp_ptr;
+
+    std::cout << "Chargement des formes : " << std::endl;
 
     while (!f_in.eof()) {
         getline(f_in, nomForme, '\n');
 
-        if(nomForme == "]") {
-            inGroupe = false;
-            getline(f_in, nomForme, '\n');
-        }
-        Forme * temp = _chargerDonnees->analyser(f_in, nomForme);
+        Forme * formeCourante = _chargerDonnees->analyser(f_in, nomForme);
 
-        if (temp != NULL) {
-            if(nomForme == "Groupe") {
-                grp_ptr = (Groupe *) temp;
-                inGroupe = true;
-                std::cout << "Chargement de la forme : " << *temp << std::endl;  // Verifie que la forme a bien été crée
-                formes.push_back(temp);
-            }
-            else if(inGroupe) {
-                temp->setGroupe(&*grp_ptr);
+        if (formeCourante != NULL) {
+            if(inGroupe) {
+                formeCourante->setGroupe(&*groupePtr);
+                std::cout << "  > dans le groupe : " << *formeCourante << std::endl;
             }
             else {
-                std::cout << "Chargement de la forme : " << *temp << std::endl;  // Verifie que la forme a bien été crée
-                formes.push_back(temp);
+                if(nomForme == "Groupe") {
+                    inGroupe = true;
+                    groupePtr = (Groupe *) formeCourante;
+                }
+                formes.push_back(formeCourante);
+                std::cout << *formeCourante << std::endl;
             }
         }
+        else if(nomForme == "]")
+            inGroupe = false;
     }
+
+    f_in.close();
 }
 
 void SauveurForme::vider() const {
     std::ofstream f_out(_filename); //vide le fichier
+    f_out.close();
 }
 
 void SauveurForme::visiter(const Cercle* cercle) const {
@@ -80,11 +86,11 @@ void SauveurForme::visiter(const Cercle* cercle) const {
 
     data += visiterForme(cercle);
 
-    data += "  origine:";
+    data += "origine:";
     data += visiterVecteur(cercle->centre());
     data += "\n";
 
-    data += "  rayon:";
+    data += "rayon:";
     data += std::to_string(cercle->rayon());
     data += "\n";
 
@@ -99,7 +105,7 @@ void SauveurForme::visiter(const Polygone* polygone) const {
     data += visiterForme(polygone);
 
     for(unsigned long i = 0; i < polygone->nombrePoints(); i++) {
-        data += "  point" + std::to_string(i+1) + ":";
+        data += "point" + std::to_string(i+1) + ":";
         data += visiterVecteur(polygone->point(i));
         data += "\n";
     }
@@ -113,11 +119,11 @@ void SauveurForme::visiter(const Segment* segment) const {
 
     data += visiterForme(segment);
 
-    data += "  debut:";
+    data += "debut:";
     data += visiterVecteur(segment->debut());
     data += "\n";
 
-    data += "  fin:";
+    data += "fin:";
     data += visiterVecteur(segment->fin());
     data += "\n";
 
@@ -130,15 +136,15 @@ void SauveurForme::visiter(const Triangle* triangle) const {
 
     data += visiterForme(triangle);
 
-    data += "  point1:";
+    data += "point1:";
     data += visiterVecteur(triangle->p1());
     data += "\n";
 
-    data += "  point2:";
+    data += "point2:";
     data += visiterVecteur(triangle->p2());
     data += "\n";
 
-    data += "  point3:";
+    data += "point3:";
     data += visiterVecteur(triangle->p3());
     data += "\n";
 
@@ -168,7 +174,7 @@ std::string SauveurForme::visiterVecteur(const Vecteur& vecteur) const {
 std::string SauveurForme::visiterForme(const Forme* forme) const {
     std::string data;
 
-    data += "  couleur:";
+    data += "couleur:";
     data += forme->couleur();
     data += "\n";
 

@@ -13,31 +13,14 @@ Forme * ChargerDonneesTriangle::analyser1(std::ifstream & f_in, std::string nomF
 
         getline(f_in, line, '\n');  // {
 
-        getline(f_in, line, '\n');  // Première variable : couleur
-        line = line.substr(line.find(':') + 1);
-        std::string couleur = line;
-
-        getline(f_in, line, '\n');  // Deuxième variable : p1
-        line = line.substr(line.find('(') + 1);
-        double p1_x = stod(line.substr(0, line.find(',')));
-        line = line.substr(line.find(',') + 1);
-        double p1_y = stod(line.substr(0, line.find(')')));
-
-        getline(f_in, line, '\n');  // Troisième variable : p2
-        line = line.substr(line.find('(') + 1);
-        double p2_x = stod(line.substr(0, line.find(',')));
-        line = line.substr(line.find(',') + 1);
-        double p2_y = stod(line.substr(0, line.find(')')));
-
-        getline(f_in, line, '\n');  // Quatrième variable : p3
-        line = line.substr(line.find('(') + 1);
-        double p3_x = stod(line.substr(0, line.find(',')));
-        line = line.substr(line.find(',') + 1);
-        double p3_y = stod(line.substr(0, line.find(')')));
+        const std::string couleur = analyserCouleur(f_in);
+        Vecteur point1 = analyserVecteur(f_in);
+        Vecteur point2 = analyserVecteur(f_in);
+        Vecteur point3 = analyserVecteur(f_in);
 
         getline(f_in, line, '\n');  // }
 
-        return new Triangle(couleur.c_str(), Vecteur(p1_x, p1_y), Vecteur(p2_x, p2_y), Vecteur(p3_x, p3_y));
+        return new Triangle(couleur, point1, point2, point3);
     }
     else {
         return nullptr;

@@ -3,7 +3,7 @@
 #include <math.h>
 #include <exceptions/argumentexception.h>
 
-Cercle::Cercle(const char* couleur, const Vecteur& centre, double rayon) :
+Cercle::Cercle(const std::string couleur, const Vecteur& centre, double rayon) :
     Forme(couleur),
     _centre(centre),
     _rayon(rayon) {

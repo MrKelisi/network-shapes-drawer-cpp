@@ -17,4 +17,8 @@ public :
 protected:
     virtual Forme * analyser1(std::ifstream & f_in, std::string nomForme) const = 0;
 
+    double analyserDouble(std::ifstream & f_in) const;
+    Vecteur analyserVecteur(std::ifstream & f_in) const;
+    const std::string analyserCouleur(std::ifstream & f_in) const;
+
 };

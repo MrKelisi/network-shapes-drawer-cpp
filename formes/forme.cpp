@@ -30,7 +30,7 @@ std::string Forme::couleurAffichee() const {
     }
 }
 
-void Forme::setCouleur(const char* couleur) {
+void Forme::setCouleur(const std::string couleur) {
     _couleur = couleur;
 }
 

@@ -2,7 +2,7 @@
 #include "triangle.h"
 #include <algorithm>
 
-Polygone::Polygone(const char* couleur) :
+Polygone::Polygone(const std::string couleur) :
         Forme(couleur) {
 
 }

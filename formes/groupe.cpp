@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <exceptions/GroupeException.h>
 
-Groupe::Groupe(const char* couleur) :
+Groupe::Groupe(const std::string couleur) :
     Forme(couleur) {
 
 }

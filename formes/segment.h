@@ -12,7 +12,7 @@ class Segment : public Forme {
         bool operator != (const Segment&) const;
 
     public:
-        Segment(const char* couleur, const Vecteur& debut, const Vecteur& fin);
+        Segment(const std::string couleur, const Vecteur& debut, const Vecteur& fin);
 
         /**
          * @brief Donne le point de départ du segment

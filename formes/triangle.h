@@ -13,7 +13,7 @@ class Triangle : public Forme {
         bool operator != (const Triangle&) const;
 
     public:
-        Triangle(const char* couleur, const Vecteur& p1, const Vecteur& p2, const Vecteur& p3);
+        Triangle(const std::string couleur, const Vecteur& p1, const Vecteur& p2, const Vecteur& p3);
         //Pas besoin de constructeur par copie
         //Pas besoin de destructeur
 

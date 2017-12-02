@@ -13,11 +13,9 @@ Forme * ChargerDonneesGroupe::analyser1(std::ifstream & f_in, std::string nomFor
 
         getline(f_in, line, '\n');  // [
 
-        getline(f_in, line, '\n');  // Première variable : couleur
-        line = line.substr(line.find(':') + 1);
-        std::string couleur = line;
+        const std::string couleur = analyserCouleur(f_in);
 
-        return new Groupe(couleur.c_str());
+        return new Groupe(couleur);
     }
     else {
         return nullptr;

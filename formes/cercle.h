@@ -13,7 +13,7 @@ class Cercle : public Forme {
         bool operator != (const Cercle&) const;
 
     public:
-        Cercle(const char* couleur, const Vecteur& centre, double rayon);
+        Cercle(const std::string couleur, const Vecteur& centre, double rayon);
         //Pas besoin de constructeur par copie
         //Pas besoin de destructeur
 

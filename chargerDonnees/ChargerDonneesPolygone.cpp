@@ -1,6 +1,6 @@
 #include <geometrie/vecteur.h>
 #include <formes/polygone.h>
-#include <affichage/affichagedistant.h>
+#include <exceptions/argumentexception.h>
 #include "ChargerDonneesPolygone.h"
 
 ChargerDonneesPolygone::ChargerDonneesPolygone(ChargerDonneesCOR * suivant) : ChargerDonneesCOR(suivant) {}
@@ -10,34 +10,28 @@ Forme * ChargerDonneesPolygone::analyser1(std::ifstream & f_in, std::string nomF
     if(nomForme == "Polygone") {
 
         std::string line;
+        std::vector<Vecteur> points;
+        bool continuerChercherPoints = true;
 
         getline(f_in, line, '\n');  // {
 
-        getline(f_in, line, '\n');  // Première variable : couleur
-        line = line.substr(line.find(':') + 1);
-        std::string couleur = line;
+        const std::string couleur = analyserCouleur(f_in);
 
-
-        int nb = 0;
-        double points_x[20], points_y[20];
-        getline(f_in, line, '\n');
-
-        while(line != "}") {
-
-            line = line.substr(line.find('(') + 1);
-            points_x[nb] = stod(line.substr(0, line.find(',')));
-            line = line.substr(line.find(',') + 1);
-            points_y[nb] = stod(line.substr(0, line.find(')')));
-
-            nb++;
-            getline(f_in, line, '\n');
+        while(continuerChercherPoints) {
+            try {
+                Vecteur temp = analyserVecteur(f_in);
+                points.push_back(temp);
+            }
+            catch(ArgumentException e) {
+                continuerChercherPoints = false;
+            }
         }
 
-        Polygone p(couleur.c_str());
-        for(int i = 0; i < nb; i++)
-            p.ajouter(Vecteur(points_x[i], points_y[i]));
+        Polygone * p = new Polygone(couleur);
+        for(std::vector<Vecteur>::iterator it = points.begin(); it != points.end(); it++)
+            p->ajouter(*it);
 
-        return new Polygone(p);
+        return p;
     }
     else {
         return nullptr;
