@@ -5,7 +5,7 @@
 
 ChargerDonneesPolygone::ChargerDonneesPolygone(ChargerDonneesCOR * suivant) : ChargerDonneesCOR(suivant) {}
 
-Forme * ChargerDonneesPolygone::analyser1(std::ifstream & f_in, std::string nomForme) const {
+Forme * ChargerDonneesPolygone::analyser1(std::ifstream& f_in, const std::string& nomForme) const {
 
     if(nomForme == "Polygone") {
 

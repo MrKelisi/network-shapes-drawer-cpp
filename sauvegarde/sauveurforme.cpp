@@ -7,15 +7,15 @@
 #include <formes/triangle.h>
 #include <formes/groupe.h>
 #include <fstream>
-#include <chargerDonnees/ChargerDonneesCercle.h>
-#include <chargerDonnees/ChargerDonneesSegment.h>
-#include <chargerDonnees/ChargerDonneesTriangle.h>
-#include <chargerDonnees/ChargerDonneesPolygone.h>
-#include <chargerDonnees/ChargerDonneesGroupe.h>
+#include <sauvegarde/ChargerDonneesCercle.h>
+#include <sauvegarde/ChargerDonneesSegment.h>
+#include <sauvegarde/ChargerDonneesTriangle.h>
+#include <sauvegarde/ChargerDonneesPolygone.h>
+#include <sauvegarde/ChargerDonneesGroupe.h>
 
 class chargerDonneesCercle;
 
-SauveurForme::SauveurForme(std::string nomFichier) {
+SauveurForme::SauveurForme(const std::string& nomFichier) {
 
     _filename = nomFichier;
 

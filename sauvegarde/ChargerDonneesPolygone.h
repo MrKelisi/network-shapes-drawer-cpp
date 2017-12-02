@@ -7,5 +7,5 @@ public :
     const std::string toString() const;
 
 protected :
-    Forme * analyser1(std::ifstream & f_in, std::string nomForme) const;
+    Forme * analyser1(std::ifstream& f_in, const std::string& nomForme) const;
 };

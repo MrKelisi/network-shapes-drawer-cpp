@@ -5,7 +5,7 @@
 
 ChargerDonneesCercle::ChargerDonneesCercle(ChargerDonneesCOR * suivant) : ChargerDonneesCOR(suivant) {}
 
-Forme * ChargerDonneesCercle::analyser1(std::ifstream & f_in, std::string nomForme) const {
+Forme * ChargerDonneesCercle::analyser1(std::ifstream& f_in, const std::string& nomForme) const {
 
     if(nomForme == "Cercle") {
 

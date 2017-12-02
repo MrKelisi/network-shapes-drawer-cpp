@@ -6,7 +6,7 @@
 
 ChargerDonneesCOR::ChargerDonneesCOR(ChargerDonneesCOR * suivant) : suivant(suivant) {}
 
-Forme * ChargerDonneesCOR::analyser(std::ifstream & f_in, std::string nomForme) const {
+Forme* ChargerDonneesCOR::analyser(std::ifstream& f_in, const std::string& nomForme) const {
     Forme * resultat;
     resultat = this->analyser1(f_in, nomForme);
 
@@ -50,7 +50,8 @@ Vecteur ChargerDonneesCOR::analyserVecteur(std::ifstream & f_in) const {
         throw ArgumentException("Impossible de lire le vecteur");
     }
 }
-const std::string ChargerDonneesCOR::analyserCouleur(std::ifstream & f_in) const {
+
+std::string ChargerDonneesCOR::analyserCouleur(std::ifstream & f_in) const {
     std::string line;
     getline(f_in, line, '\n');
 

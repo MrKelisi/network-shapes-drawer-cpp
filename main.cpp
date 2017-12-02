@@ -6,7 +6,7 @@
 #include <formes/groupe.h>
 #include <transformation/rotation.h>
 #include <math.h>
-#include <formes/sauveurforme.h>
+#include <sauvegarde/sauveurforme.h>
 #include <transformation/homothetie.h>
 
 int main(int argc, char** argv) {

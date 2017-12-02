@@ -5,7 +5,7 @@
 
 ChargerDonneesSegment::ChargerDonneesSegment(ChargerDonneesCOR * suivant) : ChargerDonneesCOR(suivant) {}
 
-Forme * ChargerDonneesSegment::analyser1(std::ifstream & f_in, std::string nomForme) const {
+Forme * ChargerDonneesSegment::analyser1(std::ifstream& f_in, const std::string& nomForme) const {
 
     if(nomForme == "Segment") {
 

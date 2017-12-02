@@ -3,7 +3,7 @@
 #include <formes/visiteurforme.h>
 #include <formes/forme.h>
 #include <geometrie/vecteur.h>
-#include <chargerDonnees/ChargerDonnees.h>
+#include <sauvegarde/ChargerDonnees.h>
 #include <vector>
 
 class SauveurForme : public VisiteurForme {
@@ -12,7 +12,7 @@ public:
      * @brief Permet de sauvegarder dans un fichier les formes
      * @param nomFichier Nom du fichier
      */
-    SauveurForme(std::string nomFichier);
+    SauveurForme(const std::string& nomFichier);
     virtual ~SauveurForme();
 
     virtual void visiter(const Cercle* cercle) const override;
