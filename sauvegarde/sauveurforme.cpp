@@ -16,22 +16,7 @@
 class chargerDonneesCercle;
 
 SauveurForme::SauveurForme(const std::string& nomFichier) {
-
     _filename = nomFichier;
-
-    ChargerDonneesCOR *chargerDonneesCercle,
-            *chargerDonneesSegment,
-            *chargerDonneesTriangle,
-            *chargerDonneesPolygone,
-            *chargerDonneesGroupe;
-
-    chargerDonneesCercle = new ChargerDonneesCercle(NULL);
-    chargerDonneesSegment = new ChargerDonneesSegment(chargerDonneesCercle);
-    chargerDonneesTriangle = new ChargerDonneesTriangle(chargerDonneesSegment);
-    chargerDonneesPolygone = new ChargerDonneesPolygone(chargerDonneesTriangle);
-    chargerDonneesGroupe = new ChargerDonneesGroupe(chargerDonneesPolygone);
-
-    _chargerDonnees = chargerDonneesGroupe;
 }
 
 SauveurForme::~SauveurForme() {}
@@ -40,40 +25,6 @@ void SauveurForme::enregistrer(const std::string& data) const {
     std::ofstream f_out(_filename, std::ios_base::app);
     f_out << data;
     f_out.close();
-}
-
-void SauveurForme::charger(std::vector<Forme*> &formes) const {
-    std::ifstream f_in(_filename);
-    std::string nomForme;
-    Groupe * groupePtr;
-    bool inGroupe = false;
-
-    std::cout << "Chargement des formes : " << std::endl;
-
-    while (!f_in.eof()) {
-        getline(f_in, nomForme, '\n');
-
-        Forme * formeCourante = _chargerDonnees->analyser(f_in, nomForme);
-
-        if (formeCourante != NULL) {
-            if(inGroupe) {
-                formeCourante->setGroupe(&*groupePtr);
-                std::cout << "  > dans le groupe : " << *formeCourante << std::endl;
-            }
-            else {
-                if(nomForme == "Groupe") {
-                    inGroupe = true;
-                    groupePtr = (Groupe *) formeCourante;
-                }
-                formes.push_back(formeCourante);
-                std::cout << *formeCourante << std::endl;
-            }
-        }
-        else if(nomForme == "]")
-            inGroupe = false;
-    }
-
-    f_in.close();
 }
 
 void SauveurForme::vider() const {

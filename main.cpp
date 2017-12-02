@@ -8,6 +8,7 @@
 #include <math.h>
 #include <sauvegarde/sauveurforme.h>
 #include <transformation/homothetie.h>
+#include <sauvegarde/chargeurforme.h>
 
 int main(int argc, char** argv) {
     AffichageDistant affichageDistant("127.0.0.1", 1952);
@@ -26,18 +27,10 @@ int main(int argc, char** argv) {
     Cercle c1("red", Vecteur(60, 250), 50);
     Cercle c2("blue", Vecteur(160, 250), 50);
 
-    /*
+
     Groupe g("red");
     c1.setGroupe(&g);
     c2.setGroupe(&g);
-     */
-
-    t.visiter(affichageDistant);
-    s1.visiter(affichageDistant);
-    s2.visiter(affichageDistant);
-    p.visiter(affichageDistant);
-    c1.visiter(affichageDistant);
-    c2.visiter(affichageDistant);
 
 
     /* === PARTIE TEST EXPORT === */
@@ -51,17 +44,16 @@ int main(int argc, char** argv) {
     p.visiter(sauveurForme);
     c1.visiter(sauveurForme);
     c2.visiter(sauveurForme);
-    /*g.visiter(sauveurForme);*/
+    g.visiter(sauveurForme);
 
 
     /* === PARTIE TEST IMPORT === */
 
-    SauveurForme importerForme("test_import.txt");
-    std::vector<Forme*> FORMES;
-    importerForme.charger(FORMES);
+    ChargeurForme c("test_export.txt");
+    std::vector<Forme*> formes = c.formes();
 
-    for(std::vector<Forme*>::iterator it = FORMES.begin(); it != FORMES.end(); it++) {
-        (**it).visiter(affichageDistant);
+    for(Forme* forme : formes) {
+        forme->visiter(affichageDistant);
     }
 
 }

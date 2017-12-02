@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ChargerDonnees.h"
+#include <geometrie/vecteur.h>
 
 class ChargerDonneesCOR : public ChargerDonnees {
 

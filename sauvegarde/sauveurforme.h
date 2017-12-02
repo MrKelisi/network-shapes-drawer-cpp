@@ -22,11 +22,6 @@ public:
     virtual void visiter(const Groupe* groupe) const override;
 
     /**
-     * @brief Charge les formes du fichier de sauvegarde
-     */
-    void charger(std::vector<Forme*> &formes) const;
-
-    /**
      * @brief Vide le fichier de sauvegarde
      */
     void vider() const;
@@ -34,7 +29,6 @@ public:
 private:
 
     std::string _filename;
-    ChargerDonnees* _chargerDonnees;
 
     /**
      * @brief Envoie des données au fichier de sauvegarde
