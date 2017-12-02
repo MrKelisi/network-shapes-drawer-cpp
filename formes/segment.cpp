@@ -14,10 +14,6 @@ void Segment::setFin(const Vecteur& fin) {
     _fin = fin;
 }
 
-void Segment::afficher(std::ostream& o) const {
-    o << "Segment(" << debut() << ";" << fin() << ")";
-}
-
 void Segment::modifier(const ModificateurForme& modificateur) {
     modificateur.modifier(this);
 }

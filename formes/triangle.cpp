@@ -20,10 +20,6 @@ void Triangle::setP3(const Vecteur& p3) {
     Triangle::_p3 = p3;
 }
 
-void Triangle::afficher(std::ostream& o) const {
-    o << "Triangle(" << _p1 << ";" << _p2 << ";" << _p3 << ")";
-}
-
 void Triangle::modifier(const ModificateurForme& modificateur) {
     modificateur.modifier(this);
 }

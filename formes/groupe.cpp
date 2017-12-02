@@ -42,23 +42,6 @@ void Groupe::removeForme(Forme* forme) {
     }
 }
 
-void Groupe::afficher(std::ostream& o) const {
-    o << "Groupe(";
-
-    std::vector<Forme*>::const_iterator it = _formes.begin();
-    if(it != _formes.end()) {
-        o << *(*it);
-        it++;
-
-        while(it != _formes.end()) {
-            o << ";" << *(*it);
-            it++;
-        }
-    }
-
-    o << ")";
-}
-
 Forme* Groupe::operator[](unsigned long index) {
     return forme(index);
 }

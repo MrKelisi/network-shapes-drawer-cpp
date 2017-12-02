@@ -1,5 +1,6 @@
 #include <exceptions/GroupeException.h>
 #include <memory.h>
+#include <sstream>
 #include "forme.h"
 #include "groupe.h"
 
@@ -55,9 +56,7 @@ void Forme::setGroupe(Groupe* groupe) {
 }
 
 std::ostream& operator<<(std::ostream& o, const Forme& base) {
-    o << "Forme(couleur=" << base._couleur << "; ";
-    base.afficher(o);
-    o << ")";
+    o << "Forme(couleur=" << base._couleur << "; " << base.toString() << ")";
 
     return o;
 }
@@ -67,5 +66,7 @@ Forme* Forme::modifierNouveau(const ModificateurForme& modificateurForme) const 
 }
 
 Forme::operator std::string() const {
-    return std::string("Forme(couleur=") + _couleur + ";" + toString() + std::string(")");
+    std::ostringstream oss;
+    oss << *this;
+    return oss.str();
 }

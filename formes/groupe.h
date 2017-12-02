@@ -15,7 +15,7 @@ class Groupe : public Forme {
 
     public:
         Groupe(const std::string couleur);
-        ~Groupe();
+        virtual ~Groupe();
 
         /**
          * @brief Donne le nombre de formes présentes dans le groupe
@@ -45,7 +45,6 @@ class Groupe : public Forme {
 
         virtual void modifier(const ModificateurForme& modificateur) override;
         virtual void visiter(const VisiteurForme& visiteur) const override;
-        void afficher(std::ostream& o) const override;
 
         virtual Forme* clone() const override;
 

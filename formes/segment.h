@@ -41,7 +41,6 @@ class Segment : public Forme {
 
         virtual void modifier(const ModificateurForme& modificateur) override;
         virtual void visiter(const VisiteurForme& visiteur) const override;
-        virtual void afficher(std::ostream& o) const override;
 
         virtual Forme* clone() const override;
 

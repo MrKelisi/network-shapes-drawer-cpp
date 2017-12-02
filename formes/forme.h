@@ -79,12 +79,6 @@ class Forme {
         virtual void visiter(const VisiteurForme& visiteur) const = 0;
 
         /**
-         * @brief Affiche la forme sur le flux donné
-         * @param o Flux de sortie
-         */
-        virtual void afficher(std::ostream& o) const = 0;
-
-        /**
          * @brief Clone la forme actuelle
          * @return Nouvelle forme
          */

@@ -60,24 +60,6 @@ Vecteur Polygone::operator[](unsigned long index) const {
     return point(index);
 }
 
-void Polygone::afficher(std::ostream& o) const {
-    o << "Polygone(";
-
-    std::vector<Vecteur>::const_iterator it = _points.begin();
-
-    if(it != _points.end()) {
-        o << *it;
-        it++;
-
-        while (it != _points.end()) {
-            o << ";" << *it;
-            it++;
-        }
-    }
-
-    o << ")";
-}
-
 void Polygone::modifier(const ModificateurForme& modificateur) {
     modificateur.modifier(this);
 }

@@ -20,10 +20,6 @@ void Cercle::setRayon(double rayon) {
     _rayon = rayon;
 }
 
-void Cercle::afficher(std::ostream& o) const {
-    o << "Cercle(centre:" << _centre << "; rayon:" << _rayon << ")";
-}
-
 void Cercle::modifier(const ModificateurForme& modificateur) {
     modificateur.modifier(this);
 }
