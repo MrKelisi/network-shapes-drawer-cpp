@@ -1,11 +1,9 @@
-#include "ChargerDonneesCOR.h"
+#include "ChargerDonnesForme.h"
 
-class ChargerDonneesCercle : public ChargerDonneesCOR {
+class ChargerDonneesCercle : public ChargerDonneesForme {
+    public:
+        ChargerDonneesCercle(ChargerDonneesCOR* suivant);
 
-    public :
-        ChargerDonneesCercle(ChargerDonneesCOR * suivant);
-        const std::string toString() const;
-
-    protected :
-        Forme * analyser1(std::ifstream& f_in, const std::string& nomForme) const;
+    protected:
+        Forme* analyserForme(std::ifstream& f_in) const;
 };

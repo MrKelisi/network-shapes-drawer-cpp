@@ -3,7 +3,6 @@
 #include <formes/visiteurforme.h>
 #include <formes/forme.h>
 #include <geometrie/vecteur.h>
-#include <sauvegarde/ChargerDonnees.h>
 #include <vector>
 
 class SauveurForme : public VisiteurForme {

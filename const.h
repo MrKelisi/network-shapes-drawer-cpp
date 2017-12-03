@@ -9,5 +9,6 @@ static const char* couleurs[] = {
      "green",
      "yellow",
      "cyan",
-     "aqua"
+     "aqua",
+     nullptr,
 };

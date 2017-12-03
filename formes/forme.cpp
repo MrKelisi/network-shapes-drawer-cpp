@@ -1,13 +1,14 @@
 #include <exceptions/GroupeException.h>
 #include <memory.h>
 #include <sstream>
+#include <exceptions/argumentexception.h>
 #include "forme.h"
 #include "groupe.h"
 
 Forme::Forme(const std::string& couleur) :
-    _couleur(couleur),
     _groupe(nullptr) {
 
+    setCouleur(couleur);
 }
 
 Forme::Forme(const Forme& forme) :
@@ -38,6 +39,19 @@ std::string Forme::couleurAffichee() const {
 }
 
 void Forme::setCouleur(const std::string couleur) {
+    unsigned int i = 0;
+
+    if(couleurs[i] == nullptr) {
+        throw ArgumentException("La couleur n'existe pas");
+    }
+
+    while(couleurs[i] != couleur) {
+        if(couleurs[i + 1] == nullptr) {
+            throw ArgumentException("La couleur n'existe pas");
+        }
+        i++;
+    }
+
     _couleur = couleur;
 }
 

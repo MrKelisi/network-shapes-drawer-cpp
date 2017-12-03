@@ -1,11 +1,10 @@
-#include "ChargerDonneesCOR.h"
+#include "ChargerDonnesForme.h"
 
-class ChargerDonneesTriangle : public ChargerDonneesCOR {
+class ChargerDonneesTriangle : public ChargerDonneesForme {
 
 public :
-    ChargerDonneesTriangle(ChargerDonneesCOR * suivant);
-    const std::string toString() const;
+    ChargerDonneesTriangle(ChargerDonneesCOR* suivant);
 
 protected :
-    Forme * analyser1(std::ifstream& f_in, const std::string& nomForme) const;
+    Forme* analyserForme(std::ifstream& f_in) const;
 };

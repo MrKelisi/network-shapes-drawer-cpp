@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
 
     Triangle t("green", Vecteur(0,0), Vecteur(100, 0), Vecteur(0, 100));
 
-    Polygone p("orange");
+    Polygone p("aqua");
     p.ajouter(Vecteur(105, 100));
     p.ajouter(Vecteur(115, 100));
     p.ajouter(Vecteur(115, 110));
@@ -30,6 +30,11 @@ int main(int argc, char** argv) {
     c1.setGroupe(&g);
     c2.setGroupe(&g);
 
+    Groupe g2("green");
+    g2 += &g;
+    g2 += &p;
+
+
 
     /* === PARTIE TEST EXPORT === */
 
@@ -39,10 +44,7 @@ int main(int argc, char** argv) {
     t.visiter(sauveurForme);
     s1.visiter(sauveurForme);
     s2.visiter(sauveurForme);
-    p.visiter(sauveurForme);
-    c1.visiter(sauveurForme);
-    c2.visiter(sauveurForme);
-    g.visiter(sauveurForme);
+    g2.visiter(sauveurForme);
 
 
     /* === PARTIE TEST IMPORT === */

@@ -5,19 +5,14 @@
 #include "ChargerDonneesPolygone.h"
 #include "ChargerDonneesTriangle.h"
 #include "ChargerDonneesGroupe.h"
+#include <formes/groupe.h>
 
 ChargeurForme::ChargeurForme(const std::string& fichier) {
-    ChargerDonneesCOR *chargerDonneesCercle,
-            *chargerDonneesSegment,
-            *chargerDonneesTriangle,
-            *chargerDonneesPolygone,
-            *chargerDonneesGroupe;
-
-    chargerDonneesCercle = new ChargerDonneesCercle(NULL);
-    chargerDonneesSegment = new ChargerDonneesSegment(chargerDonneesCercle);
-    chargerDonneesTriangle = new ChargerDonneesTriangle(chargerDonneesSegment);
-    chargerDonneesPolygone = new ChargerDonneesPolygone(chargerDonneesTriangle);
-    chargerDonneesGroupe = new ChargerDonneesGroupe(chargerDonneesPolygone);
+    ChargerDonneesCOR* chargerDonneesCercle = new ChargerDonneesCercle(NULL);
+    ChargerDonneesCOR* chargerDonneesSegment = new ChargerDonneesSegment(chargerDonneesCercle);
+    ChargerDonneesCOR* chargerDonneesTriangle = new ChargerDonneesTriangle(chargerDonneesSegment);
+    ChargerDonneesCOR* chargerDonneesPolygone = new ChargerDonneesPolygone(chargerDonneesTriangle);
+    ChargerDonneesCOR* chargerDonneesGroupe = new ChargerDonneesGroupe(chargerDonneesPolygone);
 
     _chargerDonnees = chargerDonneesGroupe;
 
@@ -27,8 +22,7 @@ ChargeurForme::ChargeurForme(const std::string& fichier) {
 void ChargeurForme::charger(const std::string& fichier) {
     std::ifstream f_in(fichier);
     std::string nomForme;
-    Groupe * groupePtr;
-    bool inGroupe = false;
+    Groupe* groupePtr = nullptr;
 
     while (!f_in.eof()) {
         getline(f_in, nomForme, '\n');
@@ -36,19 +30,21 @@ void ChargeurForme::charger(const std::string& fichier) {
         Forme * formeCourante = _chargerDonnees->analyser(f_in, nomForme);
 
         if (formeCourante != NULL) {
-            if(inGroupe) {
-                formeCourante->setGroupe(&*groupePtr);
+            if(groupePtr != nullptr) {
+                formeCourante->setGroupe(groupePtr);
             }
             else {
-                if(nomForme == "Groupe") {
-                    inGroupe = true;
-                    groupePtr = (Groupe*) formeCourante;
-                }
                 _formes.push_back(formeCourante);
             }
+
+            if(nomForme == "Groupe") {
+                groupePtr = (Groupe*) formeCourante;
+            }
+
         }
-        else if(nomForme == "]")
-            inGroupe = false;
+        else if(nomForme == FIN && groupePtr != nullptr) {
+            groupePtr = groupePtr->groupe();
+        }
     }
 
     f_in.close();

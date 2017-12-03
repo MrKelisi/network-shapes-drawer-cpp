@@ -1,32 +1,22 @@
 #include <geometrie/vecteur.h>
 #include <formes/cercle.h>
 #include <affichage/affichagedistant.h>
+#include <exceptions/argumentexception.h>
+#include <exceptions/chargementexception.h>
 #include "ChargerDonneesCercle.h"
 
-ChargerDonneesCercle::ChargerDonneesCercle(ChargerDonneesCOR * suivant) : ChargerDonneesCOR(suivant) {}
+ChargerDonneesCercle::ChargerDonneesCercle(ChargerDonneesCOR* suivant) :
+        ChargerDonneesForme("Cercle", suivant) {
 
-Forme * ChargerDonneesCercle::analyser1(std::ifstream& f_in, const std::string& nomForme) const {
-
-    if(nomForme == "Cercle") {
-
-        std::string line;
-
-        getline(f_in, line, '\n');  // {
-
-        const std::string couleur = analyserCouleur(f_in);
-        Vecteur origine = analyserVecteur(f_in);
-        double rayon = analyserDouble(f_in);
-
-        getline(f_in, line, '\n');  // }
-
-        return new Cercle(couleur, origine, rayon);
-    }
-    else {
-        return nullptr;
-    }
 }
 
-const std::string ChargerDonneesCercle::toString() const {
+Forme* ChargerDonneesCercle::analyserForme(std::ifstream& f_in) const {
+    std::string line;
 
-    return "C'est un cercle !";
+    Vecteur origine = analyserVecteur(f_in);
+    double rayon = analyserDouble(f_in);
+
+    atteindreFinForme(f_in);
+
+    return new Cercle(couleur(), origine, rayon);
 }
