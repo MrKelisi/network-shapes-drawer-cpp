@@ -1,6 +1,6 @@
 #pragma once
 
-#include <couleur.h>
+#include <const.h>
 #include <iostream>
 #include "visiteurforme.h"
 #include "modificateurforme.h"
@@ -15,6 +15,7 @@ class Forme {
     protected:
         Forme(const std::string& couleur);
         Forme(const Forme& forme);
+        virtual ~Forme();
 
     public:
         /**
@@ -57,7 +58,7 @@ class Forme {
          * @brief Change le groupe de la forme
          * @param groupe Nouveau groupe
          */
-        void setGroupe(Groupe* groupe);
+        virtual void setGroupe(Groupe* groupe);
 
         /**
          * @brief Modifie la forme
@@ -92,8 +93,11 @@ class Forme {
          */
         virtual std::string toString() const = 0;
 
+        Forme& operator = (const Forme& other);
+
         friend std::ostream& operator << (std::ostream& o, const Forme& base);
 };
+
 const Groupe* Forme::groupe() const {
     return _groupe;
 }

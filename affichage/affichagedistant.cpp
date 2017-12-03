@@ -1,5 +1,5 @@
 #include <stdexcept>
-#include <couleur.h>
+#include <const.h>
 #include "affichagedistant.h"
 #include <formes/cercle.h>
 #include <formes/polygone.h>

@@ -13,7 +13,7 @@ class Polygone : public Forme {
 
     public:
         Polygone(const std::string couleur);
-        Polygone(const Polygone &);
+        //Pas besoin de constructeur par copie
         //Pas besoin de destructeur
 
         /**

@@ -7,14 +7,12 @@ class Groupe : public Forme {
     private:
         std::vector<Forme*> _formes;
 
-        Groupe(const Groupe& groupe);
-        Groupe operator = (const Groupe& groupe);
-
         void addForme(Forme* forme);
         void removeForme(Forme* forme);
 
     public:
         Groupe(const std::string couleur);
+        Groupe(const Groupe& groupe);
         virtual ~Groupe();
 
         /**
@@ -43,6 +41,8 @@ class Groupe : public Forme {
          */
         double aire() const override;
 
+        void setGroupe(Groupe* groupe) override;
+
         virtual void modifier(const ModificateurForme& modificateur) override;
         virtual void visiter(const VisiteurForme& visiteur) const override;
 
@@ -51,8 +51,13 @@ class Groupe : public Forme {
         Forme* operator [] (unsigned long index);
         const Forme* operator [] (unsigned long index) const;
 
+        Groupe operator + (Forme* forme);
         Groupe& operator += (Forme* forme);
+
+        Groupe operator - (Forme* forme);
         Groupe& operator -= (Forme* forme);
+
+        Groupe& operator = (const Groupe& groupe);
 
         friend void Forme::setGroupe(Groupe* groupe);
 

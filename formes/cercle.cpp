@@ -1,5 +1,4 @@
 #include "cercle.h"
-#include <const.h>
 #include <math.h>
 #include <exceptions/argumentexception.h>
 

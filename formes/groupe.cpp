@@ -7,6 +7,14 @@ Groupe::Groupe(const std::string couleur) :
 
 }
 
+Groupe::Groupe(const Groupe& groupe) :
+    Forme(groupe.couleur()) {
+
+    for(Forme* forme : groupe._formes) {
+        forme->clone()->setGroupe(this);
+    }
+}
+
 Groupe::~Groupe() {
     for(Forme* forme : _formes) {
         forme->setGroupe(nullptr);
@@ -60,6 +68,18 @@ Groupe& Groupe::operator-=(Forme* forme) {
     return *this;
 }
 
+Groupe Groupe::operator+(Forme* forme) {
+    Groupe nouveau(*this);
+    nouveau += forme;
+    return nouveau;
+}
+
+Groupe Groupe::operator-(Forme* forme) {
+    Groupe nouveau(*this);
+    nouveau -= forme;
+    return nouveau;
+}
+
 void Groupe::modifier(const ModificateurForme& modificateur) {
     modificateur.modifier(this);
 }
@@ -79,7 +99,7 @@ double Groupe::aire() const {
 }
 
 Forme* Groupe::clone() const {
-    throw new GroupeException("Un groupe ne peut pas être cloné"); //TODO: ?
+    return new Groupe(*this);
 }
 
 std::string Groupe::toString() const {
@@ -101,3 +121,26 @@ std::string Groupe::toString() const {
     return res;
 }
 
+Groupe& Groupe::operator=(const Groupe& groupe) {
+    for(Forme* forme : _formes) {
+        forme->setGroupe(nullptr);
+    }
+
+    for(Forme* forme : groupe._formes) {
+        forme->clone()->setGroupe(this);
+    }
+
+    return *this;
+}
+
+void Groupe::setGroupe(Groupe* groupe) {
+    const Groupe* parent = groupe;
+    while(parent != nullptr) {
+        if(parent == this) {
+            throw GroupeException("Il ne peut pas y avoir de cycle de groupe");
+        }
+        parent = parent->groupe();
+    }
+
+    Forme::setGroupe(groupe);
+}

@@ -14,6 +14,12 @@ Forme::Forme(const Forme& forme) :
     _couleur(forme._couleur),
     _groupe(nullptr) {
 
+    setGroupe(forme._groupe);
+
+}
+
+Forme::~Forme() {
+    setGroupe(nullptr);
 }
 
 std::string Forme::couleurAffichee() const {
@@ -36,14 +42,6 @@ void Forme::setCouleur(const std::string couleur) {
 }
 
 void Forme::setGroupe(Groupe* groupe) {
-    const Groupe* parent = groupe;
-    while(parent != nullptr) {
-        if(parent == this) {
-            throw GroupeException("Il ne peut pas y avoir de cycle de groupe");
-        }
-        parent = parent->groupe();
-    }
-
     if(_groupe != nullptr) {
         _groupe->removeForme(this);
     }
@@ -69,4 +67,10 @@ Forme::operator std::string() const {
     std::ostringstream oss;
     oss << *this;
     return oss.str();
+}
+
+Forme& Forme::operator=(const Forme& other) {
+    _couleur = other.couleur();
+    _groupe = nullptr;
+    setGroupe(other._groupe);
 }

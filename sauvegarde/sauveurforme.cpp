@@ -1,17 +1,9 @@
 #include "sauveurforme.h"
-#include <stdexcept>
-#include <couleur.h>
 #include <formes/cercle.h>
 #include <formes/polygone.h>
 #include <formes/segment.h>
 #include <formes/triangle.h>
 #include <formes/groupe.h>
-#include <fstream>
-#include <sauvegarde/ChargerDonneesCercle.h>
-#include <sauvegarde/ChargerDonneesSegment.h>
-#include <sauvegarde/ChargerDonneesTriangle.h>
-#include <sauvegarde/ChargerDonneesPolygone.h>
-#include <sauvegarde/ChargerDonneesGroupe.h>
 
 class chargerDonneesCercle;
 
