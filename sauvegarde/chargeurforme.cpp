@@ -30,8 +30,6 @@ void ChargeurForme::charger(const std::string& fichier) {
     Groupe * groupePtr;
     bool inGroupe = false;
 
-    std::cout << "Chargement des formes : " << std::endl;
-
     while (!f_in.eof()) {
         getline(f_in, nomForme, '\n');
 
@@ -40,7 +38,6 @@ void ChargeurForme::charger(const std::string& fichier) {
         if (formeCourante != NULL) {
             if(inGroupe) {
                 formeCourante->setGroupe(&*groupePtr);
-                std::cout << "  > dans le groupe : " << *formeCourante << std::endl;
             }
             else {
                 if(nomForme == "Groupe") {
@@ -48,7 +45,6 @@ void ChargeurForme::charger(const std::string& fichier) {
                     groupePtr = (Groupe*) formeCourante;
                 }
                 _formes.push_back(formeCourante);
-                std::cout << *formeCourante << std::endl;
             }
         }
         else if(nomForme == "]")

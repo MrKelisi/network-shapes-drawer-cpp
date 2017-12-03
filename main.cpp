@@ -4,28 +4,26 @@
 #include <formes/polygone.h>
 #include <formes/cercle.h>
 #include <formes/groupe.h>
-#include <transformation/rotation.h>
 #include <math.h>
 #include <sauvegarde/sauveurforme.h>
-#include <transformation/homothetie.h>
 #include <sauvegarde/chargeurforme.h>
 
 int main(int argc, char** argv) {
     AffichageDistant affichageDistant("127.0.0.1", 1952);
 
-    Triangle t("green", Vecteur(110,0), Vecteur(60, 100), Vecteur(160, 100));
+    Triangle t("green", Vecteur(0,0), Vecteur(100, 0), Vecteur(0, 100));
 
     Polygone p("orange");
-    p.ajouter(Vecteur(105, 0));
-    p.ajouter(Vecteur(115, 0));
-    p.ajouter(Vecteur(115, 10));
-    p.ajouter(Vecteur(105, 10));
+    p.ajouter(Vecteur(105, 100));
+    p.ajouter(Vecteur(115, 100));
+    p.ajouter(Vecteur(115, 110));
+    p.ajouter(Vecteur(105, 110));
 
     Segment s1("black", Vecteur(60, 100), Vecteur(60, 200));
-    Segment s2("yellow", Vecteur(160, 100), Vecteur(160, 200));
+    Segment s2("blue", Vecteur(160, 100), Vecteur(160, 200));
 
-    Cercle c1("red", Vecteur(60, 250), 50);
-    Cercle c2("blue", Vecteur(160, 250), 50);
+    Cercle c1("red", Vecteur(250, 250), 50);
+    Cercle c2("yellow", Vecteur(400, 250), 50);
 
 
     Groupe g("red");
@@ -35,7 +33,7 @@ int main(int argc, char** argv) {
 
     /* === PARTIE TEST EXPORT === */
 
-    SauveurForme sauveurForme("test_export.txt");
+    SauveurForme sauveurForme("export.txt");
     sauveurForme.vider();
 
     t.visiter(sauveurForme);
@@ -49,7 +47,7 @@ int main(int argc, char** argv) {
 
     /* === PARTIE TEST IMPORT === */
 
-    ChargeurForme c("test_export.txt");
+    ChargeurForme c("export.txt");
     std::vector<Forme*> formes = c.formes();
 
     for(Forme* forme : formes) {

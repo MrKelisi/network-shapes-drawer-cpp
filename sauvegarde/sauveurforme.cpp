@@ -28,7 +28,7 @@ void SauveurForme::enregistrer(const std::string& data) const {
 }
 
 void SauveurForme::vider() const {
-    std::ofstream f_out(_filename); //vide le fichier
+    std::ofstream f_out(_filename);
     f_out.close();
 }
 
