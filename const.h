@@ -10,5 +10,6 @@ static const char* couleurs[] = {
      "yellow",
      "cyan",
      "aqua",
+     "orange",
      nullptr,
 };
