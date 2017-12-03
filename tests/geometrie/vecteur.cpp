@@ -1,3 +1,5 @@
+#define _USE_MATH_DEFINES
+#include <math.h>
 #include <geometrie/vecteur.h>
 #include <const.h>
 #include "catch.hpp"

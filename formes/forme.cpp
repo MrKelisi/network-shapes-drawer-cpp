@@ -87,4 +87,6 @@ Forme& Forme::operator=(const Forme& other) {
     _couleur = other.couleur();
     _groupe = nullptr;
     setGroupe(other._groupe);
+
+	return *this;
 }

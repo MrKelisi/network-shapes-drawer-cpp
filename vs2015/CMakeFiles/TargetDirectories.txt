@@ -1,0 +1,6 @@
+C:/msys64/home/Florian/martin-cpp/vs2015/CMakeFiles/client_cpp.dir
+C:/msys64/home/Florian/martin-cpp/vs2015/CMakeFiles/libclient_cpp.dir
+C:/msys64/home/Florian/martin-cpp/vs2015/CMakeFiles/ALL_BUILD.dir
+C:/msys64/home/Florian/martin-cpp/vs2015/CMakeFiles/ZERO_CHECK.dir
+C:/msys64/home/Florian/martin-cpp/vs2015/tests/CMakeFiles/client_cpp_tests.dir
+C:/msys64/home/Florian/martin-cpp/vs2015/tests/CMakeFiles/ALL_BUILD.dir

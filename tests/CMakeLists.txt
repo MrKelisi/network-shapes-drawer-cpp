@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.9)
-project(martin_cpp_tests)
+cmake_minimum_required(VERSION 3.6)
+project(client_cpp_tests)
 
 set(CMAKE_CXX_STANDARD 11)
 

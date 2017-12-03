@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{1D4957FF-B1BB-32BC-AAC9-09B4C923E05F}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>client_cpp</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\msys64\home\Florian\martin-cpp\vs2015\Debug\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_cpp.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_cpp</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\msys64\home\Florian\martin-cpp\vs2015\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_cpp.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_cpp</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\msys64\home\Florian\martin-cpp\vs2015\MinSizeRel\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">client_cpp.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">client_cpp</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\msys64\home\Florian\martin-cpp\vs2015\RelWithDebInfo\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">client_cpp.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">client_cpp</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\msys64\home\Florian\martin-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\msys64\home\Florian\martin-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\msys64\home\Florian\martin-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;wsock32.lib;ws2_32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/msys64/home/Florian/martin-cpp/vs2015/Debug/client_cpp.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/msys64/home/Florian/martin-cpp/vs2015/Debug/client_cpp.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\msys64\home\Florian\martin-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\msys64\home\Florian\martin-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\msys64\home\Florian\martin-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;wsock32.lib;ws2_32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/msys64/home/Florian/martin-cpp/vs2015/Release/client_cpp.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/msys64/home/Florian/martin-cpp/vs2015/Release/client_cpp.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\msys64\home\Florian\martin-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\msys64\home\Florian\martin-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\msys64\home\Florian\martin-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;wsock32.lib;ws2_32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/msys64/home/Florian/martin-cpp/vs2015/MinSizeRel/client_cpp.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/msys64/home/Florian/martin-cpp/vs2015/MinSizeRel/client_cpp.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\msys64\home\Florian\martin-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\msys64\home\Florian\martin-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\msys64\home\Florian\martin-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;wsock32.lib;ws2_32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/msys64/home/Florian/martin-cpp/vs2015/RelWithDebInfo/client_cpp.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/msys64/home/Florian/martin-cpp/vs2015/RelWithDebInfo/client_cpp.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\msys64\home\Florian\martin-cpp\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/msys64/home/Florian/martin-cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\msys64\mingw64\bin\cmake.exe -HC:/msys64/home/Florian/martin-cpp -BC:/msys64/home/Florian/martin-cpp/vs2015 --check-stamp-file C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/msys64/home/Florian/martin-cpp/CMakeLists.txt;C:\msys64\home\Florian\martin-cpp\CMakeLists.txt;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerId.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCompilerIdDetection.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GNU-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\TI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CompilerId\VS-10.vcxproj.in;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeFindBinUtils.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCXXCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-CXX.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerId.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCompilerIdDetection.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GNU-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\TI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CompilerId\VS-10.vcxproj.in;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeFindBinUtils.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineRCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeRCCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestRCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCompilerCommon.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerABI.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseImplicitLinkInfo.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCCompilerABI.c;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompileFeatures.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCXXCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCompilerCommon.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerABI.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseImplicitLinkInfo.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXCompilerABI.cpp;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompileFeatures.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Internal\FeatureTesting.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\feature_tests.cxx;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\msys64\home\Florian\martin-cpp\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/msys64/home/Florian/martin-cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\msys64\mingw64\bin\cmake.exe -HC:/msys64/home/Florian/martin-cpp -BC:/msys64/home/Florian/martin-cpp/vs2015 --check-stamp-file C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/msys64/home/Florian/martin-cpp/CMakeLists.txt;C:\msys64\home\Florian\martin-cpp\CMakeLists.txt;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerId.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCompilerIdDetection.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GNU-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\TI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CompilerId\VS-10.vcxproj.in;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeFindBinUtils.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCXXCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-CXX.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerId.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCompilerIdDetection.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GNU-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\TI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CompilerId\VS-10.vcxproj.in;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeFindBinUtils.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineRCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeRCCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestRCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCompilerCommon.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerABI.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseImplicitLinkInfo.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCCompilerABI.c;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompileFeatures.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCXXCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCompilerCommon.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerABI.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseImplicitLinkInfo.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXCompilerABI.cpp;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompileFeatures.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Internal\FeatureTesting.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\feature_tests.cxx;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\msys64\home\Florian\martin-cpp\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/msys64/home/Florian/martin-cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\msys64\mingw64\bin\cmake.exe -HC:/msys64/home/Florian/martin-cpp -BC:/msys64/home/Florian/martin-cpp/vs2015 --check-stamp-file C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/msys64/home/Florian/martin-cpp/CMakeLists.txt;C:\msys64\home\Florian\martin-cpp\CMakeLists.txt;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerId.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCompilerIdDetection.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GNU-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\TI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CompilerId\VS-10.vcxproj.in;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeFindBinUtils.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCXXCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-CXX.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerId.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCompilerIdDetection.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GNU-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\TI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CompilerId\VS-10.vcxproj.in;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeFindBinUtils.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineRCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeRCCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestRCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCompilerCommon.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerABI.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseImplicitLinkInfo.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCCompilerABI.c;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompileFeatures.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCXXCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCompilerCommon.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerABI.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseImplicitLinkInfo.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXCompilerABI.cpp;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompileFeatures.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Internal\FeatureTesting.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\feature_tests.cxx;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\msys64\home\Florian\martin-cpp\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/msys64/home/Florian/martin-cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\msys64\mingw64\bin\cmake.exe -HC:/msys64/home/Florian/martin-cpp -BC:/msys64/home/Florian/martin-cpp/vs2015 --check-stamp-file C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/msys64/home/Florian/martin-cpp/CMakeLists.txt;C:\msys64\home\Florian\martin-cpp\CMakeLists.txt;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerId.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCompilerIdDetection.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GNU-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\TI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CompilerId\VS-10.vcxproj.in;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeFindBinUtils.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCXXCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-CXX.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerId.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCompilerIdDetection.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\GNU-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\TI-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CompilerId\VS-10.vcxproj.in;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeFindBinUtils.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineRCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeRCCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestRCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCompilerCommon.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerABI.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseImplicitLinkInfo.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCCompilerABI.c;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompileFeatures.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCXXCompiler.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeTestCompilerCommon.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompilerABI.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeParseImplicitLinkInfo.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXCompilerABI.cpp;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeDetermineCompileFeatures.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Internal\FeatureTesting.cmake;C:\msys64\mingw64\share\cmake-3.6\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\feature_tests.cxx;C:\msys64\mingw64\share\cmake-3.6\Modules\CMakeCXXCompiler.cmake.in;C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\msys64\home\Florian\martin-cpp\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\msys64\home\Florian\martin-cpp\vs2015\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\forme.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\geometrie\vecteur.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\segment.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\cercle.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\triangle.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\polygone.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\transformation\transformation.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\groupe.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\transformation\translation.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\transformation\homothetie.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\transformation\rotation.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\visiteurforme.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\modificateurforme.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\affichage\clientreseau.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\affichage\affichagedistant.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\exceptions\GroupeException.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\exceptions\socketexception.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\sauveurforme.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonnees.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesCOR.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesCercle.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesSegment.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesTriangle.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesPolygone.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesGroupe.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\exceptions\argumentexception.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\chargeurforme.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\const.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonnesForme.h" />
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\exceptions\chargementexception.h" />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\main.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\formes\forme.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\geometrie\vecteur.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\formes\segment.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\formes\cercle.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\formes\triangle.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\formes\polygone.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\formes\groupe.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\transformation\translation.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\transformation\homothetie.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\transformation\rotation.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\affichage\clientreseau.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\affichage\affichagedistant.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\formes\modificateurforme.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\sauveurforme.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesCOR.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesCercle.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesSegment.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesTriangle.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesPolygone.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesGroupe.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\chargeurforme.cpp"  />
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonnesForme.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/msys64/home/Florian/martin-cpp/vs2015/ZERO_CHECK.vcxproj">
+      <Project>51BE3207-BC0B-3B7E-B790-2FBF6D2D3376</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

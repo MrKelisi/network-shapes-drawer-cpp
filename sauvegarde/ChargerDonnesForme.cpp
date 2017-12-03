@@ -1,3 +1,4 @@
+#include <string>
 #include <exceptions/argumentexception.h>
 #include <exceptions/chargementexception.h>
 #include "ChargerDonnesForme.h"

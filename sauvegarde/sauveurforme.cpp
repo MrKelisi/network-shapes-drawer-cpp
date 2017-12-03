@@ -5,6 +5,7 @@
 #include <formes/segment.h>
 #include <formes/triangle.h>
 #include <formes/groupe.h>
+#include <string>
 
 class chargerDonneesCercle;
 

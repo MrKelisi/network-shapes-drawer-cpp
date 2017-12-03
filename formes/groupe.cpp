@@ -10,14 +10,14 @@ Groupe::Groupe(const std::string couleur) :
 Groupe::Groupe(const Groupe& groupe) :
     Forme(groupe.couleur()) {
 
-    for(Forme* forme : groupe._formes) {
-        forme->clone()->setGroupe(this);
+    for(unsigned long i = 0; i < groupe._formes.size(); i++) {
+        groupe._formes[i]->clone()->setGroupe(this);
     }
 }
 
 Groupe::~Groupe() {
-    for(Forme* forme : _formes) {
-        forme->setGroupe(nullptr);
+	for (unsigned long i = 0; i < _formes.size(); i++) {
+        _formes[i]->setGroupe(nullptr);
     }
 }
 

@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\formes\forme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\geometrie\vecteur.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\formes\segment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\formes\cercle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\formes\triangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\formes\polygone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\formes\groupe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\transformation\translation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\transformation\homothetie.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\transformation\rotation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\affichage\clientreseau.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\affichage\affichagedistant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\formes\modificateurforme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\sauveurforme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesCOR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesCercle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesSegment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesTriangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesPolygone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesGroupe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\chargeurforme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonnesForme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\forme.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\geometrie\vecteur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\segment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\cercle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\triangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\polygone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\transformation\transformation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\groupe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\transformation\translation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\transformation\homothetie.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\transformation\rotation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\visiteurforme.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\formes\modificateurforme.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\affichage\clientreseau.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\affichage\affichagedistant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\exceptions\GroupeException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\exceptions\socketexception.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\sauveurforme.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonnees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesCOR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesCercle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesSegment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesTriangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesPolygone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonneesGroupe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\exceptions\argumentexception.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\chargeurforme.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\const.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\sauvegarde\ChargerDonnesForme.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\msys64\home\Florian\martin-cpp\exceptions\chargementexception.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\msys64\home\Florian\martin-cpp\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6882F763-21B3-34B9-9EFF-BC639057906A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{412944FD-35B2-31FD-9B3C-4C4FD860772C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

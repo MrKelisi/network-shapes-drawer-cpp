@@ -1,6 +1,8 @@
-#include "cercle.h"
+#define _USE_MATH_DEFINES
 #include <math.h>
+#include "cercle.h"
 #include <exceptions/argumentexception.h>
+#include <string>
 
 Cercle::Cercle(const std::string couleur, const Vecteur& centre, double rayon) :
     Forme(couleur),
