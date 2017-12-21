@@ -7,53 +7,69 @@
 #include <math.h>
 #include <sauvegarde/sauveurforme.h>
 #include <sauvegarde/chargeurforme.h>
+#include <transformation/translation.h>
+#include <transformation/rotation.h>
+#include <transformation/homothetie.h>
+
+#define NOM_FICHIER "majoliefigure2.txt"
 
 int main(int argc, char** argv) {
-    AffichageDistant affichageDistant("127.0.0.1", 1952);
+    //Création formes et calcul d'aire
 
-    Triangle t("green", Vecteur(0,0), Vecteur(100, 0), Vecteur(0, 100));
+    Triangle t1("green", Vecteur(1, 0), Vecteur(4, -2), Vecteur(4, 2));
 
-    Polygone p("aqua");
-    p.ajouter(Vecteur(105, 100));
-    p.ajouter(Vecteur(115, 100));
-    p.ajouter(Vecteur(115, 110));
-    p.ajouter(Vecteur(105, 110));
+    Cercle c1("yellow", Vecteur(7, 0), 2);
 
-    Segment s1("black", Vecteur(60, 100), Vecteur(60, 200));
-    Segment s2("blue", Vecteur(160, 100), Vecteur(160, 200));
+    Polygone r1("blue");
+    r1 += Vecteur(11, -1);
+    r1 += Vecteur(15, -1);
+    r1 += Vecteur(15, 1);
+    r1 += Vecteur(11, 1);
 
-    Cercle c1("red", Vecteur(250, 250), 50);
-    Cercle c2("yellow", Vecteur(400, 250), 50);
+    Cercle c2("yellow", Vecteur(17, 0), 1);
 
+    Groupe g1("red");
+    g1 += &t1;
+    g1 += &c1;
+    g1 += &r1;
+    g1 += &c2;
 
-    Groupe g("red");
-    c1.setGroupe(&g);
-    c2.setGroupe(&g);
+    Translation translation(Vecteur(-4, 0));
+    g1.modifier(translation);
 
-    Groupe g2("green");
-    g2 += &g;
-    g2 += &p;
+    Rotation rotation(Vecteur(0, 0), M_PI/4);
+    g1.modifier(rotation);
 
+    std::cout << g1.aire() << std::endl;
 
+    //Dessin g1
 
-    /* === PARTIE TEST EXPORT === */
+    Translation translationAffichage(Vecteur(10, 10));
+    g1.modifier(translationAffichage);
 
-    SauveurForme sauveurForme("export.txt");
+    Homothetie homothetieAffichage(Vecteur(0, 0), 20);
+    g1.modifier(homothetieAffichage);
+
+    AffichageDistant affichage("127.0.0.1", 1952);
+    g1.visiter(affichage);
+
+    //Sauvegarde et chargement
+    SauveurForme sauveurForme(NOM_FICHIER);
     sauveurForme.vider();
+    g1.visiter(sauveurForme);
 
-    t.visiter(sauveurForme);
-    s1.visiter(sauveurForme);
-    s2.visiter(sauveurForme);
-    g2.visiter(sauveurForme);
+    ChargeurForme chargeurForme(NOM_FICHIER);
+    std::vector<Forme*> formes = chargeurForme.formes();
+    Groupe* g2 = (Groupe*) formes[0];
 
+    //Affichage deuxième groupe
+    g2->setCouleur("green");
+    Translation translationAffichage2(Vecteur(300, 0));
+    g2->modifier(translationAffichage2);
+    g2->visiter(affichage);
 
-    /* === PARTIE TEST IMPORT === */
-
-    ChargeurForme c("export.txt");
-    std::vector<Forme*> formes = c.formes();
-
+    //Suppression des formes
     for(Forme* forme : formes) {
-        forme->visiter(affichageDistant);
+        delete forme;
     }
-
 }

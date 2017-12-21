@@ -15,9 +15,9 @@ class Forme {
     protected:
         Forme(const std::string& couleur);
         Forme(const Forme& forme);
-        virtual ~Forme();
 
     public:
+        virtual ~Forme();
         /**
          * @brief Donne la couleur de la forme
          * @return Couleur
